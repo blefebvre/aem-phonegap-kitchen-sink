@@ -3,25 +3,26 @@
     angular.module('phonegapCompass', ['btford.phonegap.ready'])
         .directive('phonegapCompass', ['$http', 'phonegapReady', function ($http, phonegapReady) {
             function link(scope, element, attrs) {
+                // The watch id references the current `watchHeading`
+                var watchID = null;
 
-                function geolocationSuccess(position) {
-                    scope.latitude = position.coords.latitude;
-                    scope.longitude = position.coords.longitude;
-                    console.log('[phonegapLocation] current device lat: [' + scope.latitude + '] long: [' + scope.longitude + ']');
-                    scope.foundLocation = true;
+                function onCompassSuccess(heading) {
+                    scope.heading = heading.magneticHeading;
                     scope.$apply();
                 }
 
-                function geolocationError(error) {
-                    alert('Location error. Code: '    + error.code    + '\n' +
-                        'Message: ' + error.message + '\n');
+                function onCompassError(error) {
+                    if (watchID) {
+                        navigator.compass.clearWatch(watchID);
+                        watchID = null;
+                    }
+                    alert('Compass error. Code: ' + error.code);
                 }
 
-                navigator.geolocation.getCurrentPosition(geolocationSuccess, geolocationError, {
-                    maximumAge: 10000,
-                    timeout: 15000,
-                    enableHighAccuracy: true
-                });
+                // Update compass every .25 seconds
+                var options = { frequency: 250 };
+                // Start watching compass
+                watchID = navigator.compass.watchHeading(onCompassSuccess, onCompassError, options);
             }
 
 
