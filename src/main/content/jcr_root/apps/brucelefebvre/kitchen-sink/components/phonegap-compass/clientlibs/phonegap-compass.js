@@ -7,6 +7,7 @@
                 var watchID = null;
 				
 				scope.heading = 0;
+				scope.magneticHeading = 0;
 				scope.lastMagneticHeading = 0;
 				scope.headingChange = 0;
 
@@ -15,7 +16,16 @@
 					// we need the heading to wrap over 360 or under 0 (because we can't smoothly animate between 359deg and 0deg), 
 					// so we'll always monitor the change
 					scope.headingChange = heading.magneticHeading - scope.lastMagneticHeading;
+					
+					// find the shortest path
+					if(scope.headingChange > 180) {
+						scope.headingChange -= 360;
+					}
+					else if(scope.headingChange < -180) {
+						scope.headingChange += 360;
+					}
                     scope.heading -= scope.headingChange;
+					scope.magneticHeading = heading.magneticHeading;
 					scope.lastMagneticHeading = heading.magneticHeading;
                     scope.$apply();
                 }
@@ -32,8 +42,7 @@
                 var options = { frequency: 250 };
                 // Start watching compass
                 watchID = navigator.compass.watchHeading(onCompassSuccess, onCompassError, options);
-            }
-
+            };
 
             return {
                 link: phonegapReady(link)

@@ -43,7 +43,7 @@
 			align-ring is here so that we have something larger than all of the other rendered elements, with the same center point. 
 			Otherwise as we change the rotation of sub-elements, we throw off the rotation of the #ticks element
 		 -->
-		<circle id="align-ring" fill="none" opacity="1" stroke="#000000" cx="422" cy="445" r="440" />
+		<circle id="align-ring" fill="none" opacity="0.01" stroke="#FFFFFF" cx="422" cy="445" r="440" />
 		<g id="allnumbers">
 			<g class="rotatable" style="-webkit-transform: rotate({{-heading}}deg);">
 				<text id="_x30_deg" class="deg" transform="matrix(1 0 0 1 415.8164 42.1742)">0</text>
