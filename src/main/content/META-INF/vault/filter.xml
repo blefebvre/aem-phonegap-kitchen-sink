@@ -5,4 +5,5 @@
     <filter root="/content/phonegap/brucelefebvre/content/kitchen-sink"/>
     <filter root="/etc/clientlibs/brucelefebvre/ionic"/>
     <filter root="/etc/designs/phonegap/brucelefebvre/kitchen-sink"/>
+    <filter root="/content/projects/20140310/kitchen_sink"/>
 </workspaceFilter>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:rep="internal"
+    jcr:primaryType="rep:ACL">
+    <deny
+        jcr:primaryType="rep:DenyACE"
+        rep:principalName="everyone"
+        rep:privileges="{Name}[jcr:all]"/>
+    <allow
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="projects-kitchen_sink-photographers"
+        rep:privileges="{Name}[jcr:nodeTypeManagement,jcr:modifyProperties,jcr:addChildNodes,jcr:removeChildNodes]"/>
+    <allow0
+        jcr:primaryType="rep:GrantACE"
+        rep:glob="/*"
+        rep:principalName="projects-kitchen_sink-photographers"
+        rep:privileges="{Name}[jcr:removeNode]"/>
+    <allow1
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="projects-kitchen_sink-editor"
+        rep:privileges="{Name}[jcr:nodeTypeManagement,jcr:modifyProperties,jcr:addChildNodes,jcr:removeChildNodes]"/>
+    <allow2
+        jcr:primaryType="rep:GrantACE"
+        rep:glob="/*"
+        rep:principalName="projects-kitchen_sink-editor"
+        rep:privileges="{Name}[jcr:removeNode]"/>
+    <allow3
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="projects-kitchen_sink-copywriters"
+        rep:privileges="{Name}[jcr:nodeTypeManagement,jcr:modifyProperties,jcr:addChildNodes,jcr:removeChildNodes]"/>
+    <allow4
+        jcr:primaryType="rep:GrantACE"
+        rep:glob="/*"
+        rep:principalName="projects-kitchen_sink-copywriters"
+        rep:privileges="{Name}[jcr:removeNode]"/>
+    <allow5
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="projects-kitchen_sink-supervisors"
+        rep:privileges="{Name}[jcr:read,jcr:readAccessControl]"/>
+    <allow6
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="projects-kitchen_sink-owner"
+        rep:privileges="{Name}[jcr:read,jcr:readAccessControl]"/>
+    <allow7
+        jcr:primaryType="rep:GrantACE"
+        rep:principalName="projects-kitchen_sink"
+        rep:privileges="{Name}[jcr:read,jcr:readAccessControl]"/>
+</jcr:root>
