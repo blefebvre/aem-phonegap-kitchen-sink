@@ -28,9 +28,9 @@
 
             String title = (carouselPage.getTitle() == null ? "" : carouselPage.getTitle());
 %><%
-%>        <li class="item" ng-click="go('<%= xssAPI.getValidHref(carouselPage.getPath()) %>')">
+%>        <a class="item" ng-click="go('<%= xssAPI.getValidHref(carouselPage.getPath()) %>')">
         	<%= xssAPI.encodeForHTML(title) %>
-        </li><%
+        </a><%
 %><%
         }
     }

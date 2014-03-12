@@ -3,4 +3,4 @@
     jcr:primaryType="cq:ClientLibraryFolder"
     categories="[apps.brucelefebvre.kitchen-sink.all]"
     dependencies="[ionic]"
-    embed="[cq.wcm.mobile.foundation.angular,apps.brucelefebvre.nav,apps.brucelefebvre.kitchen-sink]"/>
+    embed="[cq.wcm.mobile.foundation.angular,angular-snap,apps.brucelefebvre.nav,apps.brucelefebvre.kitchen-sink]"/>

@@ -18,5 +18,6 @@
 'cqAppControllers',
 'cqAppNavigation',
 'phonegapLocation',
-'phonegapCompass'
+'phonegapCompass',
+'snap'
 ]
