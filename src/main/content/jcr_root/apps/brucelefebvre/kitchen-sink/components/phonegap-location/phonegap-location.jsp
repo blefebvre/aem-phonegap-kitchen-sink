@@ -1,7 +1,7 @@
 <%@include file="/libs/foundation/global.jsp" %><%
 %><%@ page session="false" %><%
 %>
-<div phonegap-location class="list">
+<div ng-controller="LocationCtrl" class="list">
 	<label class="item item-input item-stacked-label">
 		<span class="input-label">Latitude</span>
 		<input type="text" placeholder="Locating..." disabled ng-value="latitude">

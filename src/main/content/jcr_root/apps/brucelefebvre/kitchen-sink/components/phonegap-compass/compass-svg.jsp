@@ -14,7 +14,7 @@
 		
 		.rotatable {
 			-webkit-transform-origin: 50% 50%;
-			-webkit-transition: all 250ms ease-in-out;
+			-webkit-transition: all 100ms ease-in-out;
 		}
 	</style>
 	<font horiz-adv-x="1000">

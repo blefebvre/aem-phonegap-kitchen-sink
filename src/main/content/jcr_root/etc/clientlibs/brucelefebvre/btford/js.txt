@@ -1,3 +1,5 @@
 #base=js
 
-btford.phonegap.geolocation.js
+angular-phonegap-geolocation.js
+angular-phonegap-accelerometer.js
+angular-phonegap-compass.js
