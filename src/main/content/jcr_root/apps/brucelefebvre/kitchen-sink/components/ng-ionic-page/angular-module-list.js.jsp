@@ -19,5 +19,6 @@
 'cqAppNavigation',
 'phonegapLocation',
 'phonegapCompass',
-'snap'
+'snap',
+'phonegapCamera'
 ]
