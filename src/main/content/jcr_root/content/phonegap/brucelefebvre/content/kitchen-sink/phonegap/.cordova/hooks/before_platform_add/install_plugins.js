@@ -21,6 +21,9 @@ var pluginlist = [
     },
     {
         id: 	"org.apache.cordova.device-orientation"
+    },
+    {
+        id:     "org.apache.cordova.camera"
     }
 ];
 

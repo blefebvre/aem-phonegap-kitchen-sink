@@ -42,4 +42,10 @@
 "plugins/org.chromium.zip/zip.js",
 "plugins/org.apache.cordova.device-orientation/www/CompassError.js",
 "plugins/org.apache.cordova.device-orientation/www/CompassHeading.js",
-"plugins/org.apache.cordova.device-orientation/www/compass.js"]
+"plugins/org.apache.cordova.device-orientation/www/compass.js",
+"plugins/org.apache.cordova.camera/www/Camera.js",
+"plugins/org.apache.cordova.camera/www/CameraPopoverHandle.js",
+"plugins/org.apache.cordova.camera/www/ios/CameraPopoverHandle.js",
+"plugins/org.apache.cordova.camera/www/CameraConstants.js",
+"plugins/org.apache.cordova.camera/www/CameraPopoverOptions.js"
+]
