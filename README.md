@@ -1,7 +1,21 @@
 PhoneGap Kitchen Sink
 ======
 
-This a content package project generated using the simple-content-package-archetype.
+A PhoneGap API showcase app managed in AEM.
+
+Requirements
+------------
+
+- AEM 6.0 version `>=load 18`
+	- author on :4502
+	- publish on :4503
+- [node.js](http://nodejs.org/) version `>=0.10.x`
+- [PhoneGap CLI](https://github.com/phonegap/phonegap-cli) version `==3.3.*`
+	- `$ npm install -g phonegap@3.3`
+- (iOS only) Xcode version `<=5.0.2`
+- (iOS only) [ios-sim](https://github.com/phonegap/ios-sim#installation) 
+	- `$ npm install -g ios-sim`
+- (Android only) [Android SDK](https://developer.android.com/sdk/index.html)
 
 Building
 --------
