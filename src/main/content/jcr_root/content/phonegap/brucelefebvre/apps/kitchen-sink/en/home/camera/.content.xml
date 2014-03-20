@@ -3,7 +3,7 @@
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:designPath="/etc/designs/phonegap/brucelefebvre/kitchen-sink"
-        cq:lastModified="{Date}2014-03-19T16:28:08.551-04:00"
+        cq:lastModified="{Date}2014-03-20T00:14:43.056-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:primaryType="cq:PageContent"
@@ -16,10 +16,14 @@
             <phonegap_camera
                 jcr:created="{Date}2014-03-19T16:28:08.548-04:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-03-19T16:28:08.548-04:00"
+                jcr:lastModified="{Date}2014-03-20T00:14:43.051-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:primaryType="nt:unstructured"
-                sling:resourceType="brucelefebvre/kitchen-sink/components/phonegap-camera"/>
+                sling:resourceType="brucelefebvre/kitchen-sink/components/phonegap-camera"
+                subtitle="Take a picture"
+                title="Camera"
+                useCamera="Take a picture"
+                useGallery="Browse gallery"/>
         </content-par>
     </jcr:content>
 </jcr:root>

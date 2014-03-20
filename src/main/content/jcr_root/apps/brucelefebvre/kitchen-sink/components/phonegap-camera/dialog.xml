@@ -4,13 +4,27 @@
     title="Camera"
     xtype="panel">
     <items jcr:primaryType="cq:WidgetCollection">
+        <title
+            jcr:primaryType="nt:unstructured"
+            defaultValue="Camera"
+            fieldLabel="Title"
+            name="./title"
+            xtype="textfield"/>
+        <subtitle
+            jcr:primaryType="nt:unstructured"
+            defaultValue="Take a picture"
+            fieldLabel="Subtitle"
+            name="./subtitle"
+            xtype="textfield"/>
         <camera
             jcr:primaryType="nt:unstructured"
+            defaultValue="Take a picture"
             fieldLabel="Camera prompt"
             name="./useCamera"
             xtype="textfield"/>
         <browse
             jcr:primaryType="nt:unstructured"
+            defaultValue="Browse gallery"
             fieldLabel="Browse prompt"
             name="./useGallery"
             xtype="textfield"/>

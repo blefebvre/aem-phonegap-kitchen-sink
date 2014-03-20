@@ -7,7 +7,7 @@
 			}
 
 			function cameraError(message) {
-			    alert('Failed with error: ' + message);
+			    alert('Problem: ' + message);
 			}
 
             $scope.takeAPicture = function() {
@@ -18,7 +18,11 @@
             };
 
             $scope.browseForAPicture = function() {
-				alert("browse!");
+				camera.getPicture(gotPicture, cameraError, {
+					quality: 50,
+                    sourceType: Camera.PictureSourceType.PHOTOLIBRARY,
+    				destinationType: Camera.DestinationType.DATA_URL
+				});
             };
         }]);
 
