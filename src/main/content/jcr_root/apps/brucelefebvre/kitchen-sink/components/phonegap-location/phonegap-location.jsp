@@ -10,4 +10,11 @@
 		<span class="input-label">Longitude</span>
 		<input type="text" placeholder="Locating..." disabled ng-value="longitude">
 	</label>
+
+    <div class="list card">
+        <div class="item item-image">
+            <img ng-src="{{mapImageSrc}}">
+        </div>
+    </div>
+
 </div>
