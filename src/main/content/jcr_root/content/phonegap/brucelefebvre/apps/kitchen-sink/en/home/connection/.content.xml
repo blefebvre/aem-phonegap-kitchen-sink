@@ -1,13 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
         cq:designPath="/etc/designs/phonegap/brucelefebvre/kitchen-sink"
-        cq:lastModified="{Date}2014-03-03T20:14:38.560-08:00"
+        cq:lastModified="{Date}2014-03-20T11:13:07.482-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="Connection"
         sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page"
-        page-transition="slide-animation"/>
+        page-transition="slide-animation">
+        <content-par
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <phonegap_connection
+                jcr:created="{Date}2014-03-20T11:13:07.479-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2014-03-20T11:13:07.479-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="brucelefebvre/kitchen-sink/components/phonegap-connection"/>
+        </content-par>
+    </jcr:content>
 </jcr:root>

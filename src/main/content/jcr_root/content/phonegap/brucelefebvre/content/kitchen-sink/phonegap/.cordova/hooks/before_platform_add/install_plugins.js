@@ -24,6 +24,9 @@ var pluginlist = [
     },
     {
         id:     "org.apache.cordova.camera"
+    },
+    {
+        id:     "org.apache.cordova.network-information"
     }
 ];
 
