@@ -49,6 +49,7 @@ Building the camera component
 - JSP 
     - change name to `phonegap-camera.jsp`
 
+```
     <%@include file="/libs/foundation/global.jsp" %><%
     %><%@ page session="false" %><%
     %>
@@ -73,12 +74,13 @@ Building the camera component
             </a>
         </div>
     </div>
-
+```
 
 - Clientlib
     - change clientlib js file to `phonegap-camera.js`
     - change js.txt
 
+```
     ;(function (angular, document, undefined) {
 
         angular.module('phonegapCamera', ['brucelefebvre.phonegap.camera'])
@@ -108,5 +110,6 @@ Building the camera component
             }]);
 
     }(angular, document));
+```
 
 - 
