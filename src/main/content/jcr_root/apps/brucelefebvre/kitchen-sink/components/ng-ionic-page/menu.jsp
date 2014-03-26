@@ -4,9 +4,6 @@
 %><%@include file="/libs/foundation/global.jsp" %><%
 %>
 <div class="list">
-	<div class="item item-divider">
-		Menu
-    </div>
 
     <a class="item item-button-right" ng-click="updateApp()">
         Update
