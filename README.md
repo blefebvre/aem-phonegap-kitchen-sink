@@ -112,4 +112,8 @@ Building the camera component
     }(angular, document));
 ```
 
-- 
+- Add module to angular-module-list.js.jsp
+    - `phonegapCamera`
+
+
+- Build and Replicate kitchen-sink package
