@@ -53,6 +53,14 @@
         </pluginRepository>
     </pluginRepositories>
 
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>phonegap-kitchen-sink-bundle</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
     <build>
         <resources>
             <resource>
@@ -64,11 +72,11 @@
                 </excludes>
             </resource>
         </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>2.6</version>
                 <configuration>
                     <includeEmptyDirs>true</includeEmptyDirs>
                 </configuration>
@@ -77,20 +85,22 @@
             <plugin>
                 <groupId>com.day.jcr.vault</groupId>
                 <artifactId>content-package-maven-plugin</artifactId>
-                <version>0.0.20</version>
                 <extensions>true</extensions>
                 <configuration>
                     <group>brucelefebvre</group>
                     <filterSource>src/main/content/META-INF/vault/filter.xml</filterSource>
+                    <embeddeds>
+                        <embedded>
+                            <groupId>${project.groupId}</groupId>
+                            <artifactId>phonegap-kitchen-sink-bundle</artifactId>
+                            <target>/apps/brucelefebvre/kitchen-sink/install</target>
+                        </embedded>
+                    </embeddeds>
                     <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
-                    <failOnError>true</failOnError>
-                    <username>${crx.username}</username>
-                    <password>${crx.password}</password>
                 </configuration>
             </plugin>
         </plugins>
     </build>
-
     <profiles>
         <profile>
             <id>autoInstallPackage</id>
