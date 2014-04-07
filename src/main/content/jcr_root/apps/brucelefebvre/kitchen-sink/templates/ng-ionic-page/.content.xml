@@ -8,6 +8,6 @@
     <jcr:content
         cq:designPath="/etc/designs/phonegap/brucelefebvre/kitchen-sink"
         jcr:primaryType="cq:PageContent"
-        sling:resourceType="brucelefebvre/components/ng-ionic-page"
+        sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page"
         page-transition="slide-animation"/>
 </jcr:root>

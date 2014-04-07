@@ -5,3 +5,7 @@
 .snap-content {
 	background-color: #FFF;
 }
+
+video {
+    max-width: 100%
+}

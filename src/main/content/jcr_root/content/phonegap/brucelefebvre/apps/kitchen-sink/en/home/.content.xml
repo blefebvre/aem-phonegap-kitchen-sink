@@ -37,4 +37,5 @@
     <accelerometer/>
     <camera/>
     <connection/>
+    <offline-video/>
 </jcr:root>
