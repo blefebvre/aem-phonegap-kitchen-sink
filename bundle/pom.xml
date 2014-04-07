@@ -1,32 +1,41 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <!-- ====================================================================== -->
+    <!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
+    <!-- ====================================================================== -->
+    <parent>
+        <groupId>com.brucelefebvre</groupId>
+        <artifactId>phonegap-kitchen-sink</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
 
     <!-- ====================================================================== -->
     <!-- P R O J E C T  D E S C R I P T I O N                                   -->
     <!-- ====================================================================== -->
-    <groupId>com.brucelefebvre.media</groupId>
-    <artifactId>video-handler</artifactId>
+    <artifactId>phonegap-kitchen-sink-bundle</artifactId>
     <packaging>bundle</packaging>
-    <version>1.0.0-SNAPSHOT</version>
-
-    <name>Video Resource Update Handler bundle</name>
+    <name>PhoneGap Kitchen Sink Bundle</name>
 
     <!-- ====================================================================== -->
     <!-- B U I L D   D E F I N I T I O N                                        -->
+    <!-- ====================================================================== -->
+    <!-- ====================================================================== -->
+    <!-- B U I L D D E F I N I T I O N -->
     <!-- ====================================================================== -->
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-scr-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.sling</groupId>
-                <artifactId>maven-sling-plugin</artifactId>
-                <configuration>
-                    <slingUrlSuffix>/apps/brucelefebvre/kitchen-sink/install/</slingUrlSuffix>
-                </configuration>
+                <executions>
+                    <execution>
+                        <id>generate-scr-descriptor</id>
+                        <goals>
+                            <goal>scr</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.felix</groupId>
@@ -34,15 +43,26 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Bundle-Category>cq5</Bundle-Category>
-                        <Export-Package>
-                        </Export-Package>
+                        <Bundle-SymbolicName>com.brucelefebvre.phonegap-kitchen-sink-bundle</Bundle-SymbolicName>
                     </instructions>
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.sling</groupId>
+                <artifactId>maven-sling-plugin</artifactId>
+                <configuration>
+                    <slingUrl>http://${crx.host}:${crx.port}/apps/brucelefebvre/install</slingUrl>
+                    <usePut>true</usePut>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                 <configuration>
+                    <excludePackageNames>
+                        *.impl
+                    </excludePackageNames>
+                 </configuration>
             </plugin>
         </plugins>
     </build>
