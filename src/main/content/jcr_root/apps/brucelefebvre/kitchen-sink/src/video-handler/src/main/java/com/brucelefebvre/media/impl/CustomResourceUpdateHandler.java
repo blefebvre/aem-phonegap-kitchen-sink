@@ -32,22 +32,22 @@ import java.util.Set;
         factory = "com.day.cq.contentsync.handler.ContentUpdateHandler/custom-resource-update-handler",
         inherit = true
 )
-public class VideoResourceUpdateHandler extends AbstractSlingResourceUpdateHandler {
+public class CustomResourceUpdateHandler extends AbstractSlingResourceUpdateHandler {
 
     /**
      * Static Logger
      */
-    private static final Logger log = LoggerFactory.getLogger(VideoResourceUpdateHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(CustomResourceUpdateHandler.class);
 
     /**
      * Some custom components to extract assets from
      */
-    private static final String COMPONENT_SOMECMP = "brucelefebvre/kitchen-sink/components/video";
+    private static final String COMPONENT_VIDEO = "brucelefebvre/kitchen-sink/components/video";
 
     private static Set<String> COMPONENTS_TO_SUPPORT = new HashSet<String>();
 
     static {
-        COMPONENTS_TO_SUPPORT.add(COMPONENT_SOMECMP);
+        COMPONENTS_TO_SUPPORT.add(COMPONENT_VIDEO);
     }
 
     /**
