@@ -1,5 +1,6 @@
-<?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd ">
     <modelVersion>4.0.0</modelVersion>
     <!-- ====================================================================== -->
     <!-- P A R E N T P R O J E C T D E S C R I P T I O N -->
@@ -11,8 +12,9 @@
     </parent>
 
     <!-- ====================================================================== -->
-    <!-- P R O J E C T  D E S C R I P T I O N                                   -->
+    <!-- P R O J E C T D E S C R I P T I O N -->
     <!-- ====================================================================== -->
+
     <artifactId>phonegap-kitchen-sink-bundle</artifactId>
     <packaging>bundle</packaging>
     <name>PhoneGap Kitchen Sink Bundle</name>
@@ -97,6 +99,18 @@
             <groupId>com.day.commons</groupId>
             <artifactId>day-commons-text</artifactId>
             <version>1.1.8</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.sling</groupId>
+            <artifactId>org.apache.sling.engine</artifactId>
+            <version>2.2.8</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.day.cq.dam</groupId>
+            <artifactId>cq-dam-api</artifactId>
+            <version>5.7.18</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

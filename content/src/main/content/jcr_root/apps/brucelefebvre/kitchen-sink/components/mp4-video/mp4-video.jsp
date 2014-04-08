@@ -16,21 +16,20 @@
 --
   ==============================================================================
 
-  HTML5 video component
+  HTML5 mp4-video component
 
   ==============================================================================
 
 --%><%@ include file="/libs/foundation/global.jsp" %><%
 %><%@ page import="com.day.cq.dam.api.Asset,
-                   com.day.cq.i18n.I18n,
                    com.day.cq.wcm.api.WCMMode,
                    com.day.cq.wcm.api.components.DropTarget,
+                   com.adobe.cq.mobile.angular.data.util.FrameworkContentExporterUtils,
                    com.day.cq.wcm.foundation.Placeholder" %><%
-%><cq:includeClientLib categories="geometrixx.video.player"/><%
+%><%
 
 //    boolean wcmEditMode = (WCMMode.fromRequest(request) == WCMMode.EDIT);
 
-    I18n i18n = new I18n(slingRequest);
     // try find referenced asset
     Asset asset = null;
     Resource assetRes = resourceResolver.getResource(properties.get("asset", ""));
@@ -38,37 +37,20 @@
         asset = assetRes.adaptTo(Asset.class);
     }
     if (asset != null) {
-        request.setAttribute("video_asset", asset);
+        // Determine the top level app resource
+        Resource topLevelAppResource = FrameworkContentExporterUtils.getTopLevelAppResource(currentPage.adaptTo(Resource.class));
 
-        // allow both pixel & percentage values
-        String width = properties.get("width", currentStyle.get("width", String.class));
-        String height = properties.get("height", currentStyle.get("height", String.class));
+        boolean appExport = Boolean.parseBoolean(slingRequest.getParameter("appExport"));
+        String resourcePath = FrameworkContentExporterUtils.getPathToAsset(topLevelAppResource, request.getContextPath() + resource.getPath(), appExport);
 
-        // allow either just a width or a height to be set (letting the browser handle it)
-        // but give a default if nothing is set
-        if (width == null && height == null) {
-            width = "480";
-            height = "320";
-        }
-        //String wh = (width != null ? "width=\"" + width + "px\"" : "") + " " + (height != null ? "height=\"" + height + "px\"" : "");
-        StringBuilder attributes = new StringBuilder();
-        String assetPath = asset.getPath();
-        String videoThumbnail = assetPath + ".thumb.100.140.png";
-
-        if(WCMMode.fromRequest(request) == WCMMode.DISABLED){
-            assetPath = "." + assetPath;
-            videoThumbnail = "." + videoThumbnail;
-        }
-
+        String videoSrcPath = resourcePath + ".original.mp4";
+        String videoPosterPath = resourcePath + ".thumb.100.140.png";
 %>
 
-    <video controls poster="<%= xssAPI.encodeForHTMLAttr(videoThumbnail) %>">
-        <source src="<%= xssAPI.encodeForHTMLAttr(assetPath) %>" type="video/mp4">
+    <video controls poster="<%= xssAPI.encodeForHTMLAttr(videoPosterPath) %>">
+        <source src="<%= xssAPI.encodeForHTMLAttr(videoSrcPath) %>" type="video/mp4">
         Your device doesn't support this video. 
     </video>
-
-
-
 
 <%
     request.removeAttribute("video_asset");
@@ -79,6 +61,6 @@
                     (WCMMode.fromRequest(request) == WCMMode.EDIT ? " cq-video-placeholder" : "")  +
                     "\"></div>";
     String placeholder = Placeholder.getDefaultPlaceholder(slingRequest, component, classicPlaceholder, ddClassName);
-%><%= placeholder %><%
+%><%= xssAPI.filterHTML(placeholder) %><%
     }
 %>

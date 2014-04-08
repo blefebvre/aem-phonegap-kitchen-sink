@@ -11,6 +11,7 @@ import com.day.cq.wcm.api.PageManager;
 import com.day.cq.wcm.foundation.Download;
 import com.day.text.Text;
 import org.apache.felix.scr.annotations.Component;
+import org.apache.felix.scr.annotations.Service;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.api.resource.ResourceResolver;
 import org.apache.sling.api.resource.ResourceUtil;
@@ -29,9 +30,10 @@ import java.util.Set;
  */
 @Component(
         metatype = true,
-        factory = "com.day.cq.contentsync.handler.ContentUpdateHandler/custom-resource-update-handler",
+        factory = "com.day.cq.contentsync.handler.ContentUpdateHandler/customresourceupdatehandler",
         inherit = true
 )
+@Service
 public class CustomResourceUpdateHandler extends AbstractSlingResourceUpdateHandler {
 
     /**
@@ -42,7 +44,7 @@ public class CustomResourceUpdateHandler extends AbstractSlingResourceUpdateHand
     /**
      * Some custom components to extract assets from
      */
-    private static final String COMPONENT_VIDEO = "brucelefebvre/kitchen-sink/components/video";
+    private static final String COMPONENT_VIDEO = "brucelefebvre/kitchen-sink/components/mp4-video";
 
     private static Set<String> COMPONENTS_TO_SUPPORT = new HashSet<String>();
 
@@ -63,6 +65,7 @@ public class CustomResourceUpdateHandler extends AbstractSlingResourceUpdateHand
      */
     public boolean updateCacheEntry(ConfigEntry configEntry, Long lastUpdated, String configCacheRoot, Session adminSession, Session userSession) {
         log.info("Updating cache @ " + configCacheRoot + " as user " + userSession.getUserID());
+        configCacheRoot = getConfigCacheRoot(configEntry, configCacheRoot);
         boolean modified = false;
         try {
             ResourceResolver resolver = resolverFactory.getResourceResolver(userSession);
@@ -79,6 +82,12 @@ public class CustomResourceUpdateHandler extends AbstractSlingResourceUpdateHand
             log.error("Unexpected error while updating cache for config: " + configEntry.getPath(), ex);
         }
         return modified;
+    }
+
+    @Override
+    protected String getTargetPath(String path) {
+        String name = "/mp4-video.thumb.100.140.png";
+        return name;
     }
 
     private void updateCache(Page page, String configCacheRoot, Session adminSession, Session userSession) throws RepositoryException {
@@ -181,14 +190,14 @@ public class CustomResourceUpdateHandler extends AbstractSlingResourceUpdateHand
                     if (ResourceUtil.isA(resource, componentPath)) {
                         log.debug("Extracting {} : {}", componentPath, resource.getPath());
                         Download download = new Download(resource);
-                        addToExportCache(download);
+                        addToExportCache(download, resource.getPath());
                         updated = true; // flag cache update occurred
                     } else {
                         log.debug("Ignoring resource " + resource.getPath());
                     }
                 }
             } catch (RepositoryException ex) {
-                log.error("Updating export data failed: ", ex);
+                 log.error("Updating export data failed: ", ex);
             }
         }
 
@@ -213,24 +222,24 @@ public class CustomResourceUpdateHandler extends AbstractSlingResourceUpdateHand
                 if (srcDAMPath != null && !srcDAMPath.equals("")) {
                     Resource srcRes = resolver.getResource(srcDAMPath);
                     if (srcRes != null && srcRes.adaptTo(Node.class) != null) {
-                        String targetPath = Text.getRelativeParent(download.getHref(), 1);
-                        String targetName = Text.getName(download.getHref());
-                        String cacheParentPath = configCacheRoot + targetPath;
+                        String targetName = download.getResource().getName() + ".original.mp4";
+
+                        // resourcePath corresponds to the component path
+                        String resourcePath = download.getResource().getParent().getPath();
+
+                        // Directories beginning with '_' are ignored by Android
+                        // This replacement prevents 'jcr:content' from becoming '_jcr_content'
+                        resourcePath = resourcePath.replaceAll("/jcr:content/", "/jcr_content/");
+                        String cacheParentPath = configCacheRoot + resourcePath;
 
                         Node parent = JcrUtil.createPath(cacheParentPath, "sling:Folder", adminSession);
                         Rendition rendition = srcRes.adaptTo(Asset.class).getOriginal();
                         JcrUtil.copy(rendition.adaptTo(Node.class), parent, targetName);
                         String mimeType = download.getMimeType();
                         if (mimeType != null && mimeType.startsWith("video")) {
-                            try {
-                                long ts = download.getLastModified().getTimeInMillis();
-                                String tsCacheBust = "." + ts;
-                                String assetPath = srcRes.getPath() + ".thumb.100.140" + ".png";
-                                log.info("Adding image to content using selector " + assetPath + " for " + srcRes.getPath());
-                                updateImageResource(assetPath);
-                            } catch (RepositoryException ex) {
-                                log.warn("Failed to export image for video " + srcRes.getPath(), ex);
-                            }
+                            String assetPath = srcRes.getPath() + ".thumb.100.140.png";
+                            log.info("Adding image to content using selector " + assetPath + " for " + srcRes.getPath());
+                            updateImageResource(cacheParentPath, assetPath);
                         }
                     }
                 } else {
@@ -241,9 +250,9 @@ public class CustomResourceUpdateHandler extends AbstractSlingResourceUpdateHand
             }
         }
 
-        private void updateImageResource(String imageURL) {
+         private void updateImageResource(String cacheDestination, String imageURL) {
             try {
-                renderResource(imageURL, configCacheRoot, adminSession, userSession);
+                renderResource(imageURL, cacheDestination, adminSession, userSession);
             } catch (Exception e) {
                 log.error("Rendering image resource failed: ", e);
             }
