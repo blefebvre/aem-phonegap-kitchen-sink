@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Dialog"
+    title="InAppBrowser Button"
+    xtype="panel">
+    <items jcr:primaryType="cq:WidgetCollection">
+        <buttonText
+            jcr:primaryType="nt:unstructured"
+            defaultValue="Click Me"
+            fieldLabel="Label"
+            name="./buttonText"
+            xtype="textfield"/>
+        <buttonLink
+            jcr:primaryType="nt:unstructured"
+            defaultValue="#"
+            fieldLabel="Link href"
+            name="./buttonLink"
+            xtype="textfield"/>
+    </items>
+</jcr:root>

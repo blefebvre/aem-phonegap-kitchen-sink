@@ -27,6 +27,9 @@ var pluginlist = [
     },
     {
         id:     "org.apache.cordova.network-information"
+    },
+    {
+        id:     "org.apache.cordova.inappbrowser"
     }
 ];
 

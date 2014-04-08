@@ -49,5 +49,6 @@
 "plugins/org.apache.cordova.camera/www/CameraConstants.js",
 "plugins/org.apache.cordova.camera/www/CameraPopoverOptions.js",
 "plugins/org.apache.cordova.network-information/www/Connection.js",
-"plugins/org.apache.cordova.network-information/www/network.js"
+"plugins/org.apache.cordova.network-information/www/network.js",
+"plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js"
 ]
