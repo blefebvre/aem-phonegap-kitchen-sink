@@ -27,6 +27,8 @@ import java.util.Set;
 
 /**
  * Extract assets that would not otherwise be auto extracted.
+ *
+ * Known limitation: can only extract one of these assets per parsys.
  */
 @Component(
         metatype = true,
@@ -35,6 +37,16 @@ import java.util.Set;
 )
 @Service
 public class CustomResourceUpdateHandler extends AbstractSlingResourceUpdateHandler {
+
+    /**
+     * Name of the file to export the video as
+     */
+    protected static final String VIDEO_FILE_NAME = "mp4-video.original.mp4";
+
+    /**
+     * Name of the file to export the video poster as
+     */
+    protected static final String VIDEO_POSTER_FILE_NAME = "mp4-video.thumb.100.140.png";
 
     /**
      * Static Logger
@@ -86,8 +98,7 @@ public class CustomResourceUpdateHandler extends AbstractSlingResourceUpdateHand
 
     @Override
     protected String getTargetPath(String path) {
-        String name = "/mp4-video.thumb.100.140.png";
-        return name;
+        return "/" + VIDEO_POSTER_FILE_NAME;
     }
 
     private void updateCache(Page page, String configCacheRoot, Session adminSession, Session userSession) throws RepositoryException {
@@ -222,7 +233,7 @@ public class CustomResourceUpdateHandler extends AbstractSlingResourceUpdateHand
                 if (srcDAMPath != null && !srcDAMPath.equals("")) {
                     Resource srcRes = resolver.getResource(srcDAMPath);
                     if (srcRes != null && srcRes.adaptTo(Node.class) != null) {
-                        String targetName = download.getResource().getName() + ".original.mp4";
+                        String targetName = VIDEO_FILE_NAME;
 
                         // resourcePath corresponds to the component path
                         String resourcePath = download.getResource().getParent().getPath();
