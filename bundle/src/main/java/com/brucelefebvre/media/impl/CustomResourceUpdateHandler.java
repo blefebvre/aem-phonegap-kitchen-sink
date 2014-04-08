@@ -190,7 +190,7 @@ public class CustomResourceUpdateHandler extends AbstractSlingResourceUpdateHand
                     if (ResourceUtil.isA(resource, componentPath)) {
                         log.debug("Extracting {} : {}", componentPath, resource.getPath());
                         Download download = new Download(resource);
-                        addToExportCache(download, resource.getPath());
+                        addToExportCache(download);
                         updated = true; // flag cache update occurred
                     } else {
                         log.debug("Ignoring resource " + resource.getPath());
