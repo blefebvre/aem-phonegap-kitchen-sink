@@ -14,7 +14,7 @@
             }
 
             function geolocationError(error) {
-                alert('Location error. Code: ' + error.code + '\n' +
+                console.error('Location error. Code: ' + error.code + '\n' +
                     'Message: ' + error.message + '\n');
             }
 

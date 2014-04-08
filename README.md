@@ -90,7 +90,7 @@ Building the camera component
                 }
 
                 function cameraError(message) {
-                    alert('Problem: ' + message);
+                    console.error('Problem: ' + message);
                 }
 
                 $scope.takeAPicture = function() {

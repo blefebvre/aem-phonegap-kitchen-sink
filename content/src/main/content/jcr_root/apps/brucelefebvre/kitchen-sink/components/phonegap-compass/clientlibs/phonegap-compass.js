@@ -36,7 +36,7 @@
                     console.log('stopping compass refresh');
                     $timeout.cancel(timer);
                 }
-                alert('Compass error. Code: ' + error.code);
+                console.error('Compass error. Code: ' + error.code);
             }
 
             function queryCompass() {
