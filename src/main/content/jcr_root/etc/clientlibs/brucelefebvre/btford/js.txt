@@ -1,6 +1,0 @@
-#base=js
-
-angular-phonegap-geolocation.js
-angular-phonegap-accelerometer.js
-angular-phonegap-compass.js
-angular-phonegap-camera.js

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/etc/designs/phonegap/brucelefebvre/kitchen-sink"
+        cq:lastModified="{Date}2014-03-03T20:13:48.728-08:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Accelerometer"
+        sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page"
+        page-transition="slide-animation"/>
+</jcr:root>

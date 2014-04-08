@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <ng-clientlibsall/>
+    <jcr:content
+        cq:lastModified="{Date}2014-03-26T10:01:29.277-06:00"
+        cq:lastModifiedBy="admin"
+        jcr:primaryType="nt:unstructured"
+        jcr:title="Kitchen Sink App Design"
+        sling:resourceType="wcm/core/components/designer">
+        <ng-ionic-page jcr:primaryType="nt:unstructured">
+            <content-par
+                jcr:lastModified="{Date}2014-03-26T10:01:29.273-06:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="foundation/components/parsys"
+                components="[/apps/geometrixx-outdoors-app/components/image,group:PhoneGap,group:PhoneGap API]">
+                <section jcr:primaryType="nt:unstructured"/>
+            </content-par>
+        </ng-ionic-page>
+    </jcr:content>
+</jcr:root>
