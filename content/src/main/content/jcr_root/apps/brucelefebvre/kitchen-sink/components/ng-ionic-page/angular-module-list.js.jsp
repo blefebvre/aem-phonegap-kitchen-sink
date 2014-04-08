@@ -20,5 +20,6 @@
 'phonegapLocation',
 'phonegapCompass',
 'snap',
-'phonegapConnection'
+'phonegapConnection',
+'phonegapCamera'
 ]
