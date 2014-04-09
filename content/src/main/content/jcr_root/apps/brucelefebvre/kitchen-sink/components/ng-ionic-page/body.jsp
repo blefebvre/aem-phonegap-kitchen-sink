@@ -15,7 +15,7 @@
 			<cq:include script="menu.jsp"/>
         </div>
 
-		<div snap-content>
+		<div snap-content snap-options="{disable: 'right'}">
             <c:choose>
                 <c:when test="${wcmMode}">
                     <%-- Render the content in a way that does not break
