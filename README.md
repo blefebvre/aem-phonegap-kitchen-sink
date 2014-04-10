@@ -3,10 +3,18 @@ PhoneGap Kitchen Sink
 
 A PhoneGap API showcase app managed in AEM.
 
+What is this?
+-------------
+
+A demo app I built for my talks at SUMMIT and [AEMHub](http://brucelefebvre.com/blog/2014/04/10/aemhub-mobile-apps-in-aem/).
+
+Background: [So, you want to build an app](http://brucelefebvre.com/blog/2014/03/14/so-you-want-to-build-an-app/)
+
+
 Requirements
 ------------
 
-- AEM 6.0 version `>=load 18`
+- AEM 6.0 version `>=load 20`
     - author on :4502
     - publish on :4503
 - [node.js](http://nodejs.org/) version `>=0.10.x`
