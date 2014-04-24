@@ -2,7 +2,7 @@
 // List of plugins to install
 var pluginlist = [
     {
-        id: 	"org.apache.cordova.file@1.0"
+        id: 	"org.apache.cordova.file@1.0.1"
     },
     {
         id: 	"org.apache.cordova.file-transfer@0.4.1"
