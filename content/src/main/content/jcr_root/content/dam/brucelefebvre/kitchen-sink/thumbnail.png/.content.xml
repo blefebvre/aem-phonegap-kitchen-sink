@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="dam:Asset">
+    <jcr:content
+        dam:lastInvalidateCache="{Date}2014-05-23T13:12:43.063-04:00"
+        dam:s7damAnchorX="{Long}159"
+        dam:s7damAnchorY="{Long}159"
+        dam:s7damHeight="{Long}319"
+        dam:s7damImageCopyPath="/var/folders/ff/_j335_652tdghgnwr94_g05h0000gp/T/scene72220069993243075586.tmp"
+        dam:s7damType="Image"
+        dam:s7damWidth="{Long}319"
+        jcr:lastModified="{Date}2014-05-23T13:12:44.219-04:00"
+        jcr:lastModifiedBy="admin"
+        jcr:primaryType="dam:AssetContent">
+        <metadata
+            dc:format="image/png"
+            jcr:mixinTypes="[cq:Taggable]"
+            jcr:primaryType="nt:unstructured"
+            tiff:ImageLength="{Long}319"
+            tiff:ImageWidth="{Long}319"
+            writebackEnable="{Boolean}true"/>
+        <renditions/>
+        <related jcr:primaryType="nt:unstructured"/>
+    </jcr:content>
+</jcr:root>
