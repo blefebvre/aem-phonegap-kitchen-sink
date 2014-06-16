@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    sling:resourceType="granite/ui/components/foundation/well">
+    <items jcr:primaryType="nt:unstructured">
+        <file-picker
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/form/decoratedtextfield"
+            class="cq-commerce-products-upload-source-preview"
+            fieldLabel="Source"
+            readonly="true">
+            <button
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/foundation/form/fileupload"
+                autoStart="{Boolean}false"
+                class="js-fileUpload"
+                icon="icon-folder"
+                multiple="{Boolean}false"
+                name="uploaded-source-file"
+                uploadUrl="will_be_replaced"
+                useHTML5="{Boolean}true"
+                variant="[secondary,square]"/>
+        </file-picker>
+        <source-path
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/form/hidden"
+            name="csvPath"
+            value="will_be_replaced"/>
+        <incremental-import
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="granite/ui/components/foundation/form/checkbox"
+            name="incrementalImport"
+            text="Incremental Import"
+            value="true"/>
+    </items>
+</jcr:root>
