@@ -59,13 +59,12 @@ public class CSVProductImporter extends AbstractProductImporter implements Produ
     protected static final int TYPE_COL = 1;
     protected static final int SKU_COL = 2;
     protected static final int TITLE_COL = 3;
-    protected static final int VARIATION_COL = 4;
-    protected static final int SIZE_COL = 5;
-    protected static final int PRICE_COL = 6;
-    protected static final int IMAGE_COL = 7;
-    protected static final int DESCRIPTION_COL = 8;
-    protected static final int TAGS_COL = 9;
-    protected static final int FIRST_CUSTOM_PROP_COL = 10;
+    protected static final int AUTHOR_COL = 4;
+    protected static final int PRICE_COL = 5;
+    protected static final int IMAGE_COL = 6;
+    protected static final int DESCRIPTION_COL = 7;
+    protected static final int TAGS_COL = 8;
+    protected static final int FIRST_CUSTOM_PROP_COL = 9;
 
     protected Iterator<String[]> inputIterator;
 
@@ -149,10 +148,6 @@ public class CSVProductImporter extends AbstractProductImporter implements Produ
             if (op.equals("add")) {
                 if (type.equals("product")) {
                     addProduct(resourceResolver, storePath, sku, cols);
-                } else if (type.equals("variation")) {
-                    addVariation(resourceResolver, storePath, sku, cols);
-                } else if (type.equals("size")) {
-                    addSize(resourceResolver, storePath, sku, cols);
                 } else {
                     logMessage("ERROR unknown type: " + type, true);
                     log.error("Row of unknown type: " + type);
@@ -160,9 +155,6 @@ public class CSVProductImporter extends AbstractProductImporter implements Produ
             } else if (op.equals("update")) {
                 if (type.equals("product")) {
                     updateProduct(resourceResolver, storePath, sku, cols);
-                } else if (type.equals("variation") || type.equals("size")) {
-                    logMessage("ERROR unsupported operation: update " + type, true);
-                    log.error("Partial update of products not supported; update the parent product and re-add all variations and sizes");
                 } else {
                     logMessage("ERROR unknown type: " + type, true);
                     log.error("Row of unknown type: " + type);
@@ -170,9 +162,6 @@ public class CSVProductImporter extends AbstractProductImporter implements Produ
             } else if (op.equals("delete")) {
                 if (type.equals("product")) {
                     deleteProduct(resourceResolver, storePath, sku);
-                } else if (type.equals("variation") || type.equals("size")) {
-                    logMessage("ERROR unsupported operation: delete " + type, true);
-                    log.error("Partial update of products not supported; update the parent product and re-add all variations and sizes");
                 } else {
                     logMessage("ERROR unknown type: " + type, true);
                     log.error("Row of unknown type: " + type);
@@ -195,9 +184,6 @@ public class CSVProductImporter extends AbstractProductImporter implements Produ
             //
             setProperties(resourceResolver, productNode, cols, false);
 
-            // Create any sizes given in the current row:
-            //
-            createSizes(resourceResolver, productNode, cols, false);
         } catch (Exception e) {
             logMessage("ERROR creating " + path, true);
             log.error("Failed to create product " + path, e);
@@ -224,68 +210,12 @@ public class CSVProductImporter extends AbstractProductImporter implements Produ
             //
             setProperties(resourceResolver, productNode, cols, true);
 
-            // Create any sizes given in the current row:
-            //
-            createSizes(resourceResolver, productNode, cols, false);
-
             // Inform superclass:
             //
             productUpdated(productNode);
         } catch (Exception e) {
             logMessage("ERROR updating " + sku, true);
             log.error("Failed to update product " + sku, e);
-        }
-    }
-
-    protected void addVariation(ResourceResolver resourceResolver, String storePath, String sku, String[] cols) {
-        try {
-            String parentSKU = sku.substring(0, sku.indexOf("."));
-            Resource parent = resourceResolver.getResource(getProductPath(storePath, parentSKU));
-            if (parent == null) {
-                throw new RuntimeException("parent doesn't exist");
-            }
-
-            String variation = get(cols, VARIATION_COL);
-            if (StringUtils.isEmpty(variation)) {
-                throw new RuntimeException("no variant property specified");
-            }
-            String parts[] = variation.split("=", 2);
-            if (parts.length != 2) {
-                throw new RuntimeException("variant property syntax error");
-            }
-
-            // Create a new variation:
-            //
-            Node variantNode = createVariant(parent.adaptTo(Node.class), sku);
-            variantNode.setProperty(parts[0], parts[1]);
-            registerVariantAxis(variantNode, parts[0]);
-
-            // Set any generic properties:
-            //
-            setProperties(resourceResolver, variantNode, cols, false);
-
-            // Create any sizes given in the current row:
-            //
-            createSizes(resourceResolver, variantNode, cols, false);
-        } catch (Exception e) {
-            logMessage("ERROR adding variation " + sku, true);
-            log.error("Failed to create variation " + sku, e);
-        }
-    }
-
-    protected void addSize(ResourceResolver resourceResolver, String storePath, String sku, String[] cols) {
-        try {
-            Resource parent = resourceResolver.getResource(getProductPath(storePath, sku));
-            if (parent == null) {
-                throw new RuntimeException("parent product doesn't exist");
-            }
-
-            // Create any sizes given:
-            //
-            createSizes(resourceResolver, parent.adaptTo(Node.class), cols, true);
-        } catch (Exception e) {
-            logMessage("ERROR adding size " + sku, true);
-            log.error("Failed to create size " + sku, e);
         }
     }
 
@@ -331,6 +261,10 @@ public class CSVProductImporter extends AbstractProductImporter implements Produ
         if (StringUtils.isNotEmpty(title)) {
             node.setProperty("jcr:title", title);
         }
+        String author = get(cols, AUTHOR_COL);
+        if (StringUtils.isNotEmpty(author)) {
+            node.setProperty("author", author);
+        }
         String sku = get(cols, SKU_COL);
         if (StringUtils.isNotEmpty(sku)) {
             node.setProperty("identifier", sku);
@@ -372,26 +306,6 @@ public class CSVProductImporter extends AbstractProductImporter implements Produ
         }
     }
 
-    protected void createSizes(ResourceResolver resourceResolver, Node node, String[] cols, boolean fromAddSizeCommand) {
-        String sizeInfo = get(cols, SIZE_COL);
-        if (StringUtils.isNotEmpty(sizeInfo)) {
-            String sizes[] = sizeInfo.split(",");
-            for (String size : sizes) {
-                try {
-                    Node variant = createVariant(node, "size-" + mangleName(size));
-                    variant.setProperty("size", size.trim());
-                    if (fromAddSizeCommand) {
-                        setProperties(resourceResolver, variant, cols, false);
-                    }
-                } catch (Exception e) {
-                    logMessage("ERROR creating size " + size, true);
-                    log.error("Failed to create size " + size, e);
-                }
-            }
-            registerVariantAxis(node, "size");
-        }
-    }
-
     private String get(String[] cols, int i) {
         if (i < cols.length) {
             return cols[i];
@@ -400,42 +314,9 @@ public class CSVProductImporter extends AbstractProductImporter implements Produ
         }
     }
 
-    protected void registerVariantAxis(Node product, String axis) {
-        try {
-            while (product.getProperty("cq:commerceType").getString().equals("variant")) {
-                product = product.getParent();
-            }
-
-            String[] axes;
-            if (product.hasProperty("cq:productVariantAxes")) {
-                Value[] values = product.getProperty("cq:productVariantAxes").getValues();
-                axes = new String[values.length + 1];
-                for (int i = 0; i < values.length; i++) {
-                    axes[i] = values[i].getString();
-                    if (axes[i].equals(axis)) {
-                        // already registered
-                        return;
-                    }
-                }
-                axes[values.length] = axis;
-            } else {
-                axes = new String[1];
-                axes[0] = axis;
-            }
-            product.setProperty("cq:productVariantAxes", axes);
-        } catch (RepositoryException e) {
-            log.error("Failed to register variant axis " + axis, e);
-        }
-    }
-
     protected String getProductPath(String storePath, String sku) {
         String productSKU = sku;
         boolean variation = false;
-
-        if (sku.contains(".")) {
-            productSKU = sku.substring(0, sku.indexOf("."));
-            variation = true;
-        }
 
         String path = storePath + "/" + sku.substring(0, 2) + "/" + sku.substring(0, 4) + "/" + productSKU;
         if (variation) {
