@@ -2,10 +2,16 @@
 
 jcr_root/.content.xml
 jcr_root/apps/.content.xml
+jcr_root/apps/commerce/gui/content/products/importproductswizard/importers/.content.xml
 jcr_root/etc/.content.xml
 jcr_root/etc/clientlibs/.content.xml
 jcr_root/etc/designs/.content.xml
+jcr_root/etc/tags/.content.xml
+jcr_root/etc/commerce/.content.xml
+jcr_root/etc/commerce/products/.content.xml
+jcr_root/etc/commerce/products/bl/.content.xml
 jcr_root/content/.content.xml
 jcr_root/content/phonegap/.content.xml
 jcr_root/content/projects/.content.xml
 jcr_root/content/dam/.content.xml
+jcr_root/content/catalogs/.content.xml

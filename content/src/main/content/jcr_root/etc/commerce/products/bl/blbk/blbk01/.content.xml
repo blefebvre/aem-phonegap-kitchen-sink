@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    cq:commerceType="product"
+    cq:tags="[kitchen-sink:genre/programming,kitchen-sink:topic/patterns]"
+    jcr:description="Elements of reusable object-oriented software"
+    jcr:lastModified="{Date}2014-06-17T16:19:07.309-04:00"
+    jcr:mixinTypes="[cq:Taggable]"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Design Patterns"
+    sling:resourceType="commerce/components/product"
+    author="Gamma, Helm, Johnson, Vlissides"
+    identifier="blbk01"
+    price="{Decimal}74.99"
+    test="123">
+    <image
+        jcr:lastModified="{Date}2014-06-17T16:19:07.310-04:00"
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="commerce/components/product/image"
+        fileReference="/content/dam/geometrixx-outdoors/products/equipment/Cajamara.jpg"/>
+</jcr:root>

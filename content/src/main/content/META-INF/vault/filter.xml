@@ -12,4 +12,5 @@
     <filter root="/etc/commerce/products/bl"/>
     <filter root="/etc/commerce/products/kitchen-sink-books.csv"/>
     <filter root="/content/catalogs/kitchen-sink"/>
+    <filter root="/etc/tags/kitchen-sink"/>
 </workspaceFilter>
