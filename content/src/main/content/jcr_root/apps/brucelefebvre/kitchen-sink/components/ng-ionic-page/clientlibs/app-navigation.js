@@ -35,6 +35,22 @@
                 };
 
                 /**
+                 * Handle navigation to library items
+                 */
+                $scope.goLibraryItem = function( templatePath, skuPrefix, productName ) {
+					if( $scope.wcmMode ) {
+						// WCMMode is not disabled; head to the product page itself
+						navigateToPageInAuthorMode( getFullLibraryPagePath( templatePath, skuPrefix, productName ) );
+					}
+					else {
+						navigateToPageInApp( templatePath + '/' + skuPrefix + '/' + productName );
+					}
+
+					console.log( '[nav] app navigated to product: [' + skuPrefix + '].' );
+				};
+
+
+                /**
                  * Toggle the menu
                  */
                 $scope.toggleMenu = function() {
@@ -65,6 +81,10 @@
                     $location.url(path);
                     $scope.navigationMenuStatus = false;
                 }
+
+				function getFullLibraryPagePath( base, skuPrefix, name ) {
+					return base + '/' + skuPrefix + '/' + name;
+				}
             }
         ]);
 })(angular);

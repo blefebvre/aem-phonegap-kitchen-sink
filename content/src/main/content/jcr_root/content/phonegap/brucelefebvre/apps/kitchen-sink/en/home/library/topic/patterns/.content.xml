@@ -4,9 +4,9 @@
     <jcr:content
         cq:catalogBlueprint="/content/catalogs/kitchen-sink/base-catalog/library/topic/patterns"
         cq:commerceType="section"
-        cq:lastModified="{Date}2014-06-18T15:12:42.756-04:00"
+        cq:lastModified="{Date}2014-06-18T16:38:34.701-04:00"
         cq:lastModifiedBy="admin"
-        cq:tags="[kitchen-sink:topic/patterns]"
+        cq:tags="[geometrixx-outdoors:topic/patterns]"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:mixinTypes="[cq:LiveSync]"
         jcr:primaryType="cq:PageContent"

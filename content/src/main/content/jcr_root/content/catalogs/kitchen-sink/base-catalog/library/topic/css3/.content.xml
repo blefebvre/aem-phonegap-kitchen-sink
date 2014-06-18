@@ -13,7 +13,7 @@
         sling:resourceType="commerce/components/section">
         <target
             jcr:primaryType="nt:unstructured"
-            cq_tags="[kitchen-sink:topic/CSS3]"
+            cq_tags="[geometrixx-outdoors:topic/CSS3]"
             jcr_title="CSS3"/>
     </jcr:content>
 </jcr:root>

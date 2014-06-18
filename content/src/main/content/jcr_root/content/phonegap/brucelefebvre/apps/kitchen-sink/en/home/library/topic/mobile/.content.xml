@@ -4,9 +4,9 @@
     <jcr:content
         cq:catalogBlueprint="/content/catalogs/kitchen-sink/base-catalog/library/topic/mobile"
         cq:commerceType="section"
-        cq:lastModified="{Date}2014-06-18T15:12:42.775-04:00"
+        cq:lastModified="{Date}2014-06-18T16:38:34.711-04:00"
         cq:lastModifiedBy="admin"
-        cq:tags="[kitchen-sink:topic/mobile]"
+        cq:tags="[geometrixx-outdoors:topic/mobile]"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:mixinTypes="[cq:LiveSync]"
         jcr:primaryType="cq:PageContent"

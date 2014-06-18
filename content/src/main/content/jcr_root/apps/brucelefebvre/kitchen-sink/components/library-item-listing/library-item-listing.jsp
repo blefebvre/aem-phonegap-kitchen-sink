@@ -10,45 +10,42 @@
 
 %><div class="full responsive-row padded">
 <%
-    final String PRODUCT_IMAGE_RELATIVE_PATH = "content-par/ng-product/ng-image";
-    final String PRODUCT_IMAGE_RESOURCE_TYPE = "mobileapps/components/image";
-    final String NG_TEMPLATE_PAGE_RESOURCE_TYPE = "geometrixx-outdoors-app/components/angular/ng-template-page";
+    final String NG_TEMPLATE_PAGE_RESOURCE_TYPE = "brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page";
 
-    String tag = currentPage.getProperties().get("tag", "");
-    String productRootPath = FrameworkContentExporterUtils.getTopLevelAppResource(currentPage.getContentResource()).getPath() + "/products";
+    boolean hasAChildPage = currentPage.listChildren().hasNext();
 
-    if (tag.length() > 0) {
-        TagManager tagManager = resourceResolver.adaptTo(TagManager.class);
+    // Don't show any library items if this page is not a leaf
+    if (hasAChildPage == false ) {
 
-        String[] tags = {tag};
-        RangeIterator<Resource> taggedPages = tagManager.find(productRootPath, tags);
+        Tag[] tags = currentPage.getTags();
+        String libraryDataRootPath = FrameworkContentExporterUtils.getTopLevelAppResource(currentPage.getContentResource()).getPath() + "/library-data";
 
-        // only show a limited number of products if the category is not a leaf
-        boolean throttle = tagManager.resolve(tag).listChildren().hasNext();
-        int throttleCount = 0;
+        if (tags.length > 0) {
+            // Convert tags array to an array of String paths
+            String[] tagsIds = new String[tags.length];
+            for (int i = 0; i < tags.length; i++) {
+                tagsIds[i] = tags[i].getPath();
+            }
+    
+            TagManager tagManager = resourceResolver.adaptTo(TagManager.class);
+    
+            RangeIterator<Resource> taggedPages = tagManager.find(libraryDataRootPath, tagsIds);
 
-        while(taggedPages.hasNext() && (!throttle || ++throttleCount < 4)){
-            Resource productPageResource = taggedPages.next();
-            // Get the product represented by this page
-            Product product = getProduct(productPageResource);
-            if (product != null) {
-                // Determine the product path
-                Resource productPageTemplateResource = FrameworkContentExporterUtils.getAncestorTemplateResource(productPageResource, NG_TEMPLATE_PAGE_RESOURCE_TYPE);
-                String productSKU = product.getSKU();
-                String templatePath = productPageTemplateResource.getPath();
-                String price = getProductPrice(product, productPageResource, slingRequest, slingResponse);
-                Resource productImageResource = resourceResolver.getResource(productPageResource, PRODUCT_IMAGE_RELATIVE_PATH);
-                pageContext.setAttribute("hasProductImage", (productImageResource != null));
+            while(taggedPages.hasNext()){
+                Resource productPageResource = taggedPages.next();
+                // Get the product represented by this page
+                Product product = getProduct(productPageResource);
+                if (product != null) {
+                    // Determine the product path
+                    Resource productPageTemplateResource = FrameworkContentExporterUtils.getAncestorTemplateResource(productPageResource, NG_TEMPLATE_PAGE_RESOURCE_TYPE);
+                    String productSKUPrefix = product.getSKU().substring(0,2);
+                    String templatePath = productPageTemplateResource.getPath();
 %>
-    <div class="responsive-cell product-menu-item" ng-click="goProduct('<%= request.getContextPath() %><%= xssAPI.getValidHref(templatePath) %>', '<%= xssAPI.getValidHref(productSKU) %>')">
-        <cq:include path="<%= productImageResource.getPath() %>" resourceType="<%= PRODUCT_IMAGE_RESOURCE_TYPE %>"/>
-
-        <span class="product-info-bar">
-            <span class="product-preview-price"><%= xssAPI.encodeForHTML(price) %></span>
-            <span class="product-button" ng-click="likeClickHandler($event)"></span>
-        </span>
+    <div  ng-click="goLibraryItem('<%= request.getContextPath() %><%= xssAPI.getValidHref(templatePath) %>', '<%= xssAPI.getValidHref(productSKUPrefix) %>', '<%= xssAPI.getValidHref(productPageResource.getParent().getName()) %>')">
+        <%= xssAPI.encodeForHTML(productPageResource.getParent().getName()) %>
     </div>
 <%
+                }
             }
         }
     }

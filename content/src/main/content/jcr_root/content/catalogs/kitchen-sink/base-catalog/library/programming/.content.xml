@@ -13,7 +13,7 @@
         sling:resourceType="commerce/components/section">
         <target
             jcr:primaryType="nt:unstructured"
-            cq_tags="[kitchen-sink:genre/programming]"
+            cq_tags="[geometrixx-outdoors:genre/programming]"
             jcr_title="All"/>
     </jcr:content>
 </jcr:root>

@@ -4,7 +4,7 @@
     <jcr:content
         cq:catalogBlueprint="/content/catalogs/kitchen-sink/base-catalog/library-data/bl"
         cq:commerceType="section"
-        cq:lastModified="{Date}2014-06-18T14:26:16.626-04:00"
+        cq:lastModified="{Date}2014-06-18T16:38:34.499-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:mixinTypes="[cq:LiveSync]"
@@ -34,9 +34,9 @@
             cq:rolloutConfigs="[/etc/msm/rolloutconfigs/catalogpagecontent,/etc/msm/rolloutconfigs/catalogrollouthooks]"
             jcr:primaryType="cq:LiveCopy"/>
     </jcr:content>
-    <design-patterns/>
-    <implementing-responsive-design/>
     <mobile-first/>
     <css3-for-web-designers/>
     <responsive-web-design/>
+    <design-patterns/>
+    <implementing-responsive-design/>
 </jcr:root>

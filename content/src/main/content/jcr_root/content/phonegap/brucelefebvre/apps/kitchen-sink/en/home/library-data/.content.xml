@@ -4,7 +4,7 @@
     <jcr:content
         cq:catalogBlueprint="/content/catalogs/kitchen-sink/base-catalog/library-data"
         cq:commerceType="section"
-        cq:lastModified="{Date}2014-06-18T14:26:16.616-04:00"
+        cq:lastModified="{Date}2014-06-18T16:38:34.488-04:00"
         cq:lastModifiedBy="admin"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:mixinTypes="[cq:LiveSync]"
