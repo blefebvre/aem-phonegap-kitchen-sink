@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     cq:commerceType="product"
-    cq:tags="[kitchen-sink:genre/programming,kitchen-sink:topic/RWD]"
-    jcr:description="Building sites for the anywhere, everywhere web"
-    jcr:lastModified="{Date}2014-06-17T16:19:07.378-04:00"
+    cq:tags="[kitchen-sink:genre/programming,kitchen-sink:topic/CSS3]"
+    jcr:description="Learn what works, how it works, and how to work around browsers where it doesn't work"
+    jcr:lastModified="{Date}2014-06-18T10:30:45.610-04:00"
     jcr:mixinTypes="[cq:Taggable]"
     jcr:primaryType="nt:unstructured"
-    jcr:title="Implementing Responsive Design"
+    jcr:title="CSS3 for Web Designers"
     sling:resourceType="commerce/components/product"
-    author="Tim Kadlec"
-    identifier="blbk05"
-    price="{Decimal}41.99">
+    author="Dan Cederholm"
+    identifier="blbk02"
+    price="{Decimal}18">
     <image
-        jcr:lastModified="{Date}2014-06-17T16:19:07.378-04:00"
+        jcr:lastModified="{Date}2014-06-18T10:30:45.610-04:00"
         jcr:primaryType="nt:unstructured"
         sling:resourceType="commerce/components/product/image"
-        fileReference="/content/dam/geometrixx-outdoors/products/footwear/Interlaken.jpg"/>
+        fileReference="/content/dam/geometrixx-outdoors/products/equipment/Sparrow.jpg"/>
 </jcr:root>

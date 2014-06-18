@@ -9,7 +9,7 @@
     <filter root="/etc/designs/phonegap/brucelefebvre/kitchen-sink"/>
     <filter root="/content/dam/brucelefebvre/kitchen-sink"/>
     <filter root="/apps/commerce/gui/content/products/importproductswizard/importers/kitchensink"/>
-    <filter root="/etc/commerce/products/bl"/>
+    <filter root="/etc/commerce/products/kitchen_sink"/>
     <filter root="/etc/commerce/products/kitchen-sink-books.csv"/>
     <filter root="/content/catalogs/kitchen-sink"/>
     <filter root="/etc/tags/kitchen-sink"/>
