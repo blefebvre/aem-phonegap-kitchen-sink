@@ -8,13 +8,12 @@
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="library-data"
-        jcr:uuid="7a46c902-9c5a-47a7-8e12-1ad3d427ecfe"
+        jcr:title="Programming"
+        jcr:uuid="728599a0-62f6-4dd2-ba12-a624b491489d"
         sling:resourceType="commerce/components/section">
         <target
             jcr:primaryType="nt:unstructured"
-            jcr_title="library-data"
-            sling_resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page"/>
+            cq_tags="[kitchen-sink:genre/programming]"
+            jcr_title="Programming"/>
     </jcr:content>
-    <bl/>
 </jcr:root>

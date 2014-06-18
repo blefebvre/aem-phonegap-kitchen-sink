@@ -32,4 +32,5 @@
         </cq:CatalogSyncConfig>
     </jcr:content>
     <library-data/>
+    <library/>
 </jcr:root>

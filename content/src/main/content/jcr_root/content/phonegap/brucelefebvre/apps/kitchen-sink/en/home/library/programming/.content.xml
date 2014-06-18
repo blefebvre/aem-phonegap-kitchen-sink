@@ -1,35 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Page">
-    <geolocation/>
-    <compass/>
-    <accelerometer/>
-    <camera/>
-    <connection/>
-    <offline-video/>
-    <inappbrowser/>
     <jcr:content
-        cq:catalogBlueprint="/content/catalogs/kitchen-sink/base-catalog"
-        cq:commerceProvider="geometrixx"
+        cq:catalogBlueprint="/content/catalogs/kitchen-sink/base-catalog/library/programming"
         cq:commerceType="section"
-        cq:designPath="/etc/designs/phonegap/brucelefebvre/kitchen-sink"
-        cq:lastModified="{Date}2014-06-18T12:08:24.564-04:00"
+        cq:lastModified="{Date}2014-06-18T12:02:44.029-04:00"
         cq:lastModifiedBy="admin"
-        cq:lastRolledout="{Date}2014-06-18T12:08:24.565-04:00"
+        cq:lastRolledout="{Date}2014-06-18T12:08:24.875-04:00"
         cq:lastRolledoutBy="admin"
+        cq:tags="[kitchen-sink:genre/programming]"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
-        jcr:language="en_US"
         jcr:mixinTypes="[cq:LiveSync]"
         jcr:primaryType="cq:PageContent"
-        jcr:title=""
-        sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page"
-        pageTitle="Kitchen Sink">
+        jcr:title="Programming"
+        sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page">
         <cq:LiveSyncConfig
             cq:isDeep="{Boolean}false"
-            cq:master="/content/catalogs/kitchen-sink/template-pages/catalog-page-template"
+            cq:master="/content/catalogs/kitchen-sink/template-pages/section-page-template"
             cq:rolloutConfigs="[/etc/msm/rolloutconfigs/catalogpagecontent,/etc/msm/rolloutconfigs/catalogrollouthooks]"
             jcr:primaryType="cq:LiveCopy"/>
     </jcr:content>
-    <library/>
-    <library-data/>
 </jcr:root>

@@ -2,19 +2,25 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2012-01-23T11:05:28.592+01:00"
+        cq:lastModified="{Date}2012-11-08T00:03:42.669Z"
         cq:lastModifiedBy="admin"
         cq:template="/libs/commerce/templates/section"
         jcr:isCheckedOut="{Boolean}true"
+        jcr:lastModified="{Date}2012-11-08T00:03:42.665Z"
+        jcr:lastModifiedBy="admin"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="library-data"
-        jcr:uuid="7a46c902-9c5a-47a7-8e12-1ad3d427ecfe"
+        jcr:title="bl"
+        jcr:uuid="0dfbf0c3-3cc8-4319-a695-e117218d614d"
         sling:resourceType="commerce/components/section">
         <target
             jcr:primaryType="nt:unstructured"
-            jcr_title="library-data"
-            sling_resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page"/>
+            jcr_title="bl"/>
+        <filter
+            jcr:primaryType="nt:unstructured"
+            matchTags="[]"
+            search="/jcr:root/etc/commerce/products/kitchen_sink//element(*, cq:Taggable)[jcr:like(@identifier, 'bl%')]"
+            searchType="xpath"/>
+        <templates jcr:primaryType="nt:unstructured"/>
     </jcr:content>
-    <bl/>
 </jcr:root>

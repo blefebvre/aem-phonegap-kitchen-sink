@@ -7,5 +7,5 @@
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="Product Page Template"
-        sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page"/>
+        sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page/ng-data-only-page"/>
 </jcr:root>

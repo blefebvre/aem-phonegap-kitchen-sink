@@ -2,20 +2,18 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:catalogBlueprint="/content/catalogs/kitchen-sink/base-catalog/library-data"
-        cq:commerceType="section"
-        cq:lastModified="{Date}2014-06-18T12:08:24.590-04:00"
+        cq:lastModified="{Date}2014-06-18T12:08:24.678-04:00"
         cq:lastModifiedBy="admin"
+        cq:productMaster="/etc/commerce/products/kitchen_sink/bl/blbk/blbk05"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:mixinTypes="[cq:LiveSync]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="library-data"
-        sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page">
+        jcr:title="Implementing Responsive Design"
+        sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page/ng-data-only-page">
         <cq:LiveSyncConfig
             cq:isDeep="{Boolean}false"
-            cq:master="/content/catalogs/kitchen-sink/template-pages/section-page-template"
+            cq:master="/content/catalogs/kitchen-sink/template-pages/product-page-template"
             cq:rolloutConfigs="[/etc/msm/rolloutconfigs/catalogpagecontent,/etc/msm/rolloutconfigs/catalogrollouthooks]"
             jcr:primaryType="cq:LiveCopy"/>
     </jcr:content>
-    <bl/>
 </jcr:root>
