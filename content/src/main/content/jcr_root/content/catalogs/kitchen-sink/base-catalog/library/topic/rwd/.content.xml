@@ -8,14 +8,12 @@
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="library-data"
-        jcr:uuid="7a46c902-9c5a-47a7-8e12-1ad3d427ecfe"
+        jcr:title="RWD"
+        jcr:uuid="497a950c-6f2d-4e22-bf5b-f7e218939e18"
         sling:resourceType="commerce/components/section">
         <target
             jcr:primaryType="nt:unstructured"
-            hideInNav="true"
-            jcr_title="library-data"
-            sling_resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page"/>
+            cq_tags="[kitchen-sink:topic/RWD]"
+            jcr_title="RWD"/>
     </jcr:content>
-    <bl/>
 </jcr:root>

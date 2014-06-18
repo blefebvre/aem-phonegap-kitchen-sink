@@ -8,14 +8,15 @@
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="library-data"
-        jcr:uuid="7a46c902-9c5a-47a7-8e12-1ad3d427ecfe"
+        jcr:title="Topic"
+        jcr:uuid="e7e142cf-42e2-47da-ba98-3804c1c52ab6"
         sling:resourceType="commerce/components/section">
         <target
             jcr:primaryType="nt:unstructured"
-            hideInNav="true"
-            jcr_title="library-data"
-            sling_resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page"/>
+            jcr_title="Topic"/>
     </jcr:content>
-    <bl/>
+    <patterns/>
+    <mobile/>
+    <css3/>
+    <rwd/>
 </jcr:root>

@@ -13,11 +13,8 @@
         sling:resourceType="commerce/components/section">
         <target
             jcr:primaryType="nt:unstructured"
-            jcr_title="Biking"/>
+            jcr_title="Library"/>
     </jcr:content>
-    <rwd/>
-    <css3/>
-    <mobile/>
-    <patterns/>
+    <topic/>
     <programming/>
 </jcr:root>
