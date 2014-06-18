@@ -11,5 +11,6 @@
     <filter root="/etc/commerce/products/kitchen_sink"/>
     <filter root="/etc/commerce/products/kitchen-sink-books.csv"/>
     <filter root="/content/catalogs/kitchen-sink"/>
-    <filter root="/etc/tags/kitchen-sink"/>
+    <filter root="/etc/tags/geometrixx-outdoors/genre"/>
+    <filter root="/etc/tags/geometrixx-outdoors/topic"/>
 </workspaceFilter>
