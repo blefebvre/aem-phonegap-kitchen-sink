@@ -3,7 +3,7 @@
     cq:commerceType="product"
     cq:tags="[kitchen-sink:genre/programming,kitchen-sink:topic/CSS3]"
     jcr:description="Learn what works, how it works, and how to work around browsers where it doesn't work"
-    jcr:lastModified="{Date}2014-06-18T10:30:45.610-04:00"
+    jcr:lastModified="{Date}2014-06-18T11:24:55.213-04:00"
     jcr:mixinTypes="[cq:Taggable]"
     jcr:primaryType="nt:unstructured"
     jcr:title="CSS3 for Web Designers"
@@ -12,7 +12,7 @@
     identifier="blbk02"
     price="{Decimal}18">
     <image
-        jcr:lastModified="{Date}2014-06-18T10:30:45.610-04:00"
+        jcr:lastModified="{Date}2014-06-18T11:24:55.214-04:00"
         jcr:primaryType="nt:unstructured"
         sling:resourceType="commerce/components/product/image"
         fileReference="/content/dam/geometrixx-outdoors/products/equipment/Sparrow.jpg"/>

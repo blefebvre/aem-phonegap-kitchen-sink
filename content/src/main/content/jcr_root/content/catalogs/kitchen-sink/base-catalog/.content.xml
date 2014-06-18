@@ -23,7 +23,7 @@
             section="/content/catalogs/kitchen-sink/template-pages/section-page-template"/>
         <filter
             jcr:primaryType="nt:unstructured"
-            basePath="/etc/commerce/products/kitchen-sink"/>
+            basePath="/etc/commerce/products/kitchen_sink"/>
         <cq:CatalogSyncConfig jcr:primaryType="cq:CatalogSyncConfig">
             <catalog
                 cq:catalogPath="/content/phonegap/brucelefebvre/apps/kitchen-sink/en/home"
@@ -31,5 +31,5 @@
                 jcr:primaryType="nt:unstructured"/>
         </cq:CatalogSyncConfig>
     </jcr:content>
-    <library/>
+    <library-data/>
 </jcr:root>
