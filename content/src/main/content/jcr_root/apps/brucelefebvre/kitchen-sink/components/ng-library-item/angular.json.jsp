@@ -8,20 +8,18 @@
     Resource currentPageResource = currentPage.adaptTo(Resource.class);
     String productPrice = "n/a";
     String summaryHTML = "";
-    String title = "";
+    String title = "no title";
     String description = "";
-    String SKU = "";
+    String sku = "";
+    String author = "no author";
     Product product = getProduct(currentPageResource);
 
     if (product != null) {
-        summaryHTML = product.getProperty("summary", String.class);
-        if (summaryHTML == null || summaryHTML.equals("...")) {
-            summaryHTML = "";
-        }
         title = product.getTitle();
         description = product.getDescription();
-        SKU = product.getSKU();
+        sku = product.getSKU();
         productPrice = getProductPrice(product, currentPageResource, slingRequest, slingResponse);
+        author = product.getProperty("author", String.class);
     }
     request.setAttribute("productPrice", productPrice);
 
@@ -31,11 +29,11 @@
     items: 
 	[
         {
-            'name': '<%= xssAPI.encodeForJSString(title) %>',
+            'title': '<%= xssAPI.encodeForJSString(title) %>',
+            'author': '<%= xssAPI.encodeForJSString(author) %>',
             'description': '<%= xssAPI.encodeForJSString(description) %>',
-            'summaryHTML': '<%= xssAPI.encodeForJSString(summaryHTML) %>',
             'price': '<%= xssAPI.encodeForJSString(productPrice) %>',
-            'SKU': '<%= xssAPI.encodeForJSString(SKU) %>',
+            'SKU': '<%= xssAPI.encodeForJSString(sku) %>',
             'numberOfLikes': '0',
             'numberOfComments': '0'
         }
