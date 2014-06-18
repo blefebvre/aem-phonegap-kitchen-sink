@@ -4,10 +4,8 @@
     <jcr:content
         cq:catalogBlueprint="/content/catalogs/kitchen-sink/base-catalog/library/topic/rwd"
         cq:commerceType="section"
-        cq:lastModified="{Date}2014-06-18T14:26:17.225-04:00"
+        cq:lastModified="{Date}2014-06-18T15:12:42.807-04:00"
         cq:lastModifiedBy="admin"
-        cq:lastRolledout="{Date}2014-06-18T14:26:17.255-04:00"
-        cq:lastRolledoutBy="admin"
         cq:tags="[kitchen-sink:topic/RWD]"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:mixinTypes="[cq:LiveSync]"
@@ -15,24 +13,18 @@
         jcr:title="RWD"
         sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page">
         <content-par
-            cq:lastRolledout="{Date}2014-06-18T14:26:17.247-04:00"
-            cq:lastRolledoutBy="admin"
             jcr:mixinTypes="[cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured">
             <ionic_menu_list
-                cq:lastRolledout="{Date}2014-06-18T14:26:17.251-04:00"
-                cq:lastRolledoutBy="admin"
                 jcr:created="{Date}2014-03-03T15:44:17.331-08:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-06-18T14:26:17.223-04:00"
+                jcr:lastModified="{Date}2014-03-03T15:44:24.453-08:00"
                 jcr:lastModifiedBy="admin"
                 jcr:mixinTypes="[cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brucelefebvre/kitchen-sink/components/ionic-menu-list"
                 listFrom="children"/>
             <library-item-listing
-                cq:lastRolledout="{Date}2014-06-18T14:26:17.255-04:00"
-                cq:lastRolledoutBy="admin"
                 jcr:mixinTypes="[cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brucelefebvre/kitchen-sink/components/library-item-listing"/>

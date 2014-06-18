@@ -8,7 +8,7 @@
 %><%@include file="/libs/foundation/global.jsp"%><%
 %><%@include file="/apps/geometrixx-outdoors-app/global.jsp"%><%
 
-%><div class="full responsive-row padded" ng-controller="ProductListCtrl">
+%><div class="full responsive-row padded">
 <%
     final String PRODUCT_IMAGE_RELATIVE_PATH = "content-par/ng-product/ng-image";
     final String PRODUCT_IMAGE_RESOURCE_TYPE = "mobileapps/components/image";
