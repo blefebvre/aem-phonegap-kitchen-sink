@@ -21,6 +21,5 @@
             matchTags="[]"
             search="/jcr:root/etc/commerce/products/kitchen_sink//element(*, cq:Taggable)[jcr:like(@identifier, 'bl%')]"
             searchType="xpath"/>
-        <templates jcr:primaryType="nt:unstructured"/>
     </jcr:content>
 </jcr:root>

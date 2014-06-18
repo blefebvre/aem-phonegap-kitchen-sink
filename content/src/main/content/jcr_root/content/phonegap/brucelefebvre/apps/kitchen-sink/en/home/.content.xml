@@ -13,9 +13,9 @@
         cq:commerceProvider="geometrixx"
         cq:commerceType="section"
         cq:designPath="/etc/designs/phonegap/brucelefebvre/kitchen-sink"
-        cq:lastModified="{Date}2014-06-18T16:38:34.462-04:00"
+        cq:lastModified="{Date}2014-06-18T17:14:38.687-04:00"
         cq:lastModifiedBy="admin"
-        cq:lastRolledout="{Date}2014-06-18T16:38:34.468-04:00"
+        cq:lastRolledout="{Date}2014-06-18T17:14:38.693-04:00"
         cq:lastRolledoutBy="admin"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:language="en_US"
@@ -25,17 +25,17 @@
         sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page"
         pageTitle="Kitchen Sink">
         <content-par
-            cq:lastRolledout="{Date}2014-06-18T16:38:34.466-04:00"
+            cq:lastRolledout="{Date}2014-06-18T17:14:38.690-04:00"
             cq:lastRolledoutBy="admin"
             jcr:mixinTypes="[cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="foundation/components/parsys">
             <ionic_menu_list
-                cq:lastRolledout="{Date}2014-06-18T16:38:34.468-04:00"
+                cq:lastRolledout="{Date}2014-06-18T17:14:38.693-04:00"
                 cq:lastRolledoutBy="admin"
                 jcr:created="{Date}2014-03-03T15:44:17.331-08:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-06-18T16:38:34.405-04:00"
+                jcr:lastModified="{Date}2014-06-18T17:14:38.671-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:mixinTypes="[cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
@@ -48,6 +48,6 @@
             cq:rolloutConfigs="[/etc/msm/rolloutconfigs/catalogpagecontent,/etc/msm/rolloutconfigs/catalogrollouthooks]"
             jcr:primaryType="cq:LiveCopy"/>
     </jcr:content>
-    <library-data/>
     <library/>
+    <library-data/>
 </jcr:root>

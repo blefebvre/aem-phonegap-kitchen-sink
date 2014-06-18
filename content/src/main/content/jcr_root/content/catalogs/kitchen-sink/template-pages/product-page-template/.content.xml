@@ -11,15 +11,14 @@
         <content-par
             jcr:primaryType="nt:unstructured"
             sling:resourceType="foundation/components/parsys">
-            <product
-                cq:commerceType="product"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="commerce/components/product"/>
             <ng-library-item
-                cq:commerceType="product"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brucelefebvre/kitchen-sink/components/ng-library-item"
                 frameworkType="angular"/>
         </content-par>
+        <product
+            cq:commerceType="product"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="commerce/components/product"/>
     </jcr:content>
 </jcr:root>

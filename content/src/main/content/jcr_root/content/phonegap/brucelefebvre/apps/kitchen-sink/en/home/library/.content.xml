@@ -4,26 +4,34 @@
     <jcr:content
         cq:catalogBlueprint="/content/catalogs/kitchen-sink/base-catalog/library"
         cq:commerceType="section"
-        cq:lastModified="{Date}2014-06-18T16:38:34.661-04:00"
+        cq:lastModified="{Date}2014-06-18T17:14:38.870-04:00"
         cq:lastModifiedBy="admin"
+        cq:lastRolledout="{Date}2014-06-18T17:14:38.952-04:00"
+        cq:lastRolledoutBy="admin"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:mixinTypes="[cq:LiveSync]"
         jcr:primaryType="cq:PageContent"
         jcr:title="Library"
         sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page">
         <content-par
+            cq:lastRolledout="{Date}2014-06-18T17:14:38.947-04:00"
+            cq:lastRolledoutBy="admin"
             jcr:mixinTypes="[cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured">
             <ionic_menu_list
+                cq:lastRolledout="{Date}2014-06-18T17:14:38.951-04:00"
+                cq:lastRolledoutBy="admin"
                 jcr:created="{Date}2014-03-03T15:44:17.331-08:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-03-03T15:44:24.453-08:00"
+                jcr:lastModified="{Date}2014-06-18T17:14:38.867-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:mixinTypes="[cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brucelefebvre/kitchen-sink/components/ionic-menu-list"
                 listFrom="children"/>
             <library-item-listing
+                cq:lastRolledout="{Date}2014-06-18T17:14:38.952-04:00"
+                cq:lastRolledoutBy="admin"
                 jcr:mixinTypes="[cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brucelefebvre/kitchen-sink/components/library-item-listing"/>

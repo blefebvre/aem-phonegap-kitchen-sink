@@ -2,7 +2,7 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2014-06-18T16:38:34.574-04:00"
+        cq:lastModified="{Date}2014-06-18T17:14:38.773-04:00"
         cq:lastModifiedBy="admin"
         cq:productMaster="/etc/commerce/products/kitchen_sink/bl/blbk/blbk04"
         cq:tags="[geometrixx-outdoors:genre/programming,geometrixx-outdoors:topic/mobile]"
@@ -15,30 +15,29 @@
             jcr:mixinTypes="[cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="foundation/components/parsys">
-            <product
-                cq:commerceType="product"
-                jcr:mixinTypes="[cq:CatalogSyncAction,cq:LiveRelationship]"
-                jcr:primaryType="nt:unstructured"
-                sling:resourceType="commerce/components/product"
-                productData="/etc/commerce/products/kitchen_sink/bl/blbk/blbk04">
-                <image
-                    jcr:lastModified="{Date}2014-06-18T16:37:41.708-04:00"
-                    jcr:mixinTypes="[cq:CatalogSyncAction,cq:LiveRelationship]"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="commerce/components/product/image"
-                    fileReference="/content/dam/geometrixx-outdoors/products/equipment/Davos.jpg"/>
-                <assets
-                    jcr:mixinTypes="[cq:CatalogSyncAction,cq:LiveRelationship]"
-                    jcr:primaryType="nt:unstructured"
-                    sling:resourceType="commerce/components/product/assets"/>
-            </product>
             <ng-library-item
-                cq:commerceType="product"
                 jcr:mixinTypes="[cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brucelefebvre/kitchen-sink/components/ng-library-item"
                 frameworkType="angular"/>
         </content-par>
+        <product
+            cq:commerceType="product"
+            jcr:mixinTypes="[cq:CatalogSyncAction,cq:LiveRelationship]"
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="commerce/components/product"
+            productData="/etc/commerce/products/kitchen_sink/bl/blbk/blbk04">
+            <image
+                jcr:lastModified="{Date}2014-06-18T16:37:41.708-04:00"
+                jcr:mixinTypes="[cq:CatalogSyncAction,cq:LiveRelationship]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="commerce/components/product/image"
+                fileReference="/content/dam/geometrixx-outdoors/products/equipment/Davos.jpg"/>
+            <assets
+                jcr:mixinTypes="[cq:CatalogSyncAction,cq:LiveRelationship]"
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="commerce/components/product/assets"/>
+        </product>
         <cq:LiveSyncConfig
             cq:isDeep="{Boolean}false"
             cq:master="/content/catalogs/kitchen-sink/template-pages/product-page-template"
