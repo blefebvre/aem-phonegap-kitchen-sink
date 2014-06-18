@@ -4,8 +4,8 @@
     <jcr:content
         cq:lastModified="{Date}2013-02-19T15:19:15.764Z"
         cq:lastModifiedBy="admin"
-        cq:template="/apps/geometrixx-outdoors/templates/page_sidebar"
+        cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:primaryType="cq:PageContent"
         jcr:title="Section Page Template"
-        sling:resourceType="geometrixx-outdoors/components/page_sidebar"/>
+        sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page"/>
 </jcr:root>

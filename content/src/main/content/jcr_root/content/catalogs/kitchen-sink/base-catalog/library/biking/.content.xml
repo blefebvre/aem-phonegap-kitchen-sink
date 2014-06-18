@@ -8,18 +8,14 @@
         jcr:isCheckedOut="{Boolean}true"
         jcr:mixinTypes="[mix:versionable]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Equipment"
-        jcr:uuid="a9534418-df7a-4b66-8519-e258e15802ab"
+        jcr:title="Biking"
+        jcr:uuid="7a46c902-9c5a-47a7-8e12-1ad3d427ecfe"
         sling:resourceType="commerce/components/section">
         <target
             jcr:primaryType="nt:unstructured"
-            jcr_title="Equipment">
-            <par jcr:primaryType="nt:unstructured">
-                <banner
-                    jcr:primaryType="nt:unstructured"
-                    fileReference="/content/dam/geometrixx-outdoors/banners/snowboard-action.jpg"/>
-            </par>
-        </target>
+            jcr_title="Biking"/>
+        <filter
+            jcr:primaryType="nt:unstructured"
+            matchTags="[kitchen-sink:genre/programming]"/>
     </jcr:content>
-    <biking/>
 </jcr:root>
