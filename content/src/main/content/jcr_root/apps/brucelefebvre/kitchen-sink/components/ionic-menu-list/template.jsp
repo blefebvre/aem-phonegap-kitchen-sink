@@ -11,6 +11,7 @@
 <cq:include script="init.jsp"/>
     <ul class="list">
 <%
+    String TEMPLATE_PAGE_RESOURCE_TYPE = "brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page";
 
     List list = (List)request.getAttribute("list");
     Iterator<Page> items = list.getPages();
@@ -21,7 +22,9 @@
             // Only include Angular pages
             Resource currentPageContentResource = carouselPage.getContentResource();
             // Skip this page if it is not based on ng-page
-            if (currentPageContentResource == null ||
+            // OR, if this page is an ng-template-page
+            if (currentPageContentResource == null || 
+                    currentPageContentResource.isResourceType(TEMPLATE_PAGE_RESOURCE_TYPE) || 
                     !currentPageContentResource.isResourceType(FrameworkContentExporterUtils.NG_PAGE_RESOURCE_TYPE)) {
                 continue;
             }

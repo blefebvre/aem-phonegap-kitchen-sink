@@ -3,7 +3,7 @@
     cq:commerceType="product"
     cq:tags="[geometrixx-outdoors:genre/programming,geometrixx-outdoors:topic/patterns]"
     jcr:description="Elements of reusable object-oriented software"
-    jcr:lastModified="{Date}2014-06-19T13:36:11.302-04:00"
+    jcr:lastModified="{Date}2014-06-19T14:14:09.910-04:00"
     jcr:mixinTypes="[cq:Taggable]"
     jcr:primaryType="nt:unstructured"
     jcr:title="Design Patterns"
@@ -12,7 +12,7 @@
     identifier="blbk01"
     price="{Decimal}74.99">
     <image
-        jcr:lastModified="{Date}2014-06-19T13:36:11.302-04:00"
+        jcr:lastModified="{Date}2014-06-19T14:14:09.911-04:00"
         jcr:primaryType="nt:unstructured"
         sling:resourceType="commerce/components/product/image"
         fileReference="/content/dam/brucelefebvre/kitchen-sink/library/design-patterns.jpeg"/>

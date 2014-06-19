@@ -13,7 +13,6 @@
         sling:resourceType="commerce/components/section">
         <target
             jcr:primaryType="nt:unstructured"
-            hideInNav="true"
             jcr_title="library-data"
             sling_resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page"/>
     </jcr:content>

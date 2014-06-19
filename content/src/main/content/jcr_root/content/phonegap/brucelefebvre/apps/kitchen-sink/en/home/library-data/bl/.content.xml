@@ -4,9 +4,9 @@
     <jcr:content
         cq:catalogBlueprint="/content/catalogs/kitchen-sink/base-catalog/library-data/bl"
         cq:commerceType="section"
-        cq:lastModified="{Date}2014-06-19T13:37:07.043-04:00"
+        cq:lastModified="{Date}2014-06-19T14:14:36.128-04:00"
         cq:lastModifiedBy="admin"
-        cq:lastRolledout="{Date}2014-06-19T13:37:07.084-04:00"
+        cq:lastRolledout="{Date}2014-06-19T14:14:36.184-04:00"
         cq:lastRolledoutBy="admin"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:mixinTypes="[cq:LiveSync]"
@@ -14,23 +14,23 @@
         jcr:title="bl"
         sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page">
         <content-par
-            cq:lastRolledout="{Date}2014-06-19T13:37:07.074-04:00"
+            cq:lastRolledout="{Date}2014-06-19T14:14:36.148-04:00"
             cq:lastRolledoutBy="admin"
             jcr:mixinTypes="[cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured">
             <ionic_menu_list
-                cq:lastRolledout="{Date}2014-06-19T13:37:07.082-04:00"
+                cq:lastRolledout="{Date}2014-06-19T14:14:36.183-04:00"
                 cq:lastRolledoutBy="admin"
                 jcr:created="{Date}2014-03-03T15:44:17.331-08:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-06-19T13:37:07.039-04:00"
+                jcr:lastModified="{Date}2014-06-19T14:14:36.125-04:00"
                 jcr:lastModifiedBy="admin"
                 jcr:mixinTypes="[cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brucelefebvre/kitchen-sink/components/ionic-menu-list"
                 listFrom="children"/>
             <library-item-listing
-                cq:lastRolledout="{Date}2014-06-19T13:37:07.084-04:00"
+                cq:lastRolledout="{Date}2014-06-19T14:14:36.184-04:00"
                 cq:lastRolledoutBy="admin"
                 jcr:mixinTypes="[cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
