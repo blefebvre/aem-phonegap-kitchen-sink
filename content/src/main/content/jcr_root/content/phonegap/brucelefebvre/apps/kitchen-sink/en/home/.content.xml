@@ -13,7 +13,7 @@
         cq:commerceProvider="geometrixx"
         cq:commerceType="section"
         cq:designPath="/etc/designs/phonegap/brucelefebvre/kitchen-sink"
-        cq:lastModified="{Date}2014-06-18T17:14:38.687-04:00"
+        cq:lastModified="{Date}2014-06-18T23:22:01.821-04:00"
         cq:lastModifiedBy="admin"
         cq:lastRolledout="{Date}2014-06-18T17:14:38.693-04:00"
         cq:lastRolledoutBy="admin"
@@ -31,16 +31,18 @@
             jcr:primaryType="nt:unstructured"
             sling:resourceType="foundation/components/parsys">
             <ionic_menu_list
+                cq:isCancelledForChildren="{Boolean}true"
                 cq:lastRolledout="{Date}2014-06-18T17:14:38.693-04:00"
                 cq:lastRolledoutBy="admin"
                 jcr:created="{Date}2014-03-03T15:44:17.331-08:00"
                 jcr:createdBy="admin"
-                jcr:lastModified="{Date}2014-06-18T17:14:38.671-04:00"
+                jcr:lastModified="{Date}2014-06-18T23:22:01.805-04:00"
                 jcr:lastModifiedBy="admin"
-                jcr:mixinTypes="[cq:LiveRelationship]"
+                jcr:mixinTypes="[cq:LiveRelationship,cq:LiveSyncCancelled]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brucelefebvre/kitchen-sink/components/ionic-menu-list"
-                listFrom="children"/>
+                listFrom="static"
+                pages="[/content/phonegap/brucelefebvre/apps/kitchen-sink/en/home/library,/content/phonegap/brucelefebvre/apps/kitchen-sink/en/home/geolocation,/content/phonegap/brucelefebvre/apps/kitchen-sink/en/home/compass,/content/phonegap/brucelefebvre/apps/kitchen-sink/en/home/accelerometer,/content/phonegap/brucelefebvre/apps/kitchen-sink/en/home/camera,/content/phonegap/brucelefebvre/apps/kitchen-sink/en/home/connection,/content/phonegap/brucelefebvre/apps/kitchen-sink/en/home/offline-video,/content/phonegap/brucelefebvre/apps/kitchen-sink/en/home/inappbrowser]"/>
         </content-par>
         <cq:LiveSyncConfig
             cq:isDeep="{Boolean}false"

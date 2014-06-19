@@ -37,16 +37,13 @@
 // Controller for page '<c:out value="${angularPage.name}"/>'
 .controller('<c:out value="${controllerNameStripped}"/>', ['$scope', '$http', '$routeParams',
 function($scope, $http, $routeParams) {
-    var sku = $routeParams.id;
-    var productPath = '/' + sku.substring(0, 2) + '/' + sku;
+    var skuPrefix = $routeParams.skuPrefix;
+    var name = $routeParams.name;
+    var productPath = '/' + skuPrefix + '/' + name;
     var data = $http.get('<c:out value="${relativeResourcePath}"/>' + productPath + '.angular.json' + cacheKiller);
-<%
 
-    for (Resource angularComponent : angularPageComponents) {
-        IncludeOptions opts = IncludeOptions.getOptions(request, true);
-        opts.setDecorationTagName("");
-        opts.forceSameContext(Boolean.TRUE);
-        %><cq:include resourceType="<%= angularComponent.getResourceType() %>" path="<%= angularComponent.getPath() + ".controller.js" %>"/><%
-    }
-%>
+    // ng-library-item component controller 
+    data.then(function(response) {
+        $scope.nglibraryitem = response.data["content-par/ng-library-item"].items;
+    });
 }])

@@ -10,8 +10,7 @@
         jcr:mixinTypes="[cq:LiveSync]"
         jcr:primaryType="cq:PageContent"
         jcr:title="library-data"
-        sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page"
-        hideInNav="true">
+        sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page">
         <content-par
             jcr:mixinTypes="[cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured">

@@ -16,7 +16,7 @@
     slingResponse.setContentType("application/javascript");
 %><%
 %><c:set var="controllerNameStripped"><%= resource.getPath().replaceAll("[^A-Za-z0-9]", "") %></c:set>
-                .when('<c:out value="${resource.path}"/>/:id', {
+                .when('<c:out value="${resource.path}"/>/:skuPrefix/:name', {
                     templateUrl: '<c:out value="${relativeResourcePath}"/>.template.html',
                     controller: '<c:out value="${controllerNameStripped}"/>'
                 })

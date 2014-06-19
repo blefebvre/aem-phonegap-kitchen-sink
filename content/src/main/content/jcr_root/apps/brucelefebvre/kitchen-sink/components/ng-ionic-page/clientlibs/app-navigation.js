@@ -46,7 +46,7 @@
 						navigateToPageInApp( templatePath + '/' + skuPrefix + '/' + productName );
 					}
 
-					console.log( '[nav] app navigated to product: [' + skuPrefix + '].' );
+					console.log( '[nav] app navigated to library item: [' + productName + '].' );
 				};
 
 
