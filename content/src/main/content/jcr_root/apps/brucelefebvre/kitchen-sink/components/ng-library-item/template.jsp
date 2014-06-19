@@ -16,4 +16,6 @@
     <div class="product-details-information">
         <h4 class="product-details-description">{{product.description}}</h4>
     </div>
+
+    <img ng-src="{{product.imageSrc}}" alt="{{product.description}}" title="{{product.description}}"/>
 </article>

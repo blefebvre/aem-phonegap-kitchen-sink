@@ -1,6 +1,7 @@
 <%@ page session="false"
            import="com.adobe.cq.commerce.api.Product,
-                    org.apache.sling.api.resource.Resource" %><%
+                   com.adobe.cq.mobile.angular.data.util.FrameworkContentExporterUtils,
+                   org.apache.sling.api.resource.Resource" %><%
 %><%@include file="/libs/foundation/global.jsp"%><%
 %><%@include file="/apps/geometrixx-outdoors-app/global.jsp"%><%
 
@@ -12,6 +13,7 @@
     String description = "";
     String sku = "";
     String author = "no author";
+    String imageSrc = "";
     Product product = getProduct(currentPageResource);
 
     if (product != null) {
@@ -22,6 +24,14 @@
         author = product.getProperty("author", String.class);
     }
     request.setAttribute("productPrice", productPrice);
+
+    Resource imageResource = currentPage.getContentResource().getChild("image");
+    if (imageResource != null) {
+        Resource topLevelAppResource = FrameworkContentExporterUtils.getTopLevelAppResource(currentPage.adaptTo(Resource.class));
+        boolean appExport = Boolean.parseBoolean(slingRequest.getParameter("appExport"));
+        imageSrc = currentPage.getPath() + ".img.png";
+        imageSrc = FrameworkContentExporterUtils.getPathToAsset(topLevelAppResource, imageSrc, appExport);
+    }
 
     // TODO: implement numberOfLikes and numberOfComments
 %>
@@ -34,6 +44,7 @@
             'description': '<%= xssAPI.encodeForJSString(description) %>',
             'price': '<%= xssAPI.encodeForJSString(productPrice) %>',
             'SKU': '<%= xssAPI.encodeForJSString(sku) %>',
+            'imageSrc': '<%= xssAPI.encodeForJSString(imageSrc) %>',
             'numberOfLikes': '0',
             'numberOfComments': '0'
         }
