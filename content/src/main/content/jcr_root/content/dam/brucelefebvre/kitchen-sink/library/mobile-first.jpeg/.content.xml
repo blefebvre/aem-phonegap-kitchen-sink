@@ -2,19 +2,19 @@
 <jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="dam:Asset">
     <jcr:content
-        dam:lastInvalidateCache="{Date}2014-06-19T13:02:03.218-04:00"
+        dam:lastInvalidateCache="{Date}2014-06-19T13:33:03.707-04:00"
         dam:s7damAnchorX="{Long}320"
         dam:s7damAnchorY="{Long}426"
         dam:s7damHeight="{Long}853"
-        dam:s7damImageCopyPath="/var/folders/s0/cdx9bfrj48zg8fm3cch555t80000gn/T/scene77615792330800041648.tmp"
+        dam:s7damImageCopyPath="/var/folders/ff/_j335_652tdghgnwr94_g05h0000gp/T/scene72211293233377305870.tmp"
         dam:s7damType="Image"
         dam:s7damWidth="{Long}640"
-        jcr:lastModified="{Date}2014-06-19T13:02:06.436-04:00"
+        jcr:lastModified="{Date}2014-06-19T13:33:07.948-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2014-06-19T13:02:01.950-04:00"
+            dam:extracted="{Date}2014-06-19T13:33:02.511-04:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"

@@ -3,7 +3,7 @@
     cq:commerceType="product"
     cq:tags="[geometrixx-outdoors:genre/programming,geometrixx-outdoors:topic/mobile]"
     jcr:description="Become a master of mobile - and improve your non-mobile design, too"
-    jcr:lastModified="{Date}2014-06-18T16:37:41.708-04:00"
+    jcr:lastModified="{Date}2014-06-19T13:36:11.304-04:00"
     jcr:mixinTypes="[cq:Taggable]"
     jcr:primaryType="nt:unstructured"
     jcr:title="Mobile First"
@@ -12,8 +12,8 @@
     identifier="blbk04"
     price="{Decimal}18">
     <image
-        jcr:lastModified="{Date}2014-06-18T16:37:41.708-04:00"
+        jcr:lastModified="{Date}2014-06-19T13:36:11.305-04:00"
         jcr:primaryType="nt:unstructured"
         sling:resourceType="commerce/components/product/image"
-        fileReference="/content/dam/geometrixx-outdoors/products/equipment/Davos.jpg"/>
+        fileReference="/content/dam/brucelefebvre/kitchen-sink/library/mobile-first.jpeg"/>
 </jcr:root>

@@ -2,8 +2,10 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2014-06-18T17:14:38.821-04:00"
+        cq:lastModified="{Date}2014-06-19T13:37:07.232-04:00"
         cq:lastModifiedBy="admin"
+        cq:lastRolledout="{Date}2014-06-19T13:37:07.304-04:00"
+        cq:lastRolledoutBy="admin"
         cq:productMaster="/etc/commerce/products/kitchen_sink/bl/blbk/blbk01"
         cq:tags="[geometrixx-outdoors:genre/programming,geometrixx-outdoors:topic/patterns]"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
@@ -12,10 +14,14 @@
         jcr:title="Design Patterns"
         sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page/ng-data-only-page">
         <content-par
+            cq:lastRolledout="{Date}2014-06-19T13:37:07.291-04:00"
+            cq:lastRolledoutBy="admin"
             jcr:mixinTypes="[cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="foundation/components/parsys">
             <ng-library-item
+                cq:lastRolledout="{Date}2014-06-19T13:37:07.294-04:00"
+                cq:lastRolledoutBy="admin"
                 jcr:mixinTypes="[cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brucelefebvre/kitchen-sink/components/ng-library-item"
@@ -23,17 +29,23 @@
         </content-par>
         <product
             cq:commerceType="product"
+            cq:lastRolledout="{Date}2014-06-19T13:37:07.298-04:00"
+            cq:lastRolledoutBy="admin"
             jcr:mixinTypes="[cq:CatalogSyncAction,cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="commerce/components/product"
             productData="/etc/commerce/products/kitchen_sink/bl/blbk/blbk01">
             <image
-                jcr:lastModified="{Date}2014-06-18T16:37:41.706-04:00"
+                cq:lastRolledout="{Date}2014-06-19T13:37:07.303-04:00"
+                cq:lastRolledoutBy="admin"
+                jcr:lastModified="{Date}2014-06-19T13:36:11.302-04:00"
                 jcr:mixinTypes="[cq:CatalogSyncAction,cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="commerce/components/product/image"
-                fileReference="/content/dam/geometrixx-outdoors/products/equipment/Cajamara.jpg"/>
+                fileReference="/content/dam/brucelefebvre/kitchen-sink/library/design-patterns.jpeg"/>
             <assets
+                cq:lastRolledout="{Date}2014-06-19T13:37:07.304-04:00"
+                cq:lastRolledoutBy="admin"
                 jcr:mixinTypes="[cq:CatalogSyncAction,cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="commerce/components/product/assets"/>
@@ -45,6 +57,6 @@
             jcr:primaryType="cq:LiveCopy"/>
         <image
             jcr:primaryType="nt:unstructured"
-            fileReference="/content/dam/geometrixx-outdoors/products/equipment/Cajamara.jpg"/>
+            fileReference="/content/dam/brucelefebvre/kitchen-sink/library/design-patterns.jpeg"/>
     </jcr:content>
 </jcr:root>

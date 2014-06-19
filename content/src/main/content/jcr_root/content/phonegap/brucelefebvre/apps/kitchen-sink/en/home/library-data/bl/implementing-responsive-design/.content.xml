@@ -2,8 +2,10 @@
 <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Page">
     <jcr:content
-        cq:lastModified="{Date}2014-06-18T17:14:38.851-04:00"
+        cq:lastModified="{Date}2014-06-19T13:37:07.322-04:00"
         cq:lastModifiedBy="admin"
+        cq:lastRolledout="{Date}2014-06-19T13:37:07.380-04:00"
+        cq:lastRolledoutBy="admin"
         cq:productMaster="/etc/commerce/products/kitchen_sink/bl/blbk/blbk05"
         cq:tags="[geometrixx-outdoors:genre/programming,geometrixx-outdoors:topic/RWD]"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
@@ -12,10 +14,14 @@
         jcr:title="Implementing Responsive Design"
         sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page/ng-data-only-page">
         <content-par
+            cq:lastRolledout="{Date}2014-06-19T13:37:07.369-04:00"
+            cq:lastRolledoutBy="admin"
             jcr:mixinTypes="[cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="foundation/components/parsys">
             <ng-library-item
+                cq:lastRolledout="{Date}2014-06-19T13:37:07.372-04:00"
+                cq:lastRolledoutBy="admin"
                 jcr:mixinTypes="[cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="brucelefebvre/kitchen-sink/components/ng-library-item"
@@ -23,17 +29,23 @@
         </content-par>
         <product
             cq:commerceType="product"
+            cq:lastRolledout="{Date}2014-06-19T13:37:07.375-04:00"
+            cq:lastRolledoutBy="admin"
             jcr:mixinTypes="[cq:CatalogSyncAction,cq:LiveRelationship]"
             jcr:primaryType="nt:unstructured"
             sling:resourceType="commerce/components/product"
             productData="/etc/commerce/products/kitchen_sink/bl/blbk/blbk05">
             <image
-                jcr:lastModified="{Date}2014-06-18T16:37:41.709-04:00"
+                cq:lastRolledout="{Date}2014-06-19T13:37:07.379-04:00"
+                cq:lastRolledoutBy="admin"
+                jcr:lastModified="{Date}2014-06-19T13:36:11.305-04:00"
                 jcr:mixinTypes="[cq:CatalogSyncAction,cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="commerce/components/product/image"
-                fileReference="/content/dam/geometrixx-outdoors/products/footwear/Interlaken.jpg"/>
+                fileReference="/content/dam/brucelefebvre/kitchen-sink/library/impl-resp-design.jpeg"/>
             <assets
+                cq:lastRolledout="{Date}2014-06-19T13:37:07.379-04:00"
+                cq:lastRolledoutBy="admin"
                 jcr:mixinTypes="[cq:CatalogSyncAction,cq:LiveRelationship]"
                 jcr:primaryType="nt:unstructured"
                 sling:resourceType="commerce/components/product/assets"/>
@@ -45,6 +57,6 @@
             jcr:primaryType="cq:LiveCopy"/>
         <image
             jcr:primaryType="nt:unstructured"
-            fileReference="/content/dam/geometrixx-outdoors/products/footwear/Interlaken.jpg"/>
+            fileReference="/content/dam/brucelefebvre/kitchen-sink/library/impl-resp-design.jpeg"/>
     </jcr:content>
 </jcr:root>

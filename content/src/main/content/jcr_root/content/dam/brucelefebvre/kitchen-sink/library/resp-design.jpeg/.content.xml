@@ -1,20 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    jcr:primaryType="dam:Asset">
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="ad131dc9-c675-479a-aa8f-7a85f6e10307">
     <jcr:content
-        dam:lastInvalidateCache="{Date}2014-06-19T13:02:03.192-04:00"
+        cq:name="resp-design.jpeg"
+        cq:parentPath="/content/dam/brucelefebvre/kitchen-sink/library"
+        dam:lastInvalidateCache="{Date}2014-06-19T13:33:04.062-04:00"
         dam:s7damAnchorX="{Long}320"
         dam:s7damAnchorY="{Long}426"
         dam:s7damHeight="{Long}853"
-        dam:s7damImageCopyPath="/var/folders/s0/cdx9bfrj48zg8fm3cch555t80000gn/T/scene75080157346747369866.tmp"
+        dam:s7damImageCopyPath="/var/folders/ff/_j335_652tdghgnwr94_g05h0000gp/T/scene7240950168773495637.tmp"
         dam:s7damType="Image"
         dam:s7damWidth="{Long}640"
-        jcr:lastModified="{Date}2014-06-19T13:02:06.309-04:00"
+        jcr:lastModified="{Date}2014-06-19T13:33:08.102-04:00"
         jcr:lastModifiedBy="admin"
-        jcr:primaryType="dam:AssetContent">
+        jcr:primaryType="dam:AssetContent"
+        restored="{Boolean}true">
         <metadata
             dam:Bitsperpixel="{Long}24"
-            dam:extracted="{Date}2014-06-19T13:02:01.972-04:00"
+            dam:extracted="{Date}2014-06-19T13:33:02.806-04:00"
             dam:Fileformat="JPEG"
             dam:MIMEtype="image/jpeg"
             dam:Numberofimages="{Long}1"
@@ -28,6 +34,9 @@
             dam:size="{Long}94061"
             dam:writebackEnable="False"
             dc:format="image/jpeg"
+            dc:modified="{Date}2014-06-19T13:33:02.567-04:00"
+            jcr:lastModified="{Date}2014-06-19T13:33:02.567-04:00"
+            jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
             tiff:ImageLength="{Long}853"

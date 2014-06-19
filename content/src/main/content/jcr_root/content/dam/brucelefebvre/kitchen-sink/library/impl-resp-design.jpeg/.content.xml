@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
-    jcr:primaryType="dam:Asset">
+<jcr:root xmlns:tiff="http://ns.adobe.com/tiff/1.0/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dam="http://www.day.com/dam/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:isCheckedOut="{Boolean}true"
+    jcr:mixinTypes="[mix:versionable]"
+    jcr:primaryType="dam:Asset"
+    jcr:uuid="74453e49-604a-4c4b-afbd-8d1eb72adccb">
     <jcr:content
+        cq:name="impl-resp-design.jpeg"
+        cq:parentPath="/content/dam/brucelefebvre/kitchen-sink/library"
         dam:lastInvalidateCache="{Date}2014-06-19T13:02:03.113-04:00"
         dam:s7damAnchorX="{Long}320"
         dam:s7damAnchorY="{Long}426"
@@ -9,7 +14,7 @@
         dam:s7damImageCopyPath="/var/folders/s0/cdx9bfrj48zg8fm3cch555t80000gn/T/scene77027179168743695403.tmp"
         dam:s7damType="Image"
         dam:s7damWidth="{Long}640"
-        jcr:lastModified="{Date}2014-06-19T13:02:05.920-04:00"
+        jcr:lastModified="{Date}2014-06-19T13:33:07.113-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -28,6 +33,9 @@
             dam:size="{Long}136746"
             dam:writebackEnable="False"
             dc:format="image/jpeg"
+            dc:modified="{Date}2014-06-19T13:33:03.739-04:00"
+            jcr:lastModified="{Date}2014-06-19T13:33:03.736-04:00"
+            jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
             tiff:ImageLength="{Long}853"
