@@ -21,7 +21,7 @@
         jcr:language="en_US"
         jcr:mixinTypes="[cq:LiveSync]"
         jcr:primaryType="cq:PageContent"
-        jcr:title=""
+        jcr:title="Kitchen Sink"
         sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page"
         pageTitle="Kitchen Sink">
         <content-par
