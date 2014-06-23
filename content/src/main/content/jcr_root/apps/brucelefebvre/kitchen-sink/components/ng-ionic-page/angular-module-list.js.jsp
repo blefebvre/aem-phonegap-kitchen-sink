@@ -21,5 +21,6 @@
 'phonegapCompass',
 'snap',
 'phonegapConnection',
-'phonegapCamera'
+'phonegapCamera',
+'phonegapAPI'
 ]
