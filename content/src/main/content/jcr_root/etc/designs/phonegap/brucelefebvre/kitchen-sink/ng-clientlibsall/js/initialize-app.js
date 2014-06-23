@@ -5,7 +5,4 @@
         document.body.className = document.body.className + ' ios7';
     }
 
-	// Initilize phonegapAPI Angular module
-    angular.module('phonegapAPI', ['btford.phonegap.ready']);
-
 })(CQ, document);
