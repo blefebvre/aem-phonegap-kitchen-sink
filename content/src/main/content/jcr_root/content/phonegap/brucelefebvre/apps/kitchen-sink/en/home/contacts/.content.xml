@@ -7,7 +7,7 @@
         cq:lastModifiedBy="admin"
         cq:template="/apps/brucelefebvre/kitchen-sink/templates/ng-ionic-page"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Accelerometer"
+        jcr:title="Contacts"
         sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page"
         page-transition="slide-animation"/>
 </jcr:root>
