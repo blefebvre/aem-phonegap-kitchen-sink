@@ -125,3 +125,73 @@ Building the camera component
 
 
 - Build and Replicate kitchen-sink package
+
+
+Building the Contact List component
+===================================
+
+- Add the `org.apache.cordova.contacts` plugin id to the install_plugins hook object (/content/phonegap/brucelefebvre/content/kitchen-sink/phonegap/.cordova/hooks/before_platform_add/install_plugins.js):
+```
+,
+    {
+        id:     "org.apache.cordova.contacts"
+    }
+```
+
+- Add the following files to the splash page file list (contentsync-file-list.js.jsp):
+```
+,
+"plugins/org.apache.cordova.contacts/www/Contact.js",
+"plugins/org.apache.cordova.contacts/www/ContactField.js",
+"plugins/org.apache.cordova.contacts/www/ContactOrganization.js",
+"plugins/org.apache.cordova.contacts/www/ContactAddress.js",
+"plugins/org.apache.cordova.contacts/www/ContactFindOptions.js",
+"plugins/org.apache.cordova.contacts/www/contacts.js",
+"plugins/org.apache.cordova.contacts/www/ContactError.js",
+"plugins/org.apache.cordova.contacts/www/ContactName.js",
+"plugins/org.apache.cordova.contacts/www/ios/Contact.js",
+"plugins/org.apache.cordova.contacts/www/ios/contacts.js"
+```
+
+- Add the following markup to phonegap-contacts.jsp:
+```
+<div ng-controller="ContactsCtrl" class="list">
+    <div class="item item-divider">
+        Device Contact List
+    </div>
+    <div ng-repeat="contact in contacts">
+        <a class="item">{{contact.displayName}}</a>
+    </div>
+</div>
+```
+
+- Add this script to phonegap-contacts.js:
+```
+angular.module('phonegapAPI')
+        .controller('ContactsCtrl', ['$scope', 'phonegapReady', function($scope, phonegapReady) {
+            
+            var readAndDisplayContacts = phonegapReady(function() {
+                function onSuccess(contacts) {
+                    $scope.contacts = contacts;
+                    $scope.$apply();
+                };
+
+                function onError(contactError) {
+                    console.error('[contacts] error reading contacts');
+                };
+
+                // find all contacts
+                if (window.ContactFindOptions) {
+                    var options = new ContactFindOptions();
+                    options.filter = "";
+                    var filter = ["displayName"];
+                    navigator.contacts.find(filter, onSuccess, onError, options);
+                }
+            });
+
+            readAndDisplayContacts();
+        }]);
+```
+
+- Add the component to the page
+- Build and replicate the kitchen-sink package if you need the component on pub

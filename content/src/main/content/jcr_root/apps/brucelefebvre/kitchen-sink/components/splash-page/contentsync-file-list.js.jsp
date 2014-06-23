@@ -50,5 +50,15 @@
 "plugins/org.apache.cordova.camera/www/CameraPopoverOptions.js",
 "plugins/org.apache.cordova.network-information/www/Connection.js",
 "plugins/org.apache.cordova.network-information/www/network.js",
-"plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js"
+"plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js",
+"plugins/org.apache.cordova.contacts/www/Contact.js",
+"plugins/org.apache.cordova.contacts/www/ContactField.js",
+"plugins/org.apache.cordova.contacts/www/ContactOrganization.js",
+"plugins/org.apache.cordova.contacts/www/ContactAddress.js",
+"plugins/org.apache.cordova.contacts/www/ContactFindOptions.js",
+"plugins/org.apache.cordova.contacts/www/contacts.js",
+"plugins/org.apache.cordova.contacts/www/ContactError.js",
+"plugins/org.apache.cordova.contacts/www/ContactName.js",
+"plugins/org.apache.cordova.contacts/www/ios/Contact.js",
+"plugins/org.apache.cordova.contacts/www/ios/contacts.js"
 ]

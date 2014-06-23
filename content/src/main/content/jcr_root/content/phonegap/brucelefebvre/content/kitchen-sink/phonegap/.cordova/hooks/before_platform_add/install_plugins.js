@@ -30,6 +30,9 @@ var pluginlist = [
     },
     {
         id:     "org.apache.cordova.inappbrowser"
+    },
+    {
+        id:     "org.apache.cordova.contacts"
     }
 ];
 
