@@ -23,7 +23,8 @@
         jcr:primaryType="cq:PageContent"
         jcr:title="Kitchen Sink"
         sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page"
-        pageTitle="Kitchen Sink">
+        pageTitle="Kitchen Sink"
+        phonegap-contentSyncConfigPath="/content/phonegap/brucelefebvre/content/kitchen-sink/kitchen-sink-content-sync">
         <content-par
             cq:lastRolledout="{Date}2014-06-19T14:14:36.055-04:00"
             cq:lastRolledoutBy="admin"
