@@ -195,3 +195,30 @@ angular.module('phonegapAPI')
 
 - Add the component to the page
 - Build and replicate the kitchen-sink package if you need the component on pub
+
+
+Rollout changes to library items
+================================
+
+- Upload updated .csv
+    - In the AEM [Products console](http://localhost:4502/aem/products.html/etc/commerce/products/kitchen_sink), click upload
+    - Select [kitchen-sink-books-update.csv](blob/master/content/src/main/content/jcr_root/etc/commerce/products/kitchen-sink-books-update.csv) and click next
+    - 1 product should be updated. Click Done when complete
+
+- Activate products
+    - From the [Products console](http://localhost:4502/aem/products.html/etc/commerce/products/kitchen_sink), navigate into the 'bl' folder
+    - select the 'blbk' folder and publish it
+    - Click the Publish button on the Assets view to continue
+
+- Rollout changes
+    - From the [Catalogs console](http://localhost:4502/aem/catalogs.html/content/catalogs/kitchen-sink), select 'Base Catalog' and click 'Rollout Changes'
+    - Click 'Rollout Changes' button to complete the rollout
+
+- Activate app
+    - From the [Apps console](http://localhost:4502/aem/apps.html/content/phonegap/brucelefebvre/apps/kitchen-sink), select the 'English' page and click 'Activate All App Pages'
+
+- Content sync update
+    - on Publish (you must be logged in via crx/de) [content sync console](http://localhost:4503/libs/cq/contentsync/content/console.html), click 'Update Cache'
+
+- On the app, open up the menu and tap 'Update'
+    - the Design Patterns library item should have an updated title (or any other updates you specified in the updated .csv)
