@@ -20,3 +20,13 @@ img {
 	padding: 0.5em 1em 0 1em;
 	margin: 0;
 }
+
+.list {
+	margin-bottom: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.card {
+	padding-top: 1px;
+}

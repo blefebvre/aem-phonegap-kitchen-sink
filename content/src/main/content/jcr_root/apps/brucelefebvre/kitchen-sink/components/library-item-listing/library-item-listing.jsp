@@ -8,7 +8,7 @@
 %><%@include file="/libs/foundation/global.jsp"%><%
 %><%@include file="/apps/geometrixx-outdoors-app/global.jsp"%><%
 
-%><div class="full responsive-row padded">
+%><div class="list">
 <%
     final String NG_TEMPLATE_PAGE_RESOURCE_TYPE = "brucelefebvre/kitchen-sink/components/ng-ionic-page/ng-template-page";
 
@@ -41,9 +41,9 @@
                     String productSKUPrefix = product.getSKU().substring(0,2);
                     String templatePath = productPageTemplateResource.getPath();
 %>
-    <div  ng-click="goLibraryItem('<%= request.getContextPath() %><%= xssAPI.getValidHref(templatePath) %>', '<%= xssAPI.getValidHref(productSKUPrefix) %>', '<%= xssAPI.getValidHref(productPageResource.getParent().getName()) %>')">
-        <%= xssAPI.encodeForHTML(productPageResource.getParent().getName()) %>
-    </div>
+    <a class="item" ng-click="goLibraryItem('<%= request.getContextPath() %><%= xssAPI.getValidHref(templatePath) %>', '<%= xssAPI.getValidHref(productSKUPrefix) %>', '<%= xssAPI.getValidHref(productPageResource.getParent().getName()) %>')">
+        <%= xssAPI.encodeForHTML(product.getTitle()) %>
+    </a>
 <%
                 }
             }
