@@ -17,8 +17,10 @@
 				if (window.ContactFindOptions) {
 					var options = new ContactFindOptions();
 					options.filter = "";
-					var filter = ["displayName"];
-					navigator.contacts.find(filter, onSuccess, onError, options);
+					options.multiple = true;
+					options.desiredFields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+					var fields = [navigator.contacts.fieldType.displayName, navigator.contacts.fieldType.name];
+					navigator.contacts.find(fields, onSuccess, onError, options);
 				}
             });
 

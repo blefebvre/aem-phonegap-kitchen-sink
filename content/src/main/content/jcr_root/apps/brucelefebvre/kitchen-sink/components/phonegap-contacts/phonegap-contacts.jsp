@@ -7,6 +7,6 @@
 		Device Contact List
 	</div>
 	<div ng-repeat="contact in contacts">
-		<a class="item">{{contact.displayName}}</a>
+		<a class="item">{{contact.name.formatted}}</a>
 	</div>
 </div>
