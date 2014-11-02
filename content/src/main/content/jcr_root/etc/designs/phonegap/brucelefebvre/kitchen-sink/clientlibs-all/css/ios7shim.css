@@ -1,0 +1,16 @@
+.ios7 .bar-header {
+	height: 64px;
+}
+
+.ios7 .bar-header > h1,
+.ios7 .bar-header > a  {
+	margin-top: 20px;
+}
+
+.ios7 .content.has-header {
+	top: 64px;
+}
+
+.ios7 .snap-drawers {
+	margin-top: 20px;
+}

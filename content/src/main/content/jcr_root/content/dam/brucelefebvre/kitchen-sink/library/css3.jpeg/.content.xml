@@ -14,7 +14,7 @@
         dam:s7damImageCopyPath="/var/folders/s0/cdx9bfrj48zg8fm3cch555t80000gn/T/scene76437995335126547219.tmp"
         dam:s7damType="Image"
         dam:s7damWidth="{Long}640"
-        jcr:lastModified="{Date}2014-06-19T13:33:06.290-04:00"
+        jcr:lastModified="{Date}2014-11-01T21:34:59.069-04:00"
         jcr:lastModifiedBy="admin"
         jcr:primaryType="dam:AssetContent">
         <metadata
@@ -34,14 +34,13 @@
             dam:writebackEnable="False"
             dc:format="image/jpeg"
             dc:modified="{Date}2014-06-19T13:33:04.031-04:00"
-            jcr:lastModified="{Date}2014-06-19T13:33:04.031-04:00"
+            jcr:lastModified="{Date}2014-11-01T21:34:54.489-04:00"
             jcr:lastModifiedBy="admin"
             jcr:mixinTypes="[cq:Taggable]"
             jcr:primaryType="nt:unstructured"
             tiff:ImageLength="{Long}853"
             tiff:ImageWidth="{Long}640"
             writebackEnable="{Boolean}true"/>
-        <renditions/>
         <related jcr:primaryType="nt:unstructured"/>
     </jcr:content>
 </jcr:root>

@@ -16,8 +16,7 @@
         dam:s7damWidth="{Long}319"
         jcr:lastModified="{Date}2014-06-19T13:33:08.188-04:00"
         jcr:lastModifiedBy="admin"
-        jcr:primaryType="dam:AssetContent"
-        restored="{Boolean}true">
+        jcr:primaryType="dam:AssetContent">
         <metadata
             dam:Bitsperpixel="{Long}32"
             dam:extracted="{Date}2014-06-19T13:33:04.218-04:00"
@@ -42,7 +41,6 @@
             tiff:ImageLength="{Long}319"
             tiff:ImageWidth="{Long}319"
             writebackEnable="{Boolean}true"/>
-        <renditions/>
         <related jcr:primaryType="nt:unstructured"/>
     </jcr:content>
 </jcr:root>
