@@ -1,0 +1,15 @@
+<js data-sly-use.currentPageHelper="${ 'PageHelper' @ page=currentPage }" data-sly-unwrap>
+    .when('${ resourcePage.path  @ context="uri" }', {
+    	templateUrl: '${ currentPageHelper.relativePathToCurrentResource @ context="uri" }.template.html' + cacheKiller,
+   		<js data-sly-use.resourcePageHelper="${ 'PageHelper' @ page=resourcePage }" data-sly-unwrap>
+    	controller: '${resourcePageHelper.jsFriendlyResourceName}'
+		</js>
+    })
+</js>
+
+<!--/* Invoke for the children of this page */-->
+<js data-sly-list.item='${ resourcePage.listChildren }' data-sly-unwrap>
+   <div data-sly-resource="${ item.path @ selectors='angular-route-fragment.js',
+    		wcmmode='disabled', 
+			resourceType=item.contentResource.sling:resourceType }" data-sly-unwrap></div>
+</js>

@@ -1,0 +1,35 @@
+<head data-sly-use.wcmInit="initwcm.js"
+        data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, width=device-width" />
+
+    <title>${properties.title}</title>
+
+    <!--/* Outputs the WCM initialization code.If WCM mode is disabled nothing is rendered */-->
+    <meta data-sly-test="${!wcmmode.disabled && wcmInit.isTouchAuthoring}" data-sly-call="${clientLib.all @ categories='cq.authoring.page'}" data-sly-unwrap></meta>
+    <meta data-sly-test="${!wcmmode.disabled && !wcmInit.isTouchAuthoring}" data-sly-call="${clientLib.all @ categories='cq.wcm.edit'}" data-sly-unwrap></meta>
+    <script data-sly-test="${!wcmmode.disabled && !wcmInit.isTouchAuthoring}" type="text/javascript">
+        (function() {
+
+            var cfg = ${wcmInit.undoConfig @ context='unsafe'};
+            cfg.pagePath = "${currentPage.path @ context='uri'}";
+
+            if (CQClientLibraryManager.channelCB() != "touch") {
+                cfg.enabled = ${wcmmode.edit @ context="scriptString"};
+                CQ.undo.UndoManager.initialize(cfg);
+                CQ.Ext.onReady(function() {
+                    CQ.undo.UndoManager.detectCachedPage((new Date()).getTime());
+                });
+            }
+        })();
+
+        CQ.WCM.launchSidekick("${currentPage.path @ context='uri'}", {
+            propsDialog: "${wcmInit.dialogPath @ context='uri'}",
+            locked: ${currentPage.locked @ context="scriptString"}
+        });
+    </script>
+    <!--/* WCM initialization code end */-->
+
+    <div data-sly-include="css_clientlibs.html" data-sly-unwrap></div>
+</head>

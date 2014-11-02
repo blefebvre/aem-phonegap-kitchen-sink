@@ -21,6 +21,7 @@
         String libraryDataRootPath = FrameworkContentExporterUtils.getTopLevelAppResource(currentPage.getContentResource()).getPath() + "/library-data";
 
         if (tags.length > 0) {
+
             // Convert tags array to an array of String paths
             String[] tagsIds = new String[tags.length];
             for (int i = 0; i < tags.length; i++) {
@@ -32,9 +33,11 @@
             RangeIterator<Resource> taggedPages = tagManager.find(libraryDataRootPath, tagsIds);
 
             while(taggedPages.hasNext()){
+
                 Resource productPageResource = taggedPages.next();
                 // Get the product represented by this page
                 Product product = getProduct(productPageResource);
+
                 if (product != null) {
                     // Determine the product path
                     Resource productPageTemplateResource = FrameworkContentExporterUtils.getAncestorTemplateResource(productPageResource, NG_TEMPLATE_PAGE_RESOURCE_TYPE);

@@ -21,11 +21,9 @@
             ValueMap vm = carouselPage.getProperties();
             // Only include Angular pages
             Resource currentPageContentResource = carouselPage.getContentResource();
-            // Skip this page if it is not based on ng-page
-            // OR, if this page is an ng-template-page
+            // Skip this page if it is an ng-template-page
             if (currentPageContentResource == null || 
-                    currentPageContentResource.isResourceType(TEMPLATE_PAGE_RESOURCE_TYPE) || 
-                    !currentPageContentResource.isResourceType(FrameworkContentExporterUtils.NG_PAGE_RESOURCE_TYPE)) {
+                    currentPageContentResource.isResourceType(TEMPLATE_PAGE_RESOURCE_TYPE)) {
                 continue;
             }
 

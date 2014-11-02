@@ -1,0 +1,13 @@
+<!--/* Template is only needed when WCMMode is enabled */-->
+<js data-sly-test.authorMode='${ wcmmode.edit || wcmmode.design }' data-sly-unwrap>
+
+    <div class="bar bar-header bar-positive">
+        <a ng-click="back()" class="button icon-left ion-chevron-left button-clear"></a>
+        <h1 class="title">${currentPage.title}</h1>
+    </div>
+    
+    <div class="page-content content has-header">
+        <div data-sly-resource="${ @path='content-par', resourceType='foundation/components/parsys' }" data-sly-unwrap></div>
+    </div>
+
+</js>

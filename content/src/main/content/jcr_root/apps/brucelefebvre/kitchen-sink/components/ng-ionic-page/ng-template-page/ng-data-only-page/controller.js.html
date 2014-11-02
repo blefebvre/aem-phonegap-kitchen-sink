@@ -1,0 +1,22 @@
+<!--/* This controller is only needed when author mode is enabled */-->
+// Controller for page '${resourcePage.name}'
+<js data-sly-use.resourcePageHelper="${ 'PageHelper' @ page=resourcePage }" data-sly-unwrap>
+	.controller('${resourcePageHelper.jsFriendlyResourceName}', ['$scope', '$http',
+	function($scope, $http) {
+
+	<js data-sly-use.currentPageHelper="${ 'PageHelper' @ page=currentPage }" data-sly-unwrap>
+		var data = $http.get('${ currentPageHelper.relativePathToCurrentResource @ context="uri" }.angular.json' + cacheKiller);
+
+	  <js data-sly-list.item='${ resourcePageHelper.allAngularPageComponents }' data-sly-unwrap>
+				<div data-sly-resource="${ item.path @ selectors='controller.js' }" data-sly-unwrap></div>
+			</js>
+		</js>
+	}])
+</js>
+
+<!--/* Invoke for the children of this page */-->
+<js data-sly-list.item='${ resourcePage.listChildren }' data-sly-unwrap>
+   <div data-sly-resource="${ item.path @ selectors='controller.js',
+		wcmmode='disabled', 
+	  resourceType=item.contentResource.sling:resourceType }" data-sly-unwrap></div>
+</js>

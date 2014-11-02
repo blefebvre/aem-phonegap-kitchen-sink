@@ -1,0 +1,31 @@
+<body ng-controller="AppController" 
+    	data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+    <div id="appWrap" ng-controller="AppNavigationController" ng-cloak 
+    		data-sly-use.pageHelper="${ 'PageHelper' @ page=currentPage }">
+
+        <div data-sly-include="header.html" data-sly-unwrap></div>
+
+        <div data-sly-test.authorMode='${ wcmmode.edit || wcmmode.design }'>
+
+            <!--/* Author mode enabled */-->
+            <div ng-controller="${pageHelper.jsFriendlyResourceName}">
+                <div data-sly-include="template.html" data-sly-unwrap></div>
+            </div>
+
+        </div>
+        <div data-sly-test="${!authorMode}">
+
+            <!--/* Authoring disabled */-->
+          	<div ng-view></div>
+
+            <script type="text/javascript" src="${pageHelper.relativePathToRoot}cordova.js"></script>
+
+        </div>
+
+        <div data-sly-include="footer.html" data-sly-unwrap></div>
+    </div>
+
+    <js data-sly-call="${clientLib.js @ categories='angularjs'}" data-sly-unwrap></js>
+    <script src="${currentPage.name}.angular-app-module.js"></script>
+    <div data-sly-include="js_clientlibs.html" data-sly-unwrap></div>
+</body>

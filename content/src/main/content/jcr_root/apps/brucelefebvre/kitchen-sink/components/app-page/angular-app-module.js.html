@@ -1,0 +1,58 @@
+<js data-sly-use.pageHelper="${ 'PageHelper' @ page=currentPage }" data-sly-unwrap>
+;(function (angular, undefined) {
+
+    "use strict";
+
+    // Cache killer is used to ensure we get the very latest content after an app update
+    var cacheKiller = '?ck=' + (new Date().getTime());
+
+    /**
+     * Main app module
+     */
+    angular.module('${properties.applicationName || "AEMAngularApp"}', 
+			<js data-sly-include="angular-module-list.js.html" data-sly-unwrap></js>)
+
+        .controller('AppController', ['$scope', '$rootScope',
+            function ($scope, $rootScope) {
+                <js data-sly-test.authorMode='${ wcmmode.edit || wcmmode.design }' data-sly-unwrap>
+                    <!--/* Author mode is enabled - page is being rendered in AEM */-->
+                    $scope.wcmMode = true;
+				</js>
+        		<js data-sly-test='${!authorMode}' data-sly-unwrap>
+                    <!--/*  Author mode is disabled */-->
+                    $scope.wcmMode = false;
+				</js>
+
+                // Store the server URL into the scope
+                $scope.publishServer = '${pageHelper.serverURL || pageHelper.externalizedPublishUri @ context="uri"}';
+
+                // Store the content package name in the scope
+				$scope.contentPackageName = '${properties["phonegap-contentPackageName"]}';
+            }
+        ])
+        .config(['$routeProvider',
+            function($routeProvider) {
+                $routeProvider
+        			
+                <!--/* Current page */-->
+                <js data-sly-resource="${ currentPage.path @ selectors='angular-route-fragment.js',
+                        wcmmode='disabled', 
+                        resourceType=item.contentResource.sling:resourceType }" data-sly-unwrap></js>
+
+                .otherwise({
+                    redirectTo: '${ currentPage.path @ context="uri" }'
+                });
+            }
+        ]);
+
+	<!--/* Render a route for each page in the app */-->
+    angular.module('cqAppControllers', ['ngRoute'])
+
+	<!--/* Current page */-->
+    <js data-sly-resource="${ currentPage.path @ selectors='controller.js',
+        	wcmmode='disabled', 
+    		resourceType=item.contentResource.sling:resourceType }" data-sly-unwrap></js>
+
+
+}(angular));
+</js>
