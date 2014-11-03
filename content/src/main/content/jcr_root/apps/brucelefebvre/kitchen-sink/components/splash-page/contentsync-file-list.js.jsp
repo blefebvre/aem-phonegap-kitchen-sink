@@ -64,5 +64,9 @@
 "plugins/org.apache.cordova.contacts/www/ios/Contact.js",
 "plugins/org.apache.cordova.contacts/www/ios/contacts.js",
 "plugins/org.apache.cordova.console/www/console-via-logger.js",
-"plugins/org.apache.cordova.console/www/logger.js"
+"plugins/org.apache.cordova.console/www/logger.js",
+"plugins/org.apache.cordova.statusbar/www/statusbar.js",
+"plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
+"plugins/org.apache.cordova.dialogs/www/notification.js",
+"plugins/org.apache.cordova.dialogs/www/android/notification.js"
 ]
