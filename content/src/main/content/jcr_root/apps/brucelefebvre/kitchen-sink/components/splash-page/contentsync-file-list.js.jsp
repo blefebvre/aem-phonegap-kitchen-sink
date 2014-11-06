@@ -68,5 +68,6 @@
 "plugins/org.apache.cordova.statusbar/www/statusbar.js",
 "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
 "plugins/org.apache.cordova.dialogs/www/notification.js",
-"plugins/org.apache.cordova.dialogs/www/android/notification.js"
+"plugins/org.apache.cordova.dialogs/www/android/notification.js",
+"plugins/com.telerik.plugins.nativepagetransitions/www/NativePageTransitions.js"
 ]
