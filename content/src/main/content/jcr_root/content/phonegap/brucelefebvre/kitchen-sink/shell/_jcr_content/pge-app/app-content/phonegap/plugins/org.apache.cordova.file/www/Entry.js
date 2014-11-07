@@ -65,16 +65,13 @@ function Entry(isFile, isDirectory, name, fullPath, fileSystem, nativeURL) {
 Entry.prototype.getMetadata = function(successCallback, errorCallback) {
     argscheck.checkArgs('FF', 'Entry.getMetadata', arguments);
     var success = successCallback && function(entryMetadata) {
-        var metadata = new Metadata({
-            size: entryMetadata.size,
-            modificationTime: entryMetadata.lastModifiedDate
-        });
+        var metadata = new Metadata(entryMetadata);
         successCallback(metadata);
     };
     var fail = errorCallback && function(code) {
         errorCallback(new FileError(code));
     };
-    exec(success, fail, "File", "getFileMetadata", [this.toInternalURL()]);
+    exec(success, fail, "File", "getMetadata", [this.filesystem.__format__(this.fullPath)]);
 };
 
 /**
@@ -89,7 +86,7 @@ Entry.prototype.getMetadata = function(successCallback, errorCallback) {
  */
 Entry.prototype.setMetadata = function(successCallback, errorCallback, metadataObject) {
     argscheck.checkArgs('FFO', 'Entry.setMetadata', arguments);
-    exec(successCallback, errorCallback, "File", "setMetadata", [this.toInternalURL(), metadataObject]);
+    exec(successCallback, errorCallback, "File", "setMetadata", [this.fullPath, metadataObject]);
 };
 
 /**
@@ -109,14 +106,15 @@ Entry.prototype.moveTo = function(parent, newName, successCallback, errorCallbac
     var fail = errorCallback && function(code) {
         errorCallback(new FileError(code));
     };
-    var srcURL = this.toInternalURL(),
+    var fs = this.filesystem // Copy / move op cannot cross filesystems;
+    // source path
+        var srcURL = this.filesystem.__format__(this.fullPath);
         // entry name
         name = newName || this.name,
         success = function(entry) {
             if (entry) {
                 if (successCallback) {
                     // create appropriate Entry object
-                    var fs = entry.filesystemName ? new FileSystem(entry.filesystemName, {name:"", fullPath:"/"}) : this.filesystem;
                     var result = (entry.isDirectory) ? new (require('./DirectoryEntry'))(entry.name, entry.fullPath, fs, entry.nativeURL) : new (require('org.apache.cordova.file.FileEntry'))(entry.name, entry.fullPath, fs, entry.nativeURL);
                     successCallback(result);
                 }
@@ -128,7 +126,7 @@ Entry.prototype.moveTo = function(parent, newName, successCallback, errorCallbac
         };
 
     // copy
-    exec(success, fail, "File", "moveTo", [srcURL, parent.toInternalURL(), name]);
+    exec(success, fail, "File", "moveTo", [srcURL, parent.filesystem.__format__(parent.fullPath), name]);
 };
 
 /**
@@ -148,8 +146,9 @@ Entry.prototype.copyTo = function(parent, newName, successCallback, errorCallbac
     var fail = errorCallback && function(code) {
         errorCallback(new FileError(code));
     };
-    var filesystem = this.filesystem, 
-        srcURL = this.toInternalURL(),
+    var fs = this.filesystem // Copy / move op cannot cross filesystems;
+        // source path
+    var srcURL = this.filesystem.__format__(this.fullPath),
         // entry name
         name = newName || this.name,
         // success callback
@@ -157,7 +156,6 @@ Entry.prototype.copyTo = function(parent, newName, successCallback, errorCallbac
             if (entry) {
                 if (successCallback) {
                     // create appropriate Entry object
-                    var fs = entry.filesystemName ? new FileSystem(entry.filesystemName, {name:"", fullPath:"/"}) : filesystem;
                     var result = (entry.isDirectory) ? new (require('./DirectoryEntry'))(entry.name, entry.fullPath, fs, entry.nativeURL) : new (require('org.apache.cordova.file.FileEntry'))(entry.name, entry.fullPath, fs, entry.nativeURL);
                     successCallback(result);
                 }
@@ -169,42 +167,26 @@ Entry.prototype.copyTo = function(parent, newName, successCallback, errorCallbac
         };
 
     // copy
-    exec(success, fail, "File", "copyTo", [srcURL, parent.toInternalURL(), name]);
-};
-
-/**
- * Return a URL that can be passed across the bridge to identify this entry.
- */
-Entry.prototype.toInternalURL = function() {
-    if (this.filesystem && this.filesystem.__format__) {
-      return this.filesystem.__format__(this.fullPath);
-    }
+    exec(success, fail, "File", "copyTo", [srcURL, parent.filesystem.__format__(parent.fullPath), name]);
 };
 
 /**
  * Return a URL that can be used to identify this entry.
- * Use a URL that can be used to as the src attribute of a <video> or
- * <audio> tag. If that is not possible, construct a cdvfile:// URL.
  */
 Entry.prototype.toURL = function() {
-    if (this.nativeURL) {
-      return this.nativeURL;
+    if (this.filesystem && this.filesystem.__format__) {
+      return this.filesystem.__format__(this.fullPath);
     }
-    // fullPath attribute may contain the full URL in the case that
-    // toInternalURL fails.
-    return this.toInternalURL() || "file://localhost" + this.fullPath;
+    // fullPath attribute contains the full URL
+    return "file://localhost" + this.fullPath;
 };
 
 /**
- * Backwards-compatibility: In v1.0.0 - 1.0.2, .toURL would only return a
- * cdvfile:// URL, and this method was necessary to obtain URLs usable by the
- * webview.
- * See CB-6051, CB-6106, CB-6117, CB-6152, CB-6199, CB-6201, CB-6243, CB-6249,
- * and CB-6300.
+ * Return a URL that can be used to as the src attribute of a <video> or
+ * <audio> tag, in case it is different from the URL returned by .toURL().
  */
 Entry.prototype.toNativeURL = function() {
-    console.log("DEPRECATED: Update your code to use 'toURL'");
-    return this.toURL();
+    return this.nativeURL || this.toURL();
 };
 
 /**
@@ -215,6 +197,7 @@ Entry.prototype.toNativeURL = function() {
  */
 Entry.prototype.toURI = function(mimeType) {
     console.log("DEPRECATED: Update your code to use 'toURL'");
+    // fullPath attribute contains the full URI
     return this.toURL();
 };
 
@@ -231,7 +214,7 @@ Entry.prototype.remove = function(successCallback, errorCallback) {
     var fail = errorCallback && function(code) {
         errorCallback(new FileError(code));
     };
-    exec(successCallback, fail, "File", "remove", [this.toInternalURL()]);
+    exec(successCallback, fail, "File", "remove", [this.filesystem.__format__(this.fullPath)]);
 };
 
 /**
@@ -251,7 +234,7 @@ Entry.prototype.getParent = function(successCallback, errorCallback) {
     var fail = errorCallback && function(code) {
         errorCallback(new FileError(code));
     };
-    exec(win, fail, "File", "getParent", [this.toInternalURL()]);
+    exec(win, fail, "File", "getParent", [this.filesystem.__format__(this.fullPath)]);
 };
 
 module.exports = Entry;

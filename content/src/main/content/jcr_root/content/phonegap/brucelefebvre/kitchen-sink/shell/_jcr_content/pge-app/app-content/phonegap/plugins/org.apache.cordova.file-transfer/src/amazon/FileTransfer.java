@@ -158,8 +158,11 @@ public class FileTransfer extends CordovaPlugin {
             return updateBytesRead(super.read());
         }
 
-        // Note: FilterInputStream delegates read(byte[] bytes) to the below method,
-        // so we don't override it or else double count (CB-5631).
+        @Override
+        public int read(byte[] buffer) throws IOException {
+            return updateBytesRead(super.read(buffer));
+        }
+
         @Override
         public int read(byte[] bytes, int offset, int count) throws IOException {
             return updateBytesRead(super.read(bytes, offset, count));
@@ -315,7 +318,7 @@ public class FileTransfer extends CordovaPlugin {
 
                     // Use a post method.
                     conn.setRequestMethod(httpMethod);
-                    conn.setRequestProperty("Content-Type", "multipart/form-data; boundary=" + BOUNDARY);
+                    conn.setRequestProperty("Content-Type", "multipart/form-data;boundary=" + BOUNDARY);
 
                     // Set the cookies on the response
                     String cookie = AmazonCookieManager.getInstance().getCookie(target);
@@ -582,19 +585,15 @@ public class FileTransfer extends CordovaPlugin {
                     if(err != null)
                     {
                         BufferedReader reader = new BufferedReader(new InputStreamReader(err, "UTF-8"));
-                        try {
-                            String line = reader.readLine();
-                            while(line != null) {
-                                bodyBuilder.append(line);
-                                line = reader.readLine();
-                                if(line != null) {
-                                    bodyBuilder.append('\n');
-                                }
-                            }
-                            body = bodyBuilder.toString();
-                        } finally {
-                            reader.close();
+                        String line = reader.readLine();
+                        while(line != null)
+                        {
+                            bodyBuilder.append(line);
+                            line = reader.readLine();
+                            if(line != null)
+                                bodyBuilder.append('\n');
                         }
+                        body = bodyBuilder.toString();
                     }
                 }
             // IOException can leave connection object in a bad state, so catch all exceptions.
@@ -761,10 +760,8 @@ public class FileTransfer extends CordovaPlugin {
                         if (connection.getContentEncoding() == null || connection.getContentEncoding().equalsIgnoreCase("gzip")) {
                             // Only trust content-length header if we understand
                             // the encoding -- identity or gzip
-                            if (connection.getContentLength() != -1) {
-                                progress.setLengthComputable(true);
-                                progress.setTotal(connection.getContentLength());
-                            }
+                            progress.setLengthComputable(true);
+                            progress.setTotal(connection.getContentLength());
                         }
                         inputStream = getInputStream(connection);
                     }
@@ -797,21 +794,9 @@ public class FileTransfer extends CordovaPlugin {
                     Log.d(LOG_TAG, "Saved file: " + target);
     
                     // create FileEntry object
-                    FileUtils filePlugin = (FileUtils)webView.pluginManager.getPlugin("File");
-                    if (filePlugin != null) {
-                        JSONObject fileEntry = filePlugin.getEntryForFile(file);
-                        if (fileEntry != null) {
-                            result = new PluginResult(PluginResult.Status.OK, fileEntry);
-                        } else {
-                            JSONObject error = createFileTransferError(CONNECTION_ERR, source, target, connection);
-                            Log.e(LOG_TAG, "File plugin cannot represent download path");
-                            result = new PluginResult(PluginResult.Status.IO_EXCEPTION, error);
-                        }
-                    } else {
-                        Log.e(LOG_TAG, "File plugin not found; cannot save downloaded file");
-                        result = new PluginResult(PluginResult.Status.ERROR, "File plugin not found; cannot save downloaded file");
-                    }
-
+                    JSONObject fileEntry = FileUtils.getEntry(file);
+                    
+                    result = new PluginResult(PluginResult.Status.OK, fileEntry);
                 } catch (FileNotFoundException e) {
                     JSONObject error = createFileTransferError(FILE_NOT_FOUND_ERR, source, target, connection);
                     Log.e(LOG_TAG, error.toString(), e);

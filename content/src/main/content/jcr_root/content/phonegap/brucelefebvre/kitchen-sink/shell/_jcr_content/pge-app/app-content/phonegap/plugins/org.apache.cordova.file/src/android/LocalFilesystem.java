@@ -1,21 +1,3 @@
-/*
-       Licensed to the Apache Software Foundation (ASF) under one
-       or more contributor license agreements.  See the NOTICE file
-       distributed with this work for additional information
-       regarding copyright ownership.  The ASF licenses this file
-       to you under the Apache License, Version 2.0 (the
-       "License"); you may not use this file except in compliance
-       with the License.  You may obtain a copy of the License at
-
-         http://www.apache.org/licenses/LICENSE-2.0
-
-       Unless required by applicable law or agreed to in writing,
-       software distributed under the License is distributed on an
-       "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-       KIND, either express or implied.  See the License for the
-       specific language governing permissions and limitations
-       under the License.
- */
 package org.apache.cordova.file;
 
 import java.io.ByteArrayInputStream;
@@ -56,7 +38,7 @@ public class LocalFilesystem extends Filesystem {
         if (questionMark >= 0) {
           path = path.substring(0, questionMark);
         }
-	    if (path.length() > 1 && path.endsWith("/")) {
+	    if (path.endsWith("/")) {
 	      path = path.substring(0, path.length()-1);
 	    }
 	    return path;
@@ -96,7 +78,7 @@ public class LocalFilesystem extends Filesystem {
 	    if (isAbsolutePath) {
 	        rawPath = rawPath.substring(1);
 	    }
-	    ArrayList<String> components = new ArrayList<String>(Arrays.asList(rawPath.split("/+")));
+	    ArrayList<String> components = new ArrayList<String>(Arrays.asList(rawPath.split("/")));
 	    for (int index = 0; index < components.size(); ++index) {
 	        if (components.get(index).equals("..")) {
 	            components.remove(index);
@@ -141,7 +123,19 @@ public class LocalFilesystem extends Filesystem {
           throw new IOException();
       }
       try {
-          return LocalFilesystem.makeEntryForURL(inputURL, fp.isDirectory(),  Uri.fromFile(fp).toString());
+    	  JSONObject entry = new JSONObject();
+    	  entry.put("isFile", fp.isFile());
+    	  entry.put("isDirectory", fp.isDirectory());
+    	  entry.put("name", fp.getName());
+    	  entry.put("fullPath", inputURL.fullPath);
+    	  // The file system can't be specified, as it would lead to an infinite loop.
+    	  // But we can specify the name of the FS, and the rest can be reconstructed
+    	  // in JS.
+    	  entry.put("filesystemName", inputURL.filesystemName);
+    	  // Backwards compatibility
+    	  entry.put("filesystem", "temporary".equals(name) ? 0 : 1);
+    	  entry.put("nativeURL", Uri.fromFile(fp).toString());
+          return entry;
       } catch (JSONException e) {
     	  throw new IOException();
       }

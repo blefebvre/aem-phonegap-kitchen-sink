@@ -29,15 +29,12 @@ This plugin allows you to upload and download files.
 
 - Amazon Fire OS
 - Android
-- BlackBerry 10
-- Firefox OS**
+- BlackBerry 10*
 - iOS
 - Windows Phone 7 and 8*
 - Windows 8*
 
 \* _Do not support `onprogress` nor `abort()`_
-
-\** _Do not support `onprogress`_
 
 # FileTransfer
 
@@ -61,13 +58,15 @@ multi-part POST request, and to download files as well.
 
 __Parameters__:
 
-- __fileURL__: Filesystem URL representing the file on the device. For backwards compatibility, this can also be the full path of the file on the device. (See [Backwards Compatibility Notes] below)
+- __filePath__: Full path of the file on the device.
 
 - __server__: URL of the server to receive the file, as encoded by `encodeURI()`.
 
 - __successCallback__: A callback that is passed a `Metadata` object. _(Function)_
 
 - __errorCallback__: A callback that executes if an error occurs retrieving the `Metadata`. Invoked with a `FileTransferError` object. _(Function)_
+
+- __trustAllHosts__: Optional parameter, defaults to `false`. If set to `true`, it accepts all security certificates. This is useful since Android rejects self-signed security certificates. Not recommended for production use. Supported on Android and iOS. _(boolean)_
 
 - __options__: Optional parameters _(Object)_. Valid keys:
   - __fileKey__: The name of the form element.  Defaults to `file`. (DOMString)
@@ -76,13 +75,10 @@ __Parameters__:
   - __params__: A set of optional key/value pairs to pass in the HTTP request. (Object)
   - __chunkedMode__: Whether to upload the data in chunked streaming mode. Defaults to `true`. (Boolean)
   - __headers__: A map of header name/header values. Use an array to specify more than one value. (Object)
-  
-- __trustAllHosts__: Optional parameter, defaults to `false`. If set to `true`, it accepts all security certificates. This is useful since Android rejects self-signed security certificates. Not recommended for production use. Supported on Android and iOS. _(boolean)_
 
 ### Example
 
-    // !! Assumes variable fileURL contains a valid URL to a text file on the device,
-    //    for example, cdvfile://localhost/persistent/path/to/file.txt
+    // !! Assumes variable fileURI contains a valid URI to a text file on the device
 
     var win = function (r) {
         console.log("Code = " + r.responseCode);
@@ -98,7 +94,7 @@ __Parameters__:
 
     var options = new FileUploadOptions();
     options.fileKey = "file";
-    options.fileName = fileURL.substr(fileURL.lastIndexOf('/') + 1);
+    options.fileName = fileURI.substr(fileURI.lastIndexOf('/') + 1);
     options.mimeType = "text/plain";
 
     var params = {};
@@ -108,7 +104,7 @@ __Parameters__:
     options.params = params;
 
     var ft = new FileTransfer();
-    ft.upload(fileURL, encodeURI("http://some.server.com/upload.php"), win, fail, options);
+    ft.upload(fileURI, encodeURI("http://some.server.com/upload.php"), win, fail, options);
 
 ### Example with Upload Headers and Progress Events (Android and iOS only)
 
@@ -128,7 +124,7 @@ __Parameters__:
 
     var options = new FileUploadOptions();
     options.fileKey="file";
-    options.fileName=fileURL.substr(fileURL.lastIndexOf('/')+1);
+    options.fileName=fileURI.substr(fileURI.lastIndexOf('/')+1);
     options.mimeType="text/plain";
 
     var headers={'headerParam':'headerValue'};
@@ -143,7 +139,7 @@ __Parameters__:
           loadingStatus.increment();
         }
     };
-    ft.upload(fileURL, uri, win, fail, options);
+    ft.upload(fileURI, uri, win, fail, options);
 
 ## FileUploadResult
 
@@ -158,9 +154,6 @@ A `FileUploadResult` object is passed to the success callback of the
 
 - __response__: The HTTP response returned by the server. (DOMString)
 
-- __headers__: The HTTP response headers by the server. (Object)
-  - Currently supported on iOS only.
-
 ### iOS Quirks
 
 - Does not support `responseCode` or `bytesSent`.
@@ -172,7 +165,7 @@ __Parameters__:
 
 - __source__: URL of the server to download the file, as encoded by `encodeURI()`.
 
-- __target__: Filesystem url representing the file on the device. For backwards compatibility, this can also be the full path of the file on the device. (See [Backwards Compatibility Notes] below)
+- __target__: Full path of the file on the device.
 
 - __successCallback__: A callback that is passed  a `FileEntry` object. _(Function)_
 
@@ -184,17 +177,16 @@ __Parameters__:
 
 ### Example
 
-    // !! Assumes variable fileURL contains a valid URL to a path on the device,
-    //    for example, cdvfile://localhost/persistent/path/to/downloads/
+    // !! Assumes filePath is a valid path on the device
 
     var fileTransfer = new FileTransfer();
     var uri = encodeURI("http://some.server.com/download.php");
 
     fileTransfer.download(
         uri,
-        fileURL,
+        filePath,
         function(entry) {
-            console.log("download complete: " + entry.toURL());
+            console.log("download complete: " + entry.fullPath);
         },
         function(error) {
             console.log("download error source " + error.source);
@@ -215,8 +207,7 @@ Aborts an in-progress transfer. The onerror callback is passed a FileTransferErr
 
 ### Example
 
-    // !! Assumes variable fileURL contains a valid URL to a text file on the device,
-    //    for example, cdvfile://localhost/persistent/path/to/file.txt
+    // !! Assumes variable fileURI contains a valid URI to a text file on the device
 
     var win = function(r) {
         console.log("Should not be called.");
@@ -235,7 +226,7 @@ Aborts an in-progress transfer. The onerror callback is passed a FileTransferErr
     options.mimeType="image/jpeg";
 
     var ft = new FileTransfer();
-    ft.upload(fileURL, encodeURI("http://some.server.com/upload.php"), win, fail, options);
+    ft.upload(fileURI, encodeURI("http://some.server.com/upload.php"), win, fail, options);
     ft.abort();
 
 
@@ -247,36 +238,16 @@ A `FileTransferError` object is passed to an error callback when an error occurs
 
 - __code__: One of the predefined error codes listed below. (Number)
 
-- __source__: URL to the source. (String)
+- __source__: URI to the source. (String)
 
-- __target__: URL to the target. (String)
+- __target__: URI to the target. (String)
 
 - __http_status__: HTTP status code.  This attribute is only available when a response code is received from the HTTP connection. (Number)
-- __exception__: Either e.getMessage or e.toString (String)
 
 ### Constants
 
-- 1 = `FileTransferError.FILE_NOT_FOUND_ERR`
-- 2 = `FileTransferError.INVALID_URL_ERR`
-- 3 = `FileTransferError.CONNECTION_ERR`
-- 4 = `FileTransferError.ABORT_ERR`
-- 5 = `FileTransferError.NOT_MODIFIED_ERR`
+- `FileTransferError.FILE_NOT_FOUND_ERR`
+- `FileTransferError.INVALID_URL_ERR`
+- `FileTransferError.CONNECTION_ERR`
+- `FileTransferError.ABORT_ERR`
 
-## Backwards Compatibility Notes
-
-Previous versions of this plugin would only accept device-absolute-file-paths as the source for uploads, or as the target for downloads. These paths would typically be of the form
-
-    /var/mobile/Applications/<application UUID>/Documents/path/to/file  (iOS)
-    /storage/emulated/0/path/to/file                                    (Android)
-
-For backwards compatibility, these paths are still accepted, and if your application has recorded paths like these in persistent storage, then they can continue to be used.
-
-These paths were previously exposed in the `fullPath` property of `FileEntry` and `DirectoryEntry` objects returned by the File plugin. New versions of the File plugin, however, no longer expose these paths to JavaScript.
-
-If you are upgrading to a new (1.0.0 or newer) version of File, and you have previously been using `entry.fullPath` as arguments to `download()` or `upload()`, then you will need to change your code to use filesystem URLs instead.
-
-`FileEntry.toURL()` and `DirectoryEntry.toURL()` return a filesystem URL of the form
-
-    cdvfile://localhost/persistent/path/to/file
-
-which can be used in place of the absolute file path in both `download()` and `upload()` methods.

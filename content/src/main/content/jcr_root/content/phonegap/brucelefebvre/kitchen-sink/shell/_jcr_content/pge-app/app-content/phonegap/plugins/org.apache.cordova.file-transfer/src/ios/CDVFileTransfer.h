@@ -19,7 +19,6 @@
 
 #import <Foundation/Foundation.h>
 #import <Cordova/CDVPlugin.h>
-#import "CDVFile.h"
 
 enum CDVFileTransferError {
     FILE_NOT_FOUND_ERR = 1,
@@ -53,8 +52,8 @@ extern NSString* const kOptionsKeyCookie;
                                       AndTarget:(NSString*)target
                                   AndHttpStatus:(int)httpStatus
                                         AndBody:(NSString*)body;
-@property (nonatomic, strong) NSOperationQueue* queue;
 @property (readonly) NSMutableDictionary* activeTransfers;
+@property (nonatomic, assign) UIBackgroundTaskIdentifier backgroundTaskID;
 @end
 
 @class CDVFileTransferEntityLengthRequest;
@@ -65,8 +64,6 @@ extern NSString* const kOptionsKeyCookie;
 - (void)cancelTransfer:(NSURLConnection*)connection;
 
 @property (strong) NSMutableData* responseData; // atomic
-@property (nonatomic, strong) NSDictionary* responseHeaders;
-@property (nonatomic, assign) UIBackgroundTaskIdentifier backgroundTaskID;
 @property (nonatomic, strong) CDVFileTransfer* command;
 @property (nonatomic, assign) CDVFileTransferDirection direction;
 @property (nonatomic, strong) NSURLConnection* connection;
@@ -82,6 +79,5 @@ extern NSString* const kOptionsKeyCookie;
 @property (nonatomic, assign) BOOL trustAllHosts;
 @property (strong) NSFileHandle* targetFileHandle;
 @property (nonatomic, strong) CDVFileTransferEntityLengthRequest* entityLengthRequest;
-@property (nonatomic, strong) CDVFile *filePlugin;
 
-@end
+@end;
