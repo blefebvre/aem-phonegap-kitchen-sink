@@ -1,9 +1,9 @@
 // Controller for page '${resourcePage.name}'
-<js data-sly-use.resourcePageHelper="${ 'PageHelper' @ page=resourcePage }" data-sly-unwrap>
+<js data-sly-use.resourcePageHelper="${ 'com.brucelefebvre.wcm.PageHelper' @ page=resourcePage }" data-sly-unwrap>
     .controller('${resourcePageHelper.jsFriendlyResourceName}', ['$scope', '$http',
     function($scope, $http) {
 
-		<js data-sly-use.currentPageHelper="${ 'PageHelper' @ page=currentPage }" data-sly-unwrap>
+		<js data-sly-use.currentPageHelper="${ 'com.brucelefebvre.wcm.PageHelper' @ page=currentPage }" data-sly-unwrap>
         var data = $http.get('${ currentPageHelper.relativePathToCurrentResource @ context="uri" }.angular.json' + cacheKiller);
 
 			<js data-sly-list.item='${ resourcePageHelper.allAngularPageComponents }' data-sly-unwrap>

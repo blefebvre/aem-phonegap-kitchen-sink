@@ -1,12 +1,12 @@
 // Controller for page '${resourcePage.name}'
-<js data-sly-use.resourcePageHelper="${ 'PageHelper' @ page=resourcePage }" data-sly-unwrap>
+<js data-sly-use.resourcePageHelper="${ 'com.brucelefebvre.wcm.PageHelper' @ page=resourcePage }" data-sly-unwrap>
 	.controller('${resourcePageHelper.jsFriendlyResourceName}', ['$scope', '$http', '$routeParams',
 	function($scope, $http, $routeParams) {
 		var skuPrefix = $routeParams.skuPrefix;
 		var name = $routeParams.name;
 		var productPath = '/' + skuPrefix + '/' + name;
 
-		<js data-sly-use.currentPageHelper="${ 'PageHelper' @ page=currentPage }" data-sly-unwrap>
+		<js data-sly-use.currentPageHelper="${ 'com.brucelefebvre.wcm.PageHelper' @ page=currentPage }" data-sly-unwrap>
 		var data = $http.get('${ currentPageHelper.relativePathToCurrentResource @ context="uri" }' + productPath + '.angular.json' + cacheKiller);
 		</js>
 

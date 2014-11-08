@@ -1,7 +1,7 @@
-<js data-sly-use.currentPageHelper="${ 'PageHelper' @ page=currentPage }" data-sly-unwrap>
+<js data-sly-use.currentPageHelper="${ 'com.brucelefebvre.wcm.PageHelper' @ page=currentPage }" data-sly-unwrap>
     .when('${ resourcePage.path  @ context="uri" }/:skuPrefix/:name', {
       templateUrl: '${ currentPageHelper.relativePathToCurrentResource @ context="uri" }.template.html' + cacheKiller,
-      <js data-sly-use.resourcePageHelper="${ 'PageHelper' @ page=resourcePage }" data-sly-unwrap>
+      <js data-sly-use.resourcePageHelper="${ 'com.brucelefebvre.wcm.PageHelper' @ page=resourcePage }" data-sly-unwrap>
       controller: '${resourcePageHelper.jsFriendlyResourceName}'
     </js>
     })

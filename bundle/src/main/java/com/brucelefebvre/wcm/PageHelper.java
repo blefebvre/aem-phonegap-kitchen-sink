@@ -1,4 +1,4 @@
-package apps.brucelefebvre.kitchen_sink.components.app_page;
+package com.brucelefebvre.wcm;
   
 import com.adobe.cq.sightly.WCMUse;
 import com.adobe.cq.mobile.angular.data.util.FrameworkContentExporterUtils;
