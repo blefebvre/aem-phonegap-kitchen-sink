@@ -1,3 +1,1 @@
-#base=js
 
-initialize-app.js

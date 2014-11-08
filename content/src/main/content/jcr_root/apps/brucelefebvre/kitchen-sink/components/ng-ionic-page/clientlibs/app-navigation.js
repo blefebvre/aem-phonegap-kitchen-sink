@@ -15,17 +15,18 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe Systems Incorporated.
  **************************************************************************/
-;(function (angular, undefined) {
+;(function (angular, contentUpdate, undefined) {
 
     "use strict";
 
     /**
      * Module to handle general navigation in the app
      */
-    angular.module('cqAppNavigation', ['cqContentSyncUpdate'])
-        .controller('AppNavigationController', ['$scope', '$window', '$location', '$timeout', 'cqContentSyncUpdate',
-            function ($scope, $window, $location, $timeout, cqContentSyncUpdate) {
+    angular.module('cqAppNavigation', [])
+        .controller('AppNavigationController', ['$scope', '$window', '$location', '$timeout',
+            function ($scope, $window, $location, $timeout) {
                 $scope.transition = '';
+                var contentUpdater = contentUpdate();
 
                 /**
                  * Handle back button
@@ -86,7 +87,48 @@
                  * Trigger an app update
                  */
                 $scope.updateApp = function() {
-                    // TODO
+                    // If update is in progress, NOOP
+                    if($scope.updating) return;
+
+                    // Check if an update is available
+                    contentUpdater.isContentPackageUpdateAvailable($scope.contentPackageName,
+                        function callback(error, isUpdateAvailable) {
+                            if (error) {
+                                // Alert the error details.
+                                return navigator.notification.alert(error, null, 'ContentSync Error');
+                            }
+
+                            if (isUpdateAvailable) {
+                                // Confirm if the user would like to update now 
+                                navigator.notification.confirm('Update is available, would you like to install it now?', 
+                                    function onConfirm(buttonIndex) {
+                                        if (buttonIndex == 1) {
+                                            // user selected 'Update'                                           
+                                            $scope.updating = true;
+                                            contentUpdater.updateContentPackageByName($scope.contentPackageName,
+                                                function callback(error, pathToContent) {
+                                                    if (error) {
+                                                        return navigator.notification.alert(error, null, 'Error');
+                                                    }
+                                                    // else 
+                                                    console.log('Update complete; reloading app.');
+                                                    window.location.reload( true );
+                                                });
+                                        }
+                                        else {
+                                            // user selected Later
+                                            // no-op
+                                        }
+                                    }, 
+                                    'ContentSync Update',       // title
+                                    ['Update', 'Later'] // button labels
+                                );
+                            }
+                            else {
+                                navigator.notification.alert('App is up to date.', null, 'ContentSync Update', 'Done');
+                            }
+                        }
+                    );
                 };
 
                 /**
@@ -159,4 +201,4 @@
                 }
             }
         ]);
-})(angular);
+})(angular, CQ.mobile.contentUpdate);
