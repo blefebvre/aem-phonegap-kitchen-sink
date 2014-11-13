@@ -1,6 +1,8 @@
 AEM Apps Kitchen Sink
 =====================
 
+:new: Note that the requirements have changed as of November 2014. If you do not have the Apps featurepack installed, please use the `release/6.0` branch.
+
 A PhoneGap API showcase app managed in AEM.
 
 What is this?
