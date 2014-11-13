@@ -3,5 +3,5 @@
     jcr:primaryType="nt:unstructured"
     autoCreateFirstUpdateBeforeImport="{Boolean}true"
     autoFillBeforeImport="{Boolean}false"
-    path="/content/phonegap/brucelefebvre/kitchen-sink/en/jcr:content/pge-app/app-config"
+    path="/content/phonegap/kitchen-sink/shell/jcr:content/pge-app/app-config"
     type="contentsyncconfigcontent"/>

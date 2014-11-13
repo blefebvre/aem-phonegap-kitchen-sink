@@ -6,10 +6,10 @@
     </description>
 
     <author href="http://brucelefebvre.com/">
-        Bruce
+        Bruce Lefebvre
     </author>
 
-    <content src="content/phonegap/brucelefebvre/kitchen-sink/en.html" />
+    <content src="content/phonegap/kitchen-sink/en.html" />
 
     <preference name="phonegap-version" value="3.6.3" />
 

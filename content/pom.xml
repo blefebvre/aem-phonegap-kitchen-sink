@@ -12,7 +12,7 @@
 
     <artifactId>phonegap-kitchen-sink-content</artifactId>
     <packaging>content-package</packaging>
-    <name>PhoneGap Kitchen Sink Content</name>
+    <name>PhoneGap Kitchen Sink - Content</name>
 
     <prerequisites>
         <maven>3.0.2</maven>

@@ -17,7 +17,7 @@
 
     <artifactId>phonegap-kitchen-sink-bundle</artifactId>
     <packaging>bundle</packaging>
-    <name>PhoneGap Kitchen Sink Bundle</name>
+    <name>PhoneGap Kitchen Sink - Bundle</name>
 
     <dependencies>
         <dependency>

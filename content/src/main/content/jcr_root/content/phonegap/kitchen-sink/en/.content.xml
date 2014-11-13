@@ -9,7 +9,7 @@
         jcr:title="Kitchen Sink English"
         sling:resourceType="brucelefebvre/kitchen-sink/components/splash-page"
         pge-type="[app-content]"
-        phonegap-exportTemplate="/content/phonegap/brucelefebvre/kitchen-sink/en/jcr:content/pge-app/app-config">
+        phonegap-exportTemplate="/content/phonegap/kitchen-sink/en/jcr:content/pge-app/app-config">
         <pge-app jcr:primaryType="nt:unstructured">
             <app-config/>
             <app-config-dev/>
