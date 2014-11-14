@@ -1,13 +1,13 @@
 <body ng-controller="AppController" 
-    	data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
+        data-sly-use.clientLib="${'/libs/granite/sightly/templates/clientlib.html'}">
     <div id="appWrap" ng-controller="AppNavigationController" ng-cloak 
-    		data-sly-use.pageHelper="${ 'com.brucelefebvre.wcm.PageHelper' @ page=currentPage }">
+            data-sly-use.pageHelper="${ 'com.brucelefebvre.wcm.PageHelper' @ page=currentPage }">
 
-    	<div snap-drawer>
-			<section data-sly-include="menu.jsp" data-sly-unwrap></section>
+        <div snap-drawer>
+            <section data-sly-include="menu.jsp" data-sly-unwrap></section>
         </div>
 
-		<div snap-content snap-options="{disable: 'right'}">
+        <div snap-content snap-options="{disable: 'right'}">
             <div data-sly-test.authorMode='${ wcmmode.edit || wcmmode.design }'>
     
                 <!--/* Author mode enabled */-->
@@ -18,13 +18,13 @@
             </div>
             <div data-sly-test="${!authorMode}">
 
-            	<!--/* Authoring disabled */-->
-            	<div ng-view></div>
+                <!--/* Authoring disabled */-->
+                <div ng-view></div>
 
                 <script type="text/javascript" src="${pageHelper.relativePathToRoot}cordova.js"></script>
 
             </div>
-   		</div>
+        </div>
 
         <div data-sly-include="footer.html" data-sly-unwrap></div>
     </div>
