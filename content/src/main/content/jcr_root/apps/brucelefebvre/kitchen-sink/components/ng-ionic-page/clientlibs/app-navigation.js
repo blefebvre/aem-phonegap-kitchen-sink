@@ -80,6 +80,9 @@
                  * Toggle the menu
                  */
                 $scope.toggleMenu = function() {
+                    if( window.ADB && !$scope.navigationMenuStatus ) {
+                        ADB.trackState( 'menu', {} );
+                    }
                     $scope.navigationMenuStatus = !$scope.navigationMenuStatus;
                 };
 
