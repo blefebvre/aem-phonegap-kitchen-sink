@@ -1,1 +1,4 @@
+#base=js
 
+shake.js
+shake-for-the-future.js

@@ -55,6 +55,8 @@
     <gap:plugin name="org.apache.cordova.inappbrowser" version="0.5.2" />
     <gap:plugin name="com.telerik.plugins.nativepagetransitions" version="0.2.0" />
     <gap:plugin name="org.apache.cordova.device" version="0.2.12" />
+    <gap:plugin name="org.apache.cordova.device-motion" version="0.2.10" />
+    <gap:plugin name="org.apache.cordova.media" version="0.2.13" />
 
     <!-- Platforms -->
     <gap:platform name="ios" />

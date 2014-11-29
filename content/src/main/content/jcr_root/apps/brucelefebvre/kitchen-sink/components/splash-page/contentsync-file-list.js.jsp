@@ -69,5 +69,9 @@
 "plugins/org.apache.cordova.dialogs/www/android/notification.js",
 "plugins/com.telerik.plugins.nativepagetransitions/www/NativePageTransitions.js",
 "plugins/org.apache.cordova.device/www/device.js",
-"plugins/ADBMobile/sdks/Cordova/ADBMobile/Shared/ADBHelper.js"
+"plugins/ADBMobile/sdks/Cordova/ADBMobile/Shared/ADBHelper.js",
+"plugins/org.apache.cordova.device-motion/www/Acceleration.js",
+"plugins/org.apache.cordova.device-motion/www/accelerometer.js",
+"plugins/org.apache.cordova.media/www/Media.js",
+"plugins/org.apache.cordova.media/www/MediaError.js"
 ]
