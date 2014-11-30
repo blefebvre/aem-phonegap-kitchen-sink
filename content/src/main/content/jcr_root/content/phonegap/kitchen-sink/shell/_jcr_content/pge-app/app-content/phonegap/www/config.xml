@@ -65,6 +65,9 @@
 
     <!-- Access whitelist -->
     <access origin="*" />
+    
+    <!-- General icon -->
+    <icon src="icon.png" />
 
     <!-- iOS icons -->
     <platform name="ios">
