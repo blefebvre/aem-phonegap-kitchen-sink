@@ -67,3 +67,8 @@ The CRX host and port can be specified on the command line with:
     mvn -Dcrx.host=otherhost -Dcrx.port=5502 <goals>
 
 
+Credits
+-------
+
+- Compass designed by <a href="https://twitter.com/jay_proulx">Jay Proulx</a>
+- Sink (app icon) designed by <a href="http://www.thenounproject.com/ArtZ91">Arthur Shlain</a> from the <a href="http://www.thenounproject.com">Noun Project</a>

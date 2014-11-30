@@ -66,4 +66,16 @@
     <!-- Access whitelist -->
     <access origin="*" />
 
+    <!-- iOS icons -->
+    <platform name="ios">
+        <!-- iPhone retina  -->
+        <icon src="res/ios/icon-60@2x.png" width="120" height="120" />
+
+        <!-- iPhone 6+  -->
+        <icon src="res/ios/icon-60@3x.png" width="180" height="180" />
+
+        <!-- iPad & mini -->
+        <icon src="res/ios/icon-76@2x.png" width="152" height="152" />
+     </platform>
+
 </widget>
