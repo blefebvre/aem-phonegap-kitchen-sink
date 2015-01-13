@@ -10,6 +10,12 @@
         sling:resourceType="brucelefebvre/kitchen-sink/components/splash-page"
         pge-type="[app-content]"
         phonegap-exportTemplate="/content/phonegap/kitchen-sink/en/jcr:content/pge-app/app-config">
+        <image
+            jcr:lastModified="{Date}2014-09-04T16:49:51.263-04:00"
+            jcr:lastModifiedBy="admin"
+            jcr:primaryType="nt:unstructured"
+            fileReference="/content/dam/brucelefebvre/kitchen-sink/thumbnail.png"
+            imageRotate="0"/>
         <pge-app jcr:primaryType="nt:unstructured">
             <app-config/>
             <app-config-dev/>
