@@ -20,6 +20,7 @@
             imageRotate="0"/>
         <pge-app jcr:primaryType="nt:unstructured">
             <app-content jcr:primaryType="nt:unstructured">
+                <images/>
                 <phonegap/>
             </app-content>
             <app-config/>
