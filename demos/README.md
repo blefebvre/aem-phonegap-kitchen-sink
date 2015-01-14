@@ -8,17 +8,17 @@ Rollout changes to library items
 --------------------------------
 
 - Upload updated .csv
-    - In the AEM [Products console](http://localhost:4502/aem/products.html/etc/commerce/products/kitchen_sink), click upload
+    - In the AEM [Products console](http://localhost:4502/aem/products.html/etc/commerce/products/kitchen_sink), click import products
     - Select [kitchen-sink-books-update.csv](blob/master/content/src/main/content/jcr_root/etc/commerce/products/kitchen-sink-books-update.csv) and click next
     - 1 product should be updated. Click Done when complete
 
 - Activate products
     - From the [Products console](http://localhost:4502/aem/products.html/etc/commerce/products/kitchen_sink), navigate into the 'bl' folder
-    - select the 'blbk' folder and publish it
+    - select the 'blbk' folder, Select publish -> publish.
     - Click the Publish button on the Assets view to continue
 
 - Rollout changes
-    - From the [Catalogs console](http://localhost:4502/aem/catalogs.html/content/catalogs/kitchen-sink), select 'Base Catalog' and click 'Rollout Changes'
+    - From the [Catalogs console](http://localhost:4502/aem/catalogs.html/content/catalogs/kitchen-sink), Click on the select button. Select 'Base Catalog' and click 'Rollout Changes'
     - Click 'Rollout Changes' button to complete the rollout
 
 - Activate app

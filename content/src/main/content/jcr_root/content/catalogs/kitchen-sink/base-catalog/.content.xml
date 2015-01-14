@@ -26,7 +26,7 @@
             basePath="/etc/commerce/products/kitchen_sink"/>
         <cq:CatalogSyncConfig jcr:primaryType="cq:CatalogSyncConfig">
             <catalog
-                cq:catalogPath="/content/phonegap/brucelefebvre/apps/kitchen-sink/en/home"
+                cq:catalogPath="/content/phonegap/kitchen-sink/en/home"
                 cq:rolloutConfigs="[/etc/msm/rolloutconfigs/catalogpagecontent,/etc/msm/rolloutconfigs/catalogrollouthooks]"
                 jcr:primaryType="nt:unstructured"/>
         </cq:CatalogSyncConfig>
