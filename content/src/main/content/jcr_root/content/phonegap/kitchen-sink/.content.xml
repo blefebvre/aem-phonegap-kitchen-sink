@@ -11,7 +11,7 @@
         sling:redirectStatus="{Long}302"
         sling:resourceType="foundation/components/redirect"
         pge-type="[app-group]"
-        redirectTarget="/content/phonegap/brucelefebvre/apps/kitchen-sink/en/home">
+        redirectTarget="/content/phonegap/kitchen-sink/en/home">
         <image
             jcr:lastModified="{Date}2013-11-08T22:47:39.166Z"
             jcr:lastModifiedBy="admin"
