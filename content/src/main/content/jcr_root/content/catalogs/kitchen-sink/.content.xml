@@ -9,5 +9,5 @@
         jcr:language="en_US"
         jcr:primaryType="nt:unstructured"
         jcr:title="Kitchen Sink"
-        coverUrl="/content/dam/geometrixx-outdoors/geometrixx-outdoors"/>
+        coverUrl="/content/phonegap/kitchen-sink/shell/_jcr_content/pge-app/app-content/images/www/icon.png"/>
 </jcr:root>

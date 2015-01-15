@@ -14,20 +14,21 @@ Rollout changes to library items
 
 - Activate products
     - From the [Products console](http://localhost:4502/aem/products.html/etc/commerce/products/kitchen_sink), navigate into the 'bl' folder
-    - select the 'blbk' folder, Select publish -> publish.
+    - Select the 'blbk' folder, Select publish -> publish.
     - Click the Publish button on the Assets view to continue
 
 - Rollout changes
     - From the [Catalogs console](http://localhost:4502/aem/catalogs.html/content/catalogs/kitchen-sink), Click on the select button. Select 'Base Catalog' and click 'Rollout Changes'
     - Click 'Rollout Changes' button to complete the rollout
 
-- Activate app
-    - From the [Apps console](http://localhost:4502/aem/apps.html/content/phonegap/brucelefebvre/apps/kitchen-sink), select the 'English' page and click 'Activate All App Pages'
+- Create Content Sync Update
+    - Navigate to the [Apps Command Center](http://localhost:4502/libs/mobileapps/admin/content/dashboard.html/content/phonegap/kitchen-sink/shell)
+    - From the Content Sync Packages tile click on [Kitchen Sync English](http://localhost:4502/libs/mobileapps/admin/content/dashboard/updatepackages/updates.html/content/phonegap/kitchen-sink/en)
+    - From the menu located on the top right, click on the down arrow to expose the menu options, click and select Stage Update.
+    - Enter a brief title and description and click Done.  Upon success, click Close to dismiss the dialog.
+    - From the menu located on the top right, click on the down arrow to expose the menu options, click and select Publish Update.
 
-- Content sync update
-    - on Publish (you must be logged in via crx/de) [content sync console](http://localhost:4503/libs/cq/contentsync/content/console.html), click 'Update Cache'
-
-- On the app, open up the menu and tap 'Update'
+- From the app, open up the menu and tap 'Update'
     - the Design Patterns library item should have an updated title (or any other updates you specified in the updated .csv)
 
 
