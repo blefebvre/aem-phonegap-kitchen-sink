@@ -4,3 +4,4 @@ target/
 *.iml
 .vlt
 *.jar
+node_modules/

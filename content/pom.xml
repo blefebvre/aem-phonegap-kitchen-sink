@@ -99,6 +99,24 @@
                     <targetURL>http://${crx.host}:${crx.port}/crx/packmgr/service.jsp</targetURL>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>com.kelveden</groupId>
+                <artifactId>maven-karma-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <karmaExecutable>${basedir}/../node_modules/karma/bin/karma</karmaExecutable>
+                    <configFile>app.conf.js</configFile>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
     <profiles>
