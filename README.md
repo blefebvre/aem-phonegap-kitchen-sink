@@ -36,10 +36,6 @@ Install the testing dependencies with `npm`:
 
 	npm install
 
-You will also need the karma-cli installed in order to run tests:
-
-	npm install -g karma-cli
-
 To run the Jasmine tests with Karma, use maven:
 
 	mvn test
