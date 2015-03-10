@@ -27,12 +27,32 @@ Requirements
 - (Android only) [Android SDK](https://developer.android.com/sdk/index.html)
 
 
+Testing
+-------
+
+Download [PhantomJS](http://phantomjs.org/download.html) and add it to your path.
+
+Install the testing dependencies with `npm`:
+
+	npm install
+
+To run the Jasmine tests with Karma, use maven:
+
+	mvn test
+
+
 Building
 --------
 
 This project uses Maven for building and installation to AEM. Common commands:
 
-From the project directory, run ``mvn -PautoInstallPackage clean install`` to build the bundle and content package and install to a AEM instance.
+From the project directory, run:
+
+	mvn -PautoInstallPackage clean install 
+
+..to build the bundle and content package and install to a AEM instance.
+
+Don't have the required testing tools installed? You can skip the tests with ``mvn -PautoInstallPackage clean install -DskipTests``
 
 
 Viewing and editing app pages
