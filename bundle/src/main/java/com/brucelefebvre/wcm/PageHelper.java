@@ -2,6 +2,7 @@ package com.brucelefebvre.wcm;
   
 import com.adobe.cq.sightly.WCMUse;
 import com.adobe.cq.mobile.angular.data.util.FrameworkContentExporterUtils;
+import com.adobe.cq.mobile.platform.MobileResourceLocator;
 import org.apache.sling.api.resource.Resource;
 import com.day.cq.wcm.api.Page;
 import com.day.cq.commons.Externalizer;
@@ -15,6 +16,7 @@ public class PageHelper extends WCMUse {
     Resource imageResource;
     String imageSrc;
     Page page;
+    MobileResourceLocator locator;
 
     @Override
     public void activate() throws Exception {
@@ -22,6 +24,7 @@ public class PageHelper extends WCMUse {
         topLevelAppResource = FrameworkContentExporterUtils.getTopLevelAppResource(page.adaptTo(Resource.class));
         appExport = Boolean.parseBoolean(getRequest().getParameter("appExport"));
         imageResource = page.getContentResource("image");
+        locator = resource.getResourceResolver().adaptTo(MobileResourceLocator.class);
     }
 
     public String getRelPathToPageImage() {
@@ -68,4 +71,6 @@ public class PageHelper extends WCMUse {
     public boolean isTopLevelAppResource() {
         return FrameworkContentExporterUtils.isTopLevelAppResource(page.adaptTo(Resource.class));
     }
+
+
 }

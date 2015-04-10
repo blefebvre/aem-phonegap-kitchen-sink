@@ -15,7 +15,7 @@
         jcr:language="fr_US"
         jcr:mixinTypes="[cq:LiveSync]"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Kitchen Sink"
+        jcr:title="Évier de Cuisine"
         sling:resourceType="brucelefebvre/kitchen-sink/components/ng-ionic-page"
         pageTitle="Évier de Cuisine"
         phonegap-contentPackageName="fr"
