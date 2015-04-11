@@ -15,7 +15,7 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Adobe Systems Incorporated.
  **************************************************************************/
-;(function (angular, contentUpdate, undefined) {
+;(function (angular, contentUpdate, contentPackageSwitcher, undefined) {
 
     "use strict";
 
@@ -132,6 +132,15 @@
                 };
 
                 /**
+                 * Switch to an alternate content package
+                 */
+                $scope.switchContentPackage = function(name) {
+                    var spec = {name: name};
+                    var switcher = contentPackageSwitcher(spec);
+                    switcher.usePackage();
+                };
+
+                /**
                  * Handle navigation to product pages
                  */
                 $scope.goProduct = function(templatePath, sku){
@@ -201,4 +210,4 @@
                 }
             }
         ]);
-})(angular, CQ.mobile.contentUpdate);
+})(angular, CQ.mobile.contentUpdate, kitchenSink.contentPackageSwitcher);

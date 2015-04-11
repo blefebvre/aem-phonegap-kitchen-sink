@@ -1,7 +1,7 @@
 <div class="list" data-sly-use.pageHelper="${ 'com.brucelefebvre.wcm.PageHelper' @ page=currentPage }">
 
     <div data-sly-list.item='${ pageHelper.appContentPages }' data-sly-unwrap>
-        <a class="item">
+        <a class="item" ng-click="switchContentPackage('${ item.name }')">
             ${ item.title }
         </a>
     </div>
