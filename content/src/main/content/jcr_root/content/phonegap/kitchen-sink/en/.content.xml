@@ -6,7 +6,7 @@
         cq:lastModified="{Date}2014-01-06T16:29:05.241-05:00"
         cq:lastModifiedBy="admin"
         jcr:primaryType="cq:PageContent"
-        jcr:title="Kitchen Sink English"
+        jcr:title="English"
         sling:resourceType="brucelefebvre/kitchen-sink/components/splash-page"
         pge-type="[app-content]"
         phonegap-exportTemplate="/content/phonegap/kitchen-sink/en/jcr:content/pge-app/app-config">

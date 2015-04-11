@@ -1,0 +1,15 @@
+<div class="list" data-sly-use.pageHelper="${ 'com.brucelefebvre.wcm.PageHelper' @ page=currentPage }">
+
+    <div data-sly-list.item='${ pageHelper.appContentPages }' data-sly-unwrap>
+        <a class="item">
+            ${ item.title }
+        </a>
+    </div>
+
+    <a class="item item-button-right" ng-click="updateApp()">
+        Update
+        <button class="button button-positive">
+            <i class="icon ion-ios7-cloud-download"></i>
+        </button>
+    </a>
+</div>
