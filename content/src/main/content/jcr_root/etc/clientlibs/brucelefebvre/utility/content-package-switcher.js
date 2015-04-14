@@ -38,9 +38,15 @@ window.kitchenSink = window.kitchenSink || {};
                     console.error('[contentPackageSwitcher] error requesting content') 
                 }
 
+                // Absolute path to the requested content package root file
+                var contentPackageRootAbsoluteUrl = contentUtils.getPathToWWWDir(window.location.href) +
+                        contentPackDetails.path + '.html';
+
                 // Truthy result indicates that the contentn package is already installed
                 if (result) {
                     // Switch to the content package
+                    redirectTo(contentPackageRootAbsoluteUrl);
+                    // TODO: check for an update, either before or after switching. 
                 }
                 else {
                     // Set timestamp to 0 and request package from the server
@@ -56,14 +62,11 @@ window.kitchenSink = window.kitchenSink || {};
                             }
 
                             // Success. Redirect to the new content package root
-                            var currentLocation = window.location.href;
-                            var contentPackageRootAbsoluteUrl = contentUtils.getPathToWWWDir(currentLocation) +
-                                    packageRootUrl;
                             console.log('Successfully installed content package: [' + contentPackageName + 
                                     ']. Redirecting to: [' + contentPackageRootAbsoluteUrl + ']');
                              
                             // Redirect to the new content package
-                            window.location.href = contentPackageRootAbsoluteUrl;
+                            redirectTo(contentPackageRootAbsoluteUrl);
                         }
                     );
                 }
@@ -72,6 +75,10 @@ window.kitchenSink = window.kitchenSink || {};
         }
 
         /* Private helpers */
+        var redirectTo = function(absoluteUrl) {
+            window.location.href = absoluteUrl;
+        }
+
         var isContentPackageAlreadyInstalled = function(pathToHtmlContent, callback) {
             var checkForContentPackageRoot = function(wwwDirectoryEntry) {
                 wwwDirectoryEntry.getFile(pathToHtmlContent, {create: false}, 
