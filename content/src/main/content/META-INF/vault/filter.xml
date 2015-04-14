@@ -6,6 +6,7 @@
     <filter root="/etc/clientlibs/brucelefebvre/angular-snap"/>
     <filter root="/etc/clientlibs/brucelefebvre/btford"/>
     <filter root="/etc/clientlibs/brucelefebvre/phonegapAPI"/>
+    <filter root="/etc/clientlibs/brucelefebvre/utility"/>
     <filter root="/etc/designs/phonegap/brucelefebvre/kitchen-sink"/>
     <filter root="/content/dam/brucelefebvre/kitchen-sink"/>
     <filter root="/etc/commerce/products/kitchen_sink"/>
