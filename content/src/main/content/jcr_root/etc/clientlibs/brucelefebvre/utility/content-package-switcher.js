@@ -44,6 +44,28 @@ window.kitchenSink = window.kitchenSink || {};
                 }
                 else {
                     // Set timestamp to 0 and request package from the server
+                    contentPackDetails.timestamp = 0;
+                    contentUtils.storeContentPackageDetails(contentPackageName, contentPackDetails);
+                    
+                    // Fetch and install the requested content package 
+                    var contentUpdater = contentUpdate();
+                    contentUpdater.updateContentPackageByName(contentPackageName, 
+                        function(error, packageRootUrl) {
+                            if (error) {
+                                return console.error(error);
+                            }
+
+                            // Success. Redirect to the new content package root
+                            var currentLocation = window.location.href;
+                            var contentPackageRootAbsoluteUrl = contentUtils.getPathToWWWDir(currentLocation) +
+                                    packageRootUrl;
+                            console.log('Successfully installed content package: [' + contentPackageName + 
+                                    ']. Redirecting to: [' + contentPackageRootAbsoluteUrl + ']');
+                             
+                            // Redirect to the new content package
+                            window.location.href = contentPackageRootAbsoluteUrl;
+                        }
+                    );
                 }
             });
 
