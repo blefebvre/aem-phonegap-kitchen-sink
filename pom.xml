@@ -257,6 +257,7 @@
     </profiles>
   <modules>
     <module>bundle</module>
-    <module>content</module>
+    <module>content-dev</module>
+    <module>content-author</module>
   </modules>
 </project>

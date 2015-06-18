@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/content/phonegap/kitchen-sink">
+        <include pattern="/content/phonegap/kitchen-sink(/.*)?"/>
+        <exclude pattern="/content/phonegap/kitchen-sink/shell(/.*)?"/>
+    </filter>
+    <filter root="/content/dam/brucelefebvre/kitchen-sink"/>
+</workspaceFilter>
