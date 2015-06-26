@@ -7,16 +7,6 @@
         "is_top_level": true,
         "variables": {}
     },
-    "com.telerik.plugins.nativepagetransitions": {
-        "source": {
-            "type": "git",
-            "url": "https://github.com/Telerik-Verified-Plugins/NativePageTransitions",
-            "subdir": ".",
-            "ref": "0.2.11"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "com.phonegap.plugins.PushPlugin": {
         "source": {
             "type": "git",
@@ -153,6 +143,16 @@
             "url": "https://github.com/Adobe-Marketing-Cloud/mobile-services",
             "subdir": ".",
             "ref": "0482f9cedf90c98a8d4b07219ece1933b2e46a60"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com.telerik.plugins.nativepagetransitions": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Telerik-Verified-Plugins/NativePageTransitions",
+            "subdir": ".",
+            "ref": "0.4.1"
         },
         "is_top_level": true,
         "variables": {}

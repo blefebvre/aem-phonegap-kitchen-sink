@@ -54,7 +54,6 @@
     <gap:plugin name="org.apache.cordova.media" version="0.2.13" />
     <gap:plugin name="com.telerik.plugins.nativepagetransitions" version="0.2.2" />
     <!-- No ADBMobile plugin on build -->
-    <gap:plugin name="com.phonegap.plugins.pushplugin" version="2.4.0" />
 
     <!-- PhoneGap CLI Plugins - note that versions differ from PhoneGap Build Plugins above -->
     <plugin name="cordova-plugin-file" spec="^2.0.0" />
@@ -73,9 +72,8 @@
     <plugin name="cordova-plugin-device-orientation" spec="^1.0.0" />
     <plugin name="cordova-plugin-device-motion" spec="^1.1.0" />
     <plugin name="cordova-plugin-media" spec="^1.0.0" />
-    <plugin name="com.telerik.plugins.nativepagetransitions" spec="https://github.com/Telerik-Verified-Plugins/NativePageTransitions#0.2.11" />
+    <plugin name="com.telerik.plugins.nativepagetransitions" spec="https://github.com/Telerik-Verified-Plugins/NativePageTransitions#0.4.1" />
     <plugin name="ADBMobile" spec="https://github.com/Adobe-Marketing-Cloud/mobile-services#0482f9cedf90c98a8d4b07219ece1933b2e46a60" />
-    <plugin name="com.phonegap.plugins.pushplugin" spec="https://github.com/phonegap-build/PushPlugin#1979d972b6ab37e28cf2077bc7ebfe706cc4dacd" />
 
     <!-- Platforms -->
     <gap:platform name="ios" />
