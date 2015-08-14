@@ -97,9 +97,9 @@ public class Sync extends CordovaPlugin {
         } else if (action.equals("download")) {
             final String source = args.getString(0);
             // Production
-            String outputDirectory = cordova.getActivity().getCacheDir().getAbsolutePath();
+            //String outputDirectory = cordova.getActivity().getCacheDir().getAbsolutePath();
             // Testing
-            //String outputDirectory = cordova.getActivity().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
+            String outputDirectory = cordova.getActivity().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
             String filename = source.substring(source.lastIndexOf("/")+1, source.length());
             final File target = new File(outputDirectory, filename);
             // @TODO we need these
@@ -512,9 +512,9 @@ public class Sync extends CordovaPlugin {
 
     private String getOutputDirectory(final String id) {
         // Production
-        String outputDirectory = cordova.getActivity().getFilesDir().getAbsolutePath();
+        //String outputDirectory = cordova.getActivity().getFilesDir().getAbsolutePath();
         // Testing
-        //String outputDirectory = cordova.getActivity().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
+        String outputDirectory = cordova.getActivity().getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
         outputDirectory += outputDirectory.endsWith(File.separator) ? "" : File.separator;
         outputDirectory += "files";
         outputDirectory += outputDirectory.endsWith(File.separator) ? "" : File.separator;
@@ -525,7 +525,6 @@ public class Sync extends CordovaPlugin {
         if (!fd.exists()) {
             fd.mkdirs();
         }
-
         return outputDirectory;
     }
 
@@ -584,25 +583,15 @@ public class Sync extends CordovaPlugin {
     }
 
     private void copyAssetFileOrDir(String outputDirectory, String path, boolean wwwExists) throws IOException {
-        if (path.contains(".")) {
-            try {
-                this.copyAssetFile(outputDirectory, path, wwwExists);
-            } catch (IOException e) {
-                copyAssetDir(outputDirectory, path, wwwExists);
-            }
+        AssetManager assetManager = cordova.getActivity().getAssets();
+        String assets[] = null;
+        assets = assetManager.list(path);
+        if (assets.length == 0) {
+            this.copyAssetFile(outputDirectory, path, wwwExists);
         } else {
-            copyAssetDir(outputDirectory, path, wwwExists);
-        }
-    }
-
-    private void copyAssetDir(String outputDirectory, String path, boolean wwwExists) throws IOException {
-        String assets[] = cordova.getActivity().getAssets().list(path);
-        if (assets.length != 0) {
             for (String file : assets) {
                 copyAssetFileOrDir(outputDirectory, path + File.separator + file, wwwExists);
             }
-        } else {
-            this.copyAssetFile(outputDirectory, path, wwwExists);
         }
     }
 
@@ -976,7 +965,8 @@ public class Sync extends CordovaPlugin {
             }
         }
 
-        copyFile(cordova.getActivity().getAssets().open(filename), new FileOutputStream(new File(outputDirectory, targetFile)));
+        copyFile(cordova.getActivity().getAssets().open(filename),
+                new FileOutputStream(new File(outputDirectory, targetFile)));
     }
 
     private void copyFile(InputStream in, OutputStream out) throws IOException {

@@ -1,0 +1,83 @@
+164.9 MB on disk for 846 items
+
+One Plus One
+
+// old
+total = 47144ms
+total = 45239ms
+total = 46938ms
+total = 45692ms
+total = 46485ms
+
+46300 avg
+
+// new
+total = 25759ms
+total = 25504ms
+total = 26905ms
+total = 24844ms
+total = 23889ms
+
+25380ms avg
+only takes 54% of the time
+
+13.8 MB on disk for 746 items
+
+// old
+total = 39403ms
+total = 39309ms
+total = 39639ms
+total = 37669ms
+total = 39262ms
+
+39056ms avg
+
+// new
+total = 18124ms
+total = 16763ms
+total = 17614ms
+total = 17655ms
+total = 18021ms
+
+17635ms avg
+only takes 45% of the time
+
+Nexus 6
+
+13.8 MB on disk for 746 items
+
+// old
+total = 28481ms
+total = 27352ms
+total = 28887ms
+total = 29285ms
+total = 30458ms
+
+28892ms avg
+
+// new
+total = 15928ms
+total = 13696ms
+total = 13865ms
+total = 13601ms
+total = 14416ms
+
+14301ms avg
+only takes 49% of time
+
+// cache file
+
+(151.1 MB on disk) for 104 items
+
+total = 8368ms
+total = 7477ms
+total = 6788ms
+total = 6336ms
+total = 7592ms
+
+13.6 MB on disk) for 714 items
+
+total = 26039ms
+total = 24678ms
+
+
