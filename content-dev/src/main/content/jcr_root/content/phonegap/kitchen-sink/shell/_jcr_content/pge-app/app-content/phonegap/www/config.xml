@@ -62,7 +62,7 @@
     <plugin name="cordova-plugin-geolocation" spec="^1.0.0" />
     <plugin name="cordova-plugin-network-information" spec="^1.0.0" />
     <plugin name="cordova-plugin-console" spec="^1.0.0" />
-    <plugin name="phonegap-plugin-contentsync" spec="^1.0.2" />
+    <plugin name="cordova-plugin-zip" spec="3.0.0" />
     <plugin name="cordova-plugin-dialogs" spec="^1.1.0" />
     <plugin name="cordova-plugin-statusbar" spec="^1.0.0" />
     <plugin name="cordova-plugin-splashscreen" spec="^1.0.0" />
@@ -73,7 +73,6 @@
     <plugin name="cordova-plugin-device-motion" spec="^1.1.0" />
     <plugin name="cordova-plugin-media" spec="^1.0.0" />
     <plugin name="com.telerik.plugins.nativepagetransitions" spec="https://github.com/Telerik-Verified-Plugins/NativePageTransitions#0.4.1" />
-    <plugin name="ADBMobile" spec="https://github.com/Adobe-Marketing-Cloud/mobile-services#0482f9cedf90c98a8d4b07219ece1933b2e46a60" />
 
     <!-- Platforms -->
     <gap:platform name="ios" />
