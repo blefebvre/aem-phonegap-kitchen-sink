@@ -19,7 +19,7 @@ Requirements
 - AEM 6.1
 - [Apache Maven](https://maven.apache.org/) version `>=3.1.1`
 - [node.js](http://nodejs.org/) version `>=0.12.x`
-- [PhoneGap CLI](https://github.com/phonegap/phonegap-cli) version `>=5.0.0`
+- [PhoneGap CLI](https://github.com/phonegap/phonegap-cli) version `==5.0.0-0.27.0` (install exact version with `npm install -g phonegap@5.0.0-0.27.0`)
 - (iOS only) Xcode version `>=6.3.1`
 - (iOS only) [ios-sim](https://github.com/phonegap/ios-sim#installation) 
 - (Android only) [Android SDK](https://developer.android.com/sdk/index.html)
