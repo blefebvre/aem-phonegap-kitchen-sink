@@ -9,7 +9,7 @@ Rollout changes to library items
 
 - Upload updated .csv
     - In the AEM [Products console](http://localhost:4502/aem/products.html/etc/commerce/products/kitchen_sink), click import products
-    - Select [kitchen-sink-books-update.csv](/blob/master/content-dev/src/main/content/jcr_root/etc/commerce/products/kitchen-sink-books-update.csv) and click next
+    - Select [kitchen-sink-books-update.csv](/content-dev/src/main/content/jcr_root/etc/commerce/products/kitchen-sink-books-update.csv) and click next
     - 1 product should be updated. Click Done when complete
 
 - Activate products
