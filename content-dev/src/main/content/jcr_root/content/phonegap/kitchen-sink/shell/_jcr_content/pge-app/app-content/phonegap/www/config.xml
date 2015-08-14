@@ -81,6 +81,7 @@
 
     <!-- Access whitelist -->
     <access origin="*" />
+    <plugin name="cordova-plugin-whitelist" version="1.0.0" />
     
     <!-- General icon -->
     <icon src="icon.png" />

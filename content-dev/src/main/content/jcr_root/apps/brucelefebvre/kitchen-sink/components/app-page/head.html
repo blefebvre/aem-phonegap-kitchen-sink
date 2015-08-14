@@ -31,5 +31,8 @@
     </script>
     <!--/* WCM initialization code end */-->
 
+    <!-- Enable all requests, inline styles, and eval() -->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+    
     <div data-sly-include="css_clientlibs.html" data-sly-unwrap></div>
 </head>
