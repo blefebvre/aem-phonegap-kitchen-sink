@@ -7,7 +7,7 @@
         cq:lastModifiedBy="admin"
         jcr:primaryType="cq:PageContent"
         jcr:title="Francais"
-        sling:resourceType="brucelefebvre/kitchen-sink/components/splash-page"
+        sling:resourceType="mobileapps/components/splash-page"
         pge-type="[app-content]"
         phonegap-exportTemplate="/content/phonegap/kitchen-sink/fr/jcr:content/pge-app/app-config">
         <image

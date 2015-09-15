@@ -1,7 +1,7 @@
 AEM Apps Kitchen Sink
 =====================
 
-:new: Note that the requirements have changed as of June 2015. If you do not have AEM 6.1, please use the `release/6.0-apps-featurepack` branch.
+:new: Note that the requirements have changed as of September 2015. If you do not have AEM 6.1 + FeaturePack 2, please use the `release/6.1` branch.
 
 A PhoneGap API showcase app managed in AEM.
 
@@ -16,10 +16,10 @@ Background: [So, you want to build an app](http://brucelefebvre.com/blog/2014/03
 Requirements
 ------------
 
-- AEM 6.1
+- AEM 6.1 + FeaturePack 2
 - [Apache Maven](https://maven.apache.org/) version `>=3.1.1`
 - [node.js](http://nodejs.org/) version `>=0.12.x`
-- [PhoneGap CLI](https://github.com/phonegap/phonegap-cli) version `==5.1.1` (install exact version with `npm install -g phonegap@5.1.1`)
+- [Cordova CLI](https://github.com/apache/cordova-cli/) version `==5.3.1` (install exact version with `npm install -g cordova@5.3.1`)
 - (iOS only) Xcode version `>=6.3.1`
 - (iOS only) [ios-sim](https://github.com/phonegap/ios-sim#installation) 
 - (Android only) [Android SDK](https://developer.android.com/sdk/index.html)
@@ -70,7 +70,7 @@ I've added a few demo scenarios to the [demos directory](demos) of this reposito
 Using with VLT
 --------------
 
-To use vlt with this project, first build and install the package to your local AEM instance as described above. Then `cd content/src/main/content/jcr_root` and run
+To use vlt with this project, first build and install the package to your local AEM instance as described above. Then `cd content-dev/src/main/content/jcr_root` and run
 
     vlt --credentials admin:admin checkout -f ../META-INF/vault/filter.xml --force http://localhost:4502/crx
 
