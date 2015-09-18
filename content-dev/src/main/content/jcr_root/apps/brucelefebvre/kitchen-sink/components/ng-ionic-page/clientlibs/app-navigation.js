@@ -23,10 +23,13 @@
      * Module to handle general navigation in the app
      */
     angular.module('cqAppNavigation', [])
-        .controller('AppNavigationController', ['$scope', '$window', '$location', '$timeout',
-            function ($scope, $window, $location, $timeout) {
+        .controller('AppNavigationController', ['$scope', '$window', '$location', '$timeout', '$rootElement',
+            function ($scope, $window, $location, $timeout, $rootElement) {
                 $scope.transition = '';
-                var contentUpdater = contentUpdate();
+                var appName = $rootElement.attr('ng-app');
+                var contentUpdater = contentUpdate({
+                    id: appName
+                });
 
                 /**
                  * Handle back button

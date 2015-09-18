@@ -7,7 +7,7 @@
         cq:lastModifiedBy="admin"
         jcr:primaryType="cq:PageContent"
         jcr:title="English"
-        sling:resourceType="mobileapps/components/splash-page"
+        sling:resourceType="mobileapps/components/splash-page-content-sync-2"
         pge-type="[app-content]"
         phonegap-exportTemplate="/content/phonegap/kitchen-sink/en/jcr:content/pge-app/app-config">
         <image
