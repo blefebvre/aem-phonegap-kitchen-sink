@@ -1,4 +1,0 @@
-#base=js
-
-snap.js
-angular-snap.js

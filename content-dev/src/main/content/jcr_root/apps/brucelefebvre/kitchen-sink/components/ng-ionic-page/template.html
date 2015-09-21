@@ -1,7 +1,7 @@
 <ion-header-bar class="bar bar-header bar-positive" 
         data-sly-use.pageHelper="${ 'com.brucelefebvre.wcm.PageHelper' @ page=resourcePage }">
     <div data-sly-test.topLevelAppPage='${ pageHelper.topLevelAppResource }' data-sly-unwrap>
-        <a snap-toggle class="button icon-left ion-navicon-round button-clear"></a>
+        <a ng-click="toggleMenu()" class="button icon-left ion-navicon-round button-clear"></a>
     </div>
     <div data-sly-test='${ !topLevelAppPage }' data-sly-unwrap>
         <a ng-click="back()" class="button icon-left ion-chevron-left button-clear"></a>

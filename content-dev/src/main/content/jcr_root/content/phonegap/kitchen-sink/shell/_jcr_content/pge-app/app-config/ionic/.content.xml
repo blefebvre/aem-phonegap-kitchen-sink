@@ -2,6 +2,6 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="nt:unstructured"
     includeFolders="[fonts]"
-    path="/etc/clientlibs/brucelefebvre/ionic-1.0.0"
+    path="/etc/clientlibs/brucelefebvre/ionic-1.1.0"
     targetRootDirectory="www"
     type="clientlib"/>
