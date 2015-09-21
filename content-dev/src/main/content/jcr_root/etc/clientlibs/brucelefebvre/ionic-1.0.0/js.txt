@@ -1,0 +1,7 @@
+#base=js
+
+ionic.bundle.js
+angular-resource.min.js
+
+angular-route.min.js
+angular-touch.min.js

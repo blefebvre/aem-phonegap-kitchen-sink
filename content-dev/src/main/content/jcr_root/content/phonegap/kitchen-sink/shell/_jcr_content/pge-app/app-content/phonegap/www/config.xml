@@ -28,9 +28,7 @@
     <preference name="android-installLocation" value="auto" />
     <preference name="SplashScreen" value="screen" />
     
-    <preference name="StatusBarOverlaysWebView" value="false" />
-    <preference name="StatusBarStyle" value="blacktranslucent" />
-    <preference name="StatusBarBackgroundColor" value="#4684F1" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
 
     <!-- File preferences -->
     <preference name="iosPersistentFileLocation" value="Library" />

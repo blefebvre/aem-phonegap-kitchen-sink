@@ -3,7 +3,7 @@
     <filter root="/content/phonegap/kitchen-sink/shell"/>
     <filter root="/content/catalogs/kitchen-sink"/>
     <filter root="/apps/brucelefebvre/kitchen-sink"/>
-    <filter root="/etc/clientlibs/brucelefebvre/ionic-1.0.0-beta.13"/>
+    <filter root="/etc/clientlibs/brucelefebvre/ionic-1.0.0"/>
     <filter root="/etc/clientlibs/brucelefebvre/angular-snap"/>
     <filter root="/etc/clientlibs/brucelefebvre/btford"/>
     <filter root="/etc/clientlibs/brucelefebvre/phonegapAPI"/>
