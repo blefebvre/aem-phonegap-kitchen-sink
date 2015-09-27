@@ -85,6 +85,18 @@ The CRX host and port can be specified on the command line with:
     mvn -Dcrx.host=otherhost -Dcrx.port=5502 <goals>
 
 
+Using ContentSync with cURL
+---------------------------
+
+To stage an update to the kitchen-sink `en` content package (note `newupdate` selector):
+
+	curl --user admin:admin --data-urlencode "title=new update" http://localhost:4502/content/phonegap/kitchen-sink/en/jcr:content/pge-app/app-config.newupdate.json
+
+To publish all staged updates of the kitchen-sink `en` content package (note `activateZips` selector):
+
+	curl --user admin:admin --data-urlencode "title=activate it" http://localhost:4502/content/phonegap/kitchen-sink/en/jcr:content/pge-app/app-config.activateZips.json
+
+	
 Credits
 -------
 
