@@ -1,7 +1,10 @@
     <ion-header-bar class="bar bar-header bar-positive">
-        <a ng-click="back()" class="button icon-left ion-chevron-left button-clear"></a>
+        <a ng-click="toggleMenu()" class="button icon-left ion-navicon-round button-clear" ng-class="{'hidden': !atRootPage}"></a>
+        <a ng-click="back()" class="button icon-left ion-chevron-left button-clear" ng-class="{'hidden': atRootPage}"></a>
     </ion-header-bar>
     
     <ion-content class="has-header">
     	<div data-sly-resource="${ @path='ng-library-item', resourceType='brucelefebvre/kitchen-sink/components/ng-library-item' }" data-sly-unwrap></div>
     </ion-content>
+
+	<div data-sly-include="footer.html" data-sly-unwrap></div>

@@ -2,12 +2,17 @@
 <js data-sly-test.authorMode='${ wcmmode.edit || wcmmode.design }' data-sly-unwrap>
 
     <ion-header-bar class="bar bar-header bar-positive">
-        <a ng-click="back()" class="button icon-left ion-chevron-left button-clear"></a>
+        <a ng-click="toggleMenu()" class="button icon-left ion-navicon-round button-clear" ng-class="{'hidden': !atRootPage}"></a>
+
         <h1 class="title">${currentPage.title}</h1>
+        
+        <a ng-click="back()" class="button icon-left ion-chevron-left button-clear" ng-class="{'hidden': atRootPage}"></a>
     </ion-header-bar>
     
     <ion-content class="has-header">
         <div data-sly-resource="${ @path='content-par', resourceType='foundation/components/parsys' }" data-sly-unwrap></div>
     </ion-content>
+
+   	<div data-sly-include="footer.html" data-sly-unwrap></div>
 
 </js>
