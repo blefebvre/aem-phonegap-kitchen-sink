@@ -181,3 +181,31 @@ angular.module('phonegapAPI')
 - Add the component to the page
 - Build and replicate the kitchen-sink package if you need the component on pub
 
+Add Tab Bar
+-----------
+
+Revert the commit which adds the tab-bar component and design data:
+
+    git revert --no-commit 4356b695dfd564b3a0044234ae4d64a54f501119
+
+Build and install the content-dev package.
+
+Download the app with clear ContentSync (CS) configs.
+
+Run the app, on one or both platforms.
+
+Add the following to /apps/brucelefebvre/kitchen-sink/components/ng-ionic-page/footer.html:
+
+    <sly data-sly-resource="${ @ path='tab-bar', resourceType='brucelefebvre/kitchen-sink/components/ng-ionic-page/tab-bar' }" />
+
+In Classic design mode (http://localhost:4502/cf#/content/phonegap/kitchen-sink/en/home.html), add a couple of pages to the tab bar design (`en/Kitchen Sink` and `en/Kitchen Sink/Camera` have matching icons).
+
+Update the en CS config:
+    
+    curl --user admin:admin --data-urlencode "title=new update" http://localhost:4502/content/phonegap/kitchen-sink/en/jcr:content/pge-app/app-config.newupdate.json
+
+Publish the update:
+
+    curl --user admin:admin --data-urlencode "title=activate it" http://localhost:4502/content/phonegap/kitchen-sink/en/jcr:content/pge-app/app-config.activateZips.json
+
+Pull an update from the app to reveal the new footer.
