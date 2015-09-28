@@ -3,33 +3,36 @@
     <div id="appWrap" ng-controller="AppNavigationController" ng-cloak 
             data-sly-use.pageHelper="${ 'com.brucelefebvre.wcm.PageHelper' @ page=currentPage }">
 
-        <div snap-drawer>
-            <section data-sly-include="menu.html" data-sly-unwrap></section>
-        </div>
+        <ion-side-menus>
+            <ion-side-menu side="left">
+                <section data-sly-include="menu.html" data-sly-unwrap></section>
+            </ion-side-menu>
 
-        <div snap-content snap-options="{disable: 'right'}">
-            <div data-sly-test.authorMode='${ wcmmode.edit || wcmmode.design }'>
-    
-                <!--/* Author mode enabled */-->
-                <div ng-controller="${pageHelper.jsFriendlyResourceName}">
-                    <div data-sly-include="template.html" data-sly-unwrap></div>
+            <ion-side-menu-content>
+                <div data-sly-test.authorMode='${ !wcmmode.disabled }'>
+        
+                    <!--/* Author mode enabled */-->
+                    <div ng-controller="${pageHelper.jsFriendlyResourceName}">
+                        <div data-sly-include="template.html" data-sly-unwrap></div>
+                    </div>
+        
                 </div>
-    
-            </div>
-            <div data-sly-test="${!authorMode}">
+                <div data-sly-test="${!authorMode}">
 
-                <!--/* Authoring disabled */-->
-                <div ng-view></div>
+                    <!--/* Authoring disabled */-->
+                    <div ng-view></div>
 
-                <script type="text/javascript" src="${pageHelper.relativePathToRoot}cordova.js"></script>
+                    <script type="text/javascript" src="${pageHelper.relativePathToRoot}cordova.js"></script>
 
-            </div>
-        </div>
+                </div>
 
-        <div data-sly-include="footer.html" data-sly-unwrap></div>
+                <div data-sly-include="footer.html" data-sly-unwrap></div>
+            </ion-side-menu-content>
+        </ion-side-menus>
+
     </div>
 
-    <js data-sly-call="${clientLib.js @ categories='angularjs'}" data-sly-unwrap></js>
+    <js data-sly-call="${clientLib.js @ categories='kitchen-sink.ionic-1.1.0'}" data-sly-unwrap></js>
     <script src="${currentPage.name}.angular-app-module.js"></script>
     <div data-sly-include="js_clientlibs.html" data-sly-unwrap></div>
 </body>

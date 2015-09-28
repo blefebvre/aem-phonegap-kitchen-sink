@@ -23,10 +23,13 @@
      * Module to handle general navigation in the app
      */
     angular.module('cqAppNavigation', [])
-        .controller('AppNavigationController', ['$scope', '$window', '$location', '$timeout',
-            function ($scope, $window, $location, $timeout) {
+        .controller('AppNavigationController', ['$scope', '$window', '$location', '$timeout', '$rootElement', '$ionicSideMenuDelegate',
+            function ($scope, $window, $location, $timeout, $rootElement, $ionicSideMenuDelegate) {
                 $scope.transition = '';
-                var contentUpdater = contentUpdate();
+                var appName = $rootElement.attr('ng-app');
+                var contentUpdater = contentUpdate({
+                    id: appName
+                });
 
                 /**
                  * Handle back button
@@ -80,7 +83,7 @@
                  * Toggle the menu
                  */
                 $scope.toggleMenu = function() {
-                    $scope.navigationMenuStatus = !$scope.navigationMenuStatus;
+                    $ionicSideMenuDelegate.toggleLeft();
                 };
 
                 /**

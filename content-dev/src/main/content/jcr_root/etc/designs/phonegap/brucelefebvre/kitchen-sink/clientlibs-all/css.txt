@@ -1,5 +1,3 @@
 #base=css
 
-ios7shim.css
-transitions.css
 ionic-custom.css

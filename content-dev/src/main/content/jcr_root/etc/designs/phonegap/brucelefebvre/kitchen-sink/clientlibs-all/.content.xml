@@ -2,5 +2,5 @@
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:ClientLibraryFolder"
     categories="[apps.brucelefebvre.kitchen-sink.all]"
-    dependencies="[ionic-1.0.0-beta.13]"
-    embed="[cq.mobile.foundation.angular,angular-snap,btford-angular-phonegap,apps.brucelefebvre.kitchen-sink.phonegap.util,apps.brucelefebvre.nav,apps.brucelefebvre.kitchen-sink.phonegap.api,apps.brucelefebvre.kitchen-sink,cq.mobile.content-sync]"/>
+    dependencies="[kitchen-sink.ionic-1.1.0]"
+    embed="[btford-angular-phonegap,apps.brucelefebvre.kitchen-sink.phonegap.util,apps.brucelefebvre.nav,apps.brucelefebvre.kitchen-sink.phonegap.api,apps.brucelefebvre.kitchen-sink,cq.mobile.content-sync-2]"/>

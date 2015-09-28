@@ -6,7 +6,7 @@
         cq:lastModifiedBy="admin"
         jcr:primaryType="cq:PageContent"
         jcr:title="Kitchen Sink Shell"
-        sling:resourceType="brucelefebvre/kitchen-sink/components/splash-page"
+        sling:resourceType="mobileapps/components/splash-page"
         pge-type="[app-instance]"
         phonegap-build-exportTemplate="/content/phonegap/kitchen-sink/shell/jcr:content/pge-app/KitchenSink"
         phonegap-build-exportTemplate-dev="/content/phonegap/kitchen-sink/shell/jcr:content/pge-app/KitchenSink-dev"
