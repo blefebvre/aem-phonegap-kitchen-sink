@@ -9,7 +9,7 @@
         <a ng-click="back()" class="button icon-left ion-chevron-left button-clear" ng-class="{'hidden': atRootPage}"></a>
     </ion-header-bar>
     
-    <ion-content class="has-header">
+    <ion-content class="has-header" ng-class="{'has-tabs-top': platform.isAndroid()}">
         <div data-sly-resource="${ @path='content-par', resourceType='foundation/components/parsys' }" data-sly-unwrap></div>
     </ion-content>
 

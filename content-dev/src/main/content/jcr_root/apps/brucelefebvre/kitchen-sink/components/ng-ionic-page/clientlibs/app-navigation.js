@@ -72,6 +72,9 @@
                 });
                 initializeTransitions();
 
+                // Make platform available to $scope for setting tab spacing on Android
+                $scope.platform = ionic.Platform;
+
                 /**
                  * Handle back button
                  */
@@ -99,12 +102,13 @@
                  * Handle navigation to library items
                  */
                 $scope.goLibraryItem = function( templatePath, skuPrefix, productName ) {
+                    numberOfPagesFromRoot++;
                     if($scope.wcmMode || !window.plugins) {
                         // WCMMode is not disabled; head to the product page itself
                         navigateToPage( getFullLibraryPagePath( templatePath, skuPrefix, productName ), productName );
                     }
                     else {
-                        navigateToPage( templatePath + '/' + skuPrefix + '/' + productName,
+                        navigateToPage( templatePath + '/' + skuPrefix + '/' + productName, productName,
                             pageTransitions.effect.slide,
                             pageTransitions.direction.left );
                     }

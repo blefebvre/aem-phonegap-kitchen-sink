@@ -7,7 +7,7 @@
     <h1 class="title">${resourcePage.title}</h1>
 </ion-header-bar>
     
-<ion-content class="has-header">
+<ion-content class="has-header" ng-class="{'has-tabs-top': platform.isAndroid()}">
     <div data-sly-resource="${ @path='content-par', resourceType='wcm/foundation/components/parsys' }" data-sly-unwrap></div>
 </ion-content>
 
