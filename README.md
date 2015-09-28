@@ -52,7 +52,9 @@ From the project directory, run:
 
 ..to build the bundle and content package and install to a AEM instance.
 
-Don't have the required testing tools installed? You can skip the tests with ``mvn -PautoInstallPackage clean install -DskipTests``
+Don't have the required testing tools installed? You can skip the tests with:
+
+	mvn -PautoInstallPackage clean install -DskipTests
 
 
 Viewing and editing app pages
