@@ -34,7 +34,7 @@
 
                 // Page dimensions for consistent transitions
                 var headerHeight = 44;
-                var footerHeight = 49;
+                var footerHeight = 0;
 
                 // Add 20px when iOS is detected
                 if (/iPad|iPhone|iPod/.test(navigator.platform)) {
