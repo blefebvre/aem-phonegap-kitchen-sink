@@ -11,6 +11,7 @@ window.kitchenSink = window.kitchenSink || {};
         'use strict';
 
         var contentPackageName = spec.name;
+        var id = spec.id;
 
         /**
          *
@@ -35,7 +36,7 @@ window.kitchenSink = window.kitchenSink || {};
             isContentPackageAlreadyInstalled(contentPackDetails.path + '.html', function(error, result) {
                 if (error) {
                     // Something went wrong
-                    console.error('[contentPackageSwitcher] error requesting content') 
+                    console.error('[contentPackageSwitcher] error requesting content: ' + error.code);
                 }
 
                 // Absolute path to the requested content package root file
@@ -54,7 +55,9 @@ window.kitchenSink = window.kitchenSink || {};
                     contentUtils.storeContentPackageDetails(contentPackageName, contentPackDetails);
                     
                     // Fetch and install the requested content package 
-                    var contentUpdater = contentUpdate();
+                    var contentUpdater = contentUpdate({
+                        id: id
+                    });
                     contentUpdater.updateContentPackageByName(contentPackageName, 
                         function(error, packageRootUrl) {
                             if (error) {
@@ -78,10 +81,16 @@ window.kitchenSink = window.kitchenSink || {};
         var redirectTo = function(absoluteUrl) {
             window.location.href = absoluteUrl;
         }
-
+        
         var isContentPackageAlreadyInstalled = function(pathToHtmlContent, callback) {
-            var checkForContentPackageRoot = function(wwwDirectoryEntry) {
-                wwwDirectoryEntry.getFile(pathToHtmlContent, {create: false}, 
+
+            console.log('[contentPackageSwitcher] looking for existing content at: [' + pathToHtmlContent + ']' );
+            CQ.mobile.contentUtils.requestFileSystemRoot(function(error, fileSystemRoot) {
+                if (error) {
+                    return callback(error);
+                }
+
+                fileSystemRoot.getFile(pathToHtmlContent, {create: false}, 
                     function success(packageRootFile) {
                         console.log('[contentPackageSwitcher] package [' + contentPackageName + '] ' +
                                 'root detected: package is already installed.');
@@ -92,21 +101,6 @@ window.kitchenSink = window.kitchenSink || {};
                                 'is NOT already installed.');
                         callback(null);
                     }
-                );
-            };
-
-            console.log('[contentPackageSwitcher] looking for existing content at: [' + pathToHtmlContent + ']' );
-            CQ.mobile.contentUtils.requestFileSystemRoot(function(error, fileSystemRoot) {
-                if (error) {
-                    return callback(error);
-                }
-
-                fileSystemRoot.getDirectory('www', {create: false}, 
-                    function success(wwwDir) {
-                        checkForContentPackageRoot(wwwDir);
-                    },
-                    // Callback will be invoked on error
-                    callback
                 );
             });
         };
