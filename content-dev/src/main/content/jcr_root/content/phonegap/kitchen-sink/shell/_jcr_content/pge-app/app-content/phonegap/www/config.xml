@@ -50,6 +50,7 @@
     <gap:plugin name="cordova-plugin-device-motion" source="npm" version="^1.1.0" />
     <gap:plugin name="cordova-plugin-media" source="npm" version="^1.0.0" />
     <gap:plugin name="com.telerik.plugins.nativepagetransitions" version="0.2.2" />
+    <gap:plugin name="cordova-plugin-transport-security" source="npm" version="0.1.1" />
 
     <!-- PhoneGap CLI Plugins - note that versions differ from PhoneGap Build Plugins above -->
     <plugin name="cordova-plugin-device" spec="^1.0.0" />
@@ -67,6 +68,7 @@
     <plugin name="cordova-plugin-device-motion" spec="^1.1.0" />
     <plugin name="cordova-plugin-media" spec="^1.0.0" />
     <plugin name="com.telerik.plugins.nativepagetransitions" spec="https://github.com/Telerik-Verified-Plugins/NativePageTransitions#0.4.1" />
+    <plugin name="cordova-plugin-transport-security" spec="0.1.1" />
 
     <!-- Platforms -->
     <gap:platform name="ios" />
