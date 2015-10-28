@@ -32,16 +32,12 @@ window.kitchenSink = window.kitchenSink || {};
             // - once complete, load the new content
 
             var contentPackDetails = contentUtils.getContentPackageDetailsByName(contentPackageName);
+            
+            // Absolute path to the requested content package root file
+            var contentPackageRootAbsoluteUrl = contentUtils.getPathToWWWDir(window.location.href) +
+                    contentPackDetails.path.substring(1) + '.html';
 
-            isContentPackageAlreadyInstalled(contentPackDetails.path + '.html', function(error, result) {
-                if (error) {
-                    // Something went wrong
-                    console.error('[contentPackageSwitcher] error requesting content: ' + error.code);
-                }
-
-                // Absolute path to the requested content package root file
-                var contentPackageRootAbsoluteUrl = contentUtils.getPathToWWWDir(window.location.href) +
-                        contentPackDetails.path + '.html';
+            isContentPackageAlreadyInstalled(contentPackageRootAbsoluteUrl, function(result) {
 
                 // Truthy result indicates that the contentn package is already installed
                 if (result) {
@@ -83,26 +79,20 @@ window.kitchenSink = window.kitchenSink || {};
         }
         
         var isContentPackageAlreadyInstalled = function(pathToHtmlContent, callback) {
-
             console.log('[contentPackageSwitcher] looking for existing content at: [' + pathToHtmlContent + ']' );
-            CQ.mobile.contentUtils.requestFileSystemRoot(function(error, fileSystemRoot) {
-                if (error) {
-                    return callback(error);
+            
+            window.resolveLocalFileSystemURL(pathToHtmlContent,
+                function success(packageRootFile) {
+                    console.log('[contentPackageSwitcher] package [' + contentPackageName + '] ' +
+                            'root detected: package is already installed.');
+                    callback(true);
+                },
+                function fail(error) {
+                    console.log('[contentPackageSwitcher] package [' + contentPackageName + '] ' + 
+                            'is NOT already installed.');
+                    callback(false);
                 }
-
-                fileSystemRoot.getFile(pathToHtmlContent, {create: false}, 
-                    function success(packageRootFile) {
-                        console.log('[contentPackageSwitcher] package [' + contentPackageName + '] ' +
-                                'root detected: package is already installed.');
-                        callback(null, packageRootFile);
-                    },
-                    function fail(error) {
-                        console.log('[contentPackageSwitcher] package [' + contentPackageName + '] ' + 
-                                'is NOT already installed.');
-                        callback(null);
-                    }
-                );
-            });
+            );
         };
 
         return {

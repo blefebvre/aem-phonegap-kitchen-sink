@@ -203,8 +203,11 @@
                 /**
                  * Switch to an alternate content package
                  */
-                $scope.switchContentPackage = function(name) {
-                    var spec = {name: name};
+                $scope.switchContentPackage = function(packageName) {
+                    var spec = {
+                        id: appName, 
+                        name: packageName
+                    };
                     var switcher = contentPackageSwitcher(spec);
                     switcher.usePackage();
                 };
