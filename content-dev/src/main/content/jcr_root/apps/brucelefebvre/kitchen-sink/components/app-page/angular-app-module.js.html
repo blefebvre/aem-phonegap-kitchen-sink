@@ -14,7 +14,7 @@
 
         .controller('AppController', ['$scope', '$rootScope',
             function ($scope, $rootScope) {
-                <js data-sly-test.authorMode='${ wcmmode.edit || wcmmode.design }' data-sly-unwrap>
+                <js data-sly-test.authorMode='${ !wcmmode.disabled }' data-sly-unwrap>
                     <!--/* Author mode is enabled - page is being rendered in AEM */-->
                     $scope.wcmMode = true;
                 </js>

@@ -1,5 +1,5 @@
 <!--/* Template is only needed when WCMMode is enabled */-->
-<js data-sly-test.authorMode='${ wcmmode.edit || wcmmode.design }' data-sly-unwrap>
+<js data-sly-test.authorMode='${ !wcmmode.disabled }' data-sly-unwrap>
 
     <ion-header-bar class="bar bar-header bar-positive">
         <a ng-click="toggleMenu()" class="button icon-left ion-navicon-round button-clear" ng-class="{'hidden': !atRootPage}"></a>
