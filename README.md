@@ -16,13 +16,11 @@ Background: [So, you want to build an app](http://brucelefebvre.com/blog/2014/03
 Requirements
 ------------
 
-- AEM 6.1
-	- [Apps FeaturePack 2.0.12](https://www.adobeaemcloud.com/content/marketplace/marketplaceProxy.html?packagePath=/content/companies/public/adobe/packages/cq610/featurepack2/cq-6.1.0-apps-featurepack)
-	- [Apps Samples 2.0.8](https://www.adobeaemcloud.com/content/marketplace/marketplaceProxy.html?packagePath=/content/companies/public/adobe/packages/cq610/featurepack2/cq-6.1.0-apps-featurepack-samples) (optional; updates Geo samples)
+- AEM 6.3 version `>=load9`
 - [Apache Maven](https://maven.apache.org/) version `>=3.1.1`
 - [node.js](http://nodejs.org/) version `>=0.12.x`
-- [Cordova CLI](https://github.com/apache/cordova-cli/) version `==5.3.1` (install exact version with `npm install -g cordova@5.3.1`)
-- (iOS only) Xcode version `>=6.3.1`
+- [Cordova CLI](https://github.com/apache/cordova-cli/) version `>=6.3.1`
+- (iOS only) Xcode version `>=7.3.1`
 - (iOS only) [ios-sim](https://github.com/phonegap/ios-sim#installation) 
 - (Android only) [Android SDK](https://developer.android.com/sdk/index.html)
 
