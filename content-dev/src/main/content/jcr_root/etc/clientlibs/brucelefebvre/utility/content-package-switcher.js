@@ -47,8 +47,9 @@ window.kitchenSink = window.kitchenSink || {};
                 }
                 else {
                     // Set timestamp to 0 and request package from the server
-                    contentPackDetails.timestamp = 0;
-                    contentUtils.storeContentPackageDetails(contentPackageName, contentPackDetails);
+                    // NO! don't do this anymore.
+                    //contentPackDetails.timestamp = 0;
+                    //contentUtils.storeContentPackageDetails(contentPackageName, contentPackDetails);
                     
                     // Fetch and install the requested content package 
                     var contentUpdater = contentUpdate({

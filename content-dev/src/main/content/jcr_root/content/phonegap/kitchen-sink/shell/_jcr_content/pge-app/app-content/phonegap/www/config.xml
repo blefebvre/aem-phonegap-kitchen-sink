@@ -34,24 +34,6 @@
     <preference name="iosPersistentFileLocation" value="Library" />
     <preference name="AndroidPersistentFileLocation" value="Internal" />
 
-    <!-- Phonegap Build Plugins -->
-    <gap:plugin name="cordova-plugin-device" source="npm" version="^1.0.0" />
-    <gap:plugin name="cordova-plugin-geolocation" source="npm" version="^1.0.0" />
-    <gap:plugin name="cordova-plugin-network-information" source="npm" version="^1.0.0" />
-    <!-- Console plugin is not relevant for Build -->
-    <gap:plugin name="phonegap-plugin-contentsync" source="npm" version="1.1.12" />
-    <gap:plugin name="cordova-plugin-dialogs" source="npm" version="^1.1.0" />
-    <gap:plugin name="cordova-plugin-statusbar" source="npm" version="^1.0.0" />
-    <gap:plugin name="cordova-plugin-splashscreen" source="npm" version="^1.0.0" />
-    <gap:plugin name="cordova-plugin-camera" source="npm" version="^1.1.0" />
-    <gap:plugin name="cordova-plugin-inappbrowser" source="npm" version="^1.0.0" />
-    <gap:plugin name="cordova-plugin-contacts" source="npm" version="^1.0.0" />
-    <gap:plugin name="cordova-plugin-device-orientation" source="npm" version="^1.0.0" />
-    <gap:plugin name="cordova-plugin-device-motion" source="npm" version="^1.1.0" />
-    <gap:plugin name="cordova-plugin-media" source="npm" version="^1.0.0" />
-    <gap:plugin name="com.telerik.plugins.nativepagetransitions" version="0.2.2" />
-    <gap:plugin name="cordova-plugin-transport-security" source="npm" version="0.1.1" />
-
     <!-- PhoneGap CLI Plugins - note that versions differ from PhoneGap Build Plugins above -->
     <plugin name="cordova-plugin-device" spec="^1.0.0" />
     <plugin name="cordova-plugin-geolocation" spec="^1.0.0" />
@@ -60,15 +42,15 @@
     <plugin name="phonegap-plugin-contentsync" spec="1.1.12" />
     <plugin name="cordova-plugin-dialogs" spec="^1.1.0" />
     <plugin name="cordova-plugin-statusbar" spec="^1.0.0" />
-    <plugin name="cordova-plugin-splashscreen" spec="^1.0.0" />
-    <plugin name="cordova-plugin-camera" spec="^1.1.0" />
     <plugin name="cordova-plugin-inappbrowser" spec="^1.0.0" />
     <plugin name="cordova-plugin-contacts" spec="^1.0.0" />
     <plugin name="cordova-plugin-device-orientation" spec="^1.0.0" />
     <plugin name="cordova-plugin-device-motion" spec="^1.1.0" />
     <plugin name="cordova-plugin-media" spec="^1.0.0" />
-    <plugin name="com.telerik.plugins.nativepagetransitions" spec="https://github.com/Telerik-Verified-Plugins/NativePageTransitions#0.4.1" />
     <plugin name="cordova-plugin-transport-security" spec="0.1.1" />
+    <plugin name="cordova-plugin-camera" spec="^2.2.0" />
+    <plugin name="com.telerik.plugins.nativepagetransitions" spec="0.6.5" />
+    <plugin name="cordova-plugin-splashscreen" spec="^3.2.2" />
 
     <!-- Platforms -->
     <gap:platform name="ios" />
