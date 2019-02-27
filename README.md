@@ -1,7 +1,11 @@
-AEM Apps Kitchen Sink
+DEPRECATED: AEM Apps Kitchen Sink
 =====================
 
-:new: Note that the requirements have changed as of September 2015. If you do not have AEM 6.1 + FeaturePack 2, please use the `release/6.1` branch.
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
+⛔️This project is no longer maintained or supported.
+
+Note that the requirements have changed as of September 2015. If you do not have AEM 6.1 + FeaturePack 2, please use the `release/6.1` branch.
 
 A PhoneGap API showcase app managed in AEM.
 
